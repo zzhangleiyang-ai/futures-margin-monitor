@@ -10,72 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install Python
+      - name: Setup
         run: pip install requests
-
-      - name: Fetch all contracts
-        run: |
-          python3 << 'PYEOF'
-import json, requests
-from datetime import datetime
-now = datetime.now(); m = now.month; y = now.year % 100
-# Generate contract codes for all 58 varieties
-varieties = ['RB','HC','CU','AL','ZN','PB','NI','SN','AU','AG','BU','RU','SP','SS','BR','I','J','JM','M','Y','A','B','P','C','CS','L','PP','V','EG','EB','JD','LH','PG','SR','CF','OI','RM','MA','TA','FG','SA','UR','AP','CJ','SF','SM','PF','PK','IF','IC','IH','IM','SC','NR','LU','BC','SI','LC']
-results = []
-h = {'User-Agent':'Mozilla/5.0','Referer':'https://quote.eastmoney.com/'}
-
-for vid in varieties:
-    for j in range(4):
-        nxt = m + 1 + j; yr = y
-        if nxt > 12: nxt -= 12; yr += 1
-        code = f'{vid}{yr}{nxt:02d}'
-        url = f'https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=f2,f3,f4,f5,f8,f12,f14&secids=1.{code}'
-        try:
-            r = requests.get(url, headers=h, timeout=5).json()
-            if r.get('data') and r['data'].get('diff'):
-                for item in r['data']['diff']:
-                    if item.get('f2') and item.get('f12'):
-                        c = item['f12']
-                        try: results.append({'c':c,'p':float(item['f2']),'o':int(item.get('f8',0)),'ch':float(item.get('f3',0))})
-                        except: pass
-        except: pass
-    # Break if any contract found for this variety
-    found = [x for x in results if x['c'].startswith(vid)]
-    if found: break
-
-if not results:
-    # Fallback: try Sina API
-    print('East Money failed, trying Sina...')
-    h2 = {'User-Agent':'Mozilla/5.0','Referer':'https://finance.sina.com.cn/'}
-    for vid in varieties[:5]:  # Test first 5
-        for j in range(4):
-            nxt = m + 1 + j; yr = y
-            if nxt > 12: nxt -= 12; yr += 1
-            code = f'{vid}{yr}{nxt:02d}'
-            surl = f'https://hq.sinajs.cn/list=hf_{code}'
-            try:
-                r = requests.get(surl, headers=h2, timeout=5)
-                r.encoding = 'gbk'
-                for line in r.text.split(';'):
-                    if '=' in line and 'hq_str_hf_' in line:
-                        parts = line.split('"')[1].split(',') if '"' in line else []
-                        if len(parts) > 10 and parts[3]:
-                            results.append({'c':code,'p':float(parts[3]),'o':int(parts[9]) if parts[9] else 0,'ch':0})
-                            break
-            except: pass
-        if results: break
-
-print(f'Results: {len(results)}')
-for r in results[:3]: print(f'  {r["c"]}: p={r["p"]} oi={r["o"]}')
-with open('data.json','w') as f: json.dump(results, f)
-PYEOF
-
-      - name: Save and commit
+      - name: Run
+        run: python3 .github/scripts/fetch-data.py
+      - name: Save
         run: |
           mkdir -p data
           if [ -f data.json ]; then mv data.json data/; else echo '[]' > data/data.json; fi
-          head -c 300 data/data.json
+          head -c 200 data/data.json
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add data/data.json
