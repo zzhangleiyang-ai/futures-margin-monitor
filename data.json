@@ -860,13 +860,13 @@
       "exchange": "DCE",
       "exchangeName": "大商所",
       "contractMultiplier": 10,
-      "contract": "rr2609",
-      "price": 3617.0,
-      "openInterest": 24209,
-      "preSettlement": 3583.0,
+      "contract": "rr2608",
+      "price": 3603.0,
+      "openInterest": 39808,
+      "preSettlement": 3604.0,
       "marginRate": 0.06,
       "marginSource": "akshare estimated",
-      "marginPerLot": 2170.2
+      "marginPerLot": 2161.8
     },
     {
       "code": "BZ",
@@ -881,7 +881,21 @@
       "marginRate": 0.1,
       "marginSource": "akshare estimated",
       "marginPerLot": 3368.0
+    },
+    {
+      "code": "PT",
+      "name": "铂",
+      "exchange": "GFEX",
+      "exchangeName": "广期所",
+      "price": 431.2,
+      "openInterest": 12570,
+      "contractMultiplier": 1000,
+      "marginRate": 0.19,
+      "marginPerLot": 81928.0,
+      "contract": "pt2608",
+      "marginSource": "exchange settlement @ 20260618",
+      "preSettlement": 441.5
     }
   ],
-  "updatedAt": "2026-06-20T17:24:07+00:00"
+  "updatedAt": "2026-06-20T17:31:54+00:00"
 }
