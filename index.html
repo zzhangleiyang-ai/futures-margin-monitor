@@ -9,14 +9,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Microsoft
 #statusBar{max-width:1400px;margin:12px auto 0;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:13px;color:#94a3b8}
 .status-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
 .status-loading{background:#f59e0b}.status-success{background:#22c55e}.status-error{background:#ef4444}
-.status-time{margin-left:auto;font-size:12px;color:#64748b}
 #app{max-width:1400px;margin:0 auto;padding:16px 24px 40px}
 .exchange-section{margin-bottom:20px}
 .exchange-header{display:flex;align-items:center;padding:12px 16px;border-left:4px solid;background:#fff;border-radius:10px 10px 0 0;margin-bottom:2px}
 .exchange-name{font-size:16px;font-weight:700;margin-right:12px}.exchange-count{font-size:12px;color:#9ca3af}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
 .futures-card{background:#fff;border-radius:0 0 10px 10px;padding:14px 16px;border:1px solid #f0f0f0;border-top:2px solid var(--ex-color);transition:all .2s}
-.futures-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
 .card-top{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
 .card-variety{font-size:15px;font-weight:600}.card-code{font-size:12px;color:#9ca3af}
 .card-bottom{display:flex;justify-content:space-between;align-items:flex-start}
@@ -30,10 +28,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Microsoft
 .empty-state{text-align:center;padding:60px 20px;color:#9ca3af}
 .empty-icon{font-size:48px;margin-bottom:16px}.empty-text{font-size:18px;color:#6b7280;margin-bottom:8px}
 .footer{max-width:1400px;margin:0 auto;padding:16px 24px 32px;text-align:center;font-size:12px;color:#9ca3af;border-top:1px solid #e5e7eb}
-</style></head><body><header class="top-header"><div class="header-inner"><div class="header-left"><span class="header-icon">📈</span><span class="header-title">期货保证金监控</span><span class="header-sub">国内期货主力 · 交易所保证金</span></div><div class="header-actions"><button id="refreshBtn">⟳ 刷新</button></div></div></header><div id="statusBar"></div><div id="app"></div><footer class="footer">数据由 GitHub Actions 定时抓取 · 约每10分钟更新</footer><script>
-// Exchange definitions
+</style></head><body><header class="top-header"><div class="header-inner"><div class="header-left"><span class="header-icon">📈</span><span class="header-title">期货保证金监控</span><span class="header-sub">国内期货主力 · 交易所保证金</span></div><div class="header-actions"><button id="refreshBtn">⟳ 刷新</button></div></div></header><div id="statusBar"></div><div id="app"></div><footer class="footer">数据来源：东方财富API / 新浪财经 · 自动刷新每 5 秒</footer><script>
 var EX = { SHFE:{n:'上期所',c:1,co:'#2563eb'}, DCE:{n:'大商所',c:2,co:'#059669'}, CZCE:{n:'郑商所',c:3,co:'#d97706'}, CFFEX:{n:'中金所',c:4,co:'#7c3aed'}, INE:{n:'能源中心',c:5,co:'#0891b2'}, GFEX:{n:'广期所',c:6,co:'#db2777'} };
-
 var FC = [
   ['RB','螺纹钢','SHFE',10,0.07],['HC','热轧卷板','SHFE',10,0.07],['CU','沪铜','SHFE',5,0.08],['AL','沪铝','SHFE',5,0.08],
   ['ZN','沪锌','SHFE',5,0.08],['PB','沪铅','SHFE',5,0.08],['NI','沪镍','SHFE',1,0.12],['SN','沪锡','SHFE',1,0.12],
@@ -51,44 +47,36 @@ var FC = [
   ['IM','中证1000','CFFEX',200,0.12],['SC','原油','INE',1000,0.10],['NR','20号胶','INE',10,0.08],['LU','低硫燃料油','INE',10,0.10],
   ['BC','国际铜','INE',5,0.08],['SI','工业硅','GFEX',5,0.08],['LC','碳酸锂','GFEX',1,0.09]
 ];
-
 var MO = { AU:[2,4,6,8,10,12],M:[1,3,5,7,8,9,11,12],Y:[1,3,5,7,8,9,11,12],A:[1,3,5,7,9,11],C:[1,3,5,7,9,11],CS:[1,3,5,7,9,11],
   LH:[1,3,5,7,9,11],SR:[1,3,5,7,9,11],CF:[1,3,5,7,9,11],OI:[1,3,5,7,9,11],RM:[1,3,5,7,8,9,11],AP:[1,3,4,5,10,11,12],CJ:[1,3,5,7,9,12],
   PK:[1,3,4,10,11,12],IF:[1,3,5,7,9,11],IC:[1,3,5,7,9,11],IH:[1,3,5,7,9,11],IM:[1,3,5,7,9,11] };
+function getMo(v){return MO[v]||[1,2,3,4,5,6,7,8,9,10,11,12]}
+function cc(v,y,m){return v+(y%100)+('0'+m).slice(-2)}
+function fmt(n){return(n==null||isNaN(n))?'--':Number(n).toFixed(2)}
+function fw(n){if(n==null||isNaN(n))return'--';return n>=10000?(n/10000).toFixed(1)+'万':Math.round(n).toLocaleString()}
 
-function getMo(v) { return MO[v] || [1,2,3,4,5,6,7,8,9,10,11,12]; }
-function cc(v,y,m) { return v + (y%100) + ('0'+m).slice(-2); }
-function fmt(n) { return (n==null||isNaN(n))?'--':Number(n).toFixed(2); }
-function fw(n) { if(n==null||isNaN(n))return'--';return n>=10000?(n/10000).toFixed(1)+'万':Math.round(n).toLocaleString(); }
-
-function show(msg,type) {
-  var e=document.getElementById('statusBar');
-  if(e) e.innerHTML='<span class="status-dot status-'+type+'"></span> '+msg+' <span class="status-time">'+new Date().toLocaleTimeString('zh-CN',{hour12:false})+'</span>';
-}
-function setError(msg) {
-  var e=document.getElementById('app');
-  if(e) e.innerHTML='<div class="empty-state"><div class="empty-icon">⚠️</div><div class="empty-text">'+msg+'</div></div>';
-}
+function show(msg,tp){var e=document.getElementById('statusBar');if(e)e.innerHTML='<span class="status-dot status-'+tp+'"></span>'+msg+' <span class="status-time">'+new Date().toLocaleTimeString('zh-CN',{hour12:false})+'</span>'}
+function setError(msg){var e=document.getElementById('app');if(e)e.innerHTML='<div class="empty-state"><div class="empty-icon">⚠️</div><div class="empty-text">'+msg+'</div></div>';show(msg,'error')}
 
 function render(results) {
   var app=document.getElementById('app'); if(!app) return;
-  if(!results||!results.length) { setError('暂无符合条件的主力合约'); return; }
+  if(!results||!results.length){setError('暂无符合条件的主力合约');return;}
   app.innerHTML='';
   var g={}, ek=Object.keys(EX); ek.forEach(function(k){g[k]=[];});
   results.forEach(function(it){if(g[it.c[2]])g[it.c[2]].push(it);});
   ek.forEach(function(k){g[k].sort(function(a,b){return b.oi-a.oi});});
   ek.forEach(function(k){
-    var ex=EX[k], its=g[k]; if(!its||!its.length) return;
-    var sec=document.createElement('div'); sec.className='exchange-section';
-    var h=document.createElement('div'); h.className='exchange-header';
+    var ex=EX[k], its=g[k]; if(!its||!its.length)return;
+    var sec=document.createElement('div');sec.className='exchange-section';
+    var h=document.createElement('div');h.className='exchange-header';
     h.style.borderLeftColor=ex.co;
-    h.innerHTML='<span class="exchange-name" style="color:'+ex.co+'">'+ex.n+'</span> <span class="exchange-count">'+its.length+'个品种</span>';
+    h.innerHTML='<span class="exchange-name" style="color:'+ex.co+'">'+ex.n+'</span><span class="exchange-count">'+its.length+'个品种</span>';
     sec.appendChild(h);
-    var grid=document.createElement('div'); grid.className='card-grid';
+    var grid=document.createElement('div');grid.className='card-grid';
     its.forEach(function(it){
-      var ca=document.createElement('div'); ca.className='futures-card';
+      var ca=document.createElement('div');ca.className='futures-card';
       ca.style.setProperty('--ex-color',ex.co);
-      var cl='',sy='—'; if(it.ch>0){cl='up';sy='▲'}else if(it.ch<0){cl='down';sy='▼'}
+      var cl='',sy='—';if(it.ch>0){cl='up';sy='▲'}else if(it.ch<0){cl='down';sy='▼'}
       ca.innerHTML='<div class="card-top"><span class="card-variety">'+it.c[1]+'</span><span class="card-code">'+it.d+'</span></div>'+
         '<div class="card-bottom"><div class="card-left"><div class="card-price '+cl+'">'+fmt(it.p)+'</div>'+
         '<div class="card-change '+cl+'">'+sy+' '+Math.abs(it.ch).toFixed(2)+'%</div></div>'+
@@ -97,63 +85,120 @@ function render(results) {
         '<div class="card-info card-margin"><span>每手保证金</span><strong>'+fw(it.mg)+'元</strong></div></div></div>';
       grid.appendChild(ca);
     });
-    sec.appendChild(grid); app.appendChild(sec);
+    sec.appendChild(grid);app.appendChild(sec);
   });
-  show(''+results.length+'个主力合约','success');
+  show(results.length+'个主力合约','success');
 }
 
-function parseAPI(data) {
-  if(!data||!data.data||!data.data.diff) return [];
-  var quotes={};
-  data.data.diff.forEach(function(it){if(it.f12)quotes[it.f12]=it;});
+// Helper: get upcoming contracts for each variety
+function getContracts(vid) {
+  var ms=getMo(vid), now=new Date(), y=now.getFullYear()%100, cm=now.getMonth()+1;
+  var i=0;while(i<ms.length&&ms[i]<=cm)i++;if(i>=ms.length){i=0;y++;}
+  var r=[];
+  for(var j=0;j<4;j++){if(i>=ms.length){i=0;y++}r.push(cc(vid,y,ms[i]));i++}
+  return r;
+}
+
+// Parse East Money data (via CORS proxy)
+function parseEastMoney(data) {
+  if(!data||!data.data||!data.data.diff)return[];
+  var q={};data.data.diff.forEach(function(i){if(i.f12)q[i.f12]=i;});
   var r=[];
   FC.forEach(function(c){
-    var ex=EX[c[2]], ms=getMo(c[0]), now=new Date(), y=now.getFullYear()%100, cm=now.getMonth()+1;
-    var i=0; while(i<ms.length&&ms[i]<=cm)i++; if(i>=ms.length){i=0;y++;}
     var bestOI=0,best=null;
-    for(var j=0;j<4;j++){
-      if(i>=ms.length){i=0;y++;}
-      var m=ms[i]; i++;
-      if(!m) continue;
-      var cd=cc(c[0],y,m);
-      var q=quotes[cd]; if(!q) continue;
-      var oi=parseFloat(q.f8)||0, p=parseFloat(q.f2),ch=parseFloat(q.f3)||0;
-      if(oi>bestOI){bestOI=oi; best={d:cd,p:p,ch:ch,oi:oi};}
-    }
-    if(best&&best.oi>=30000&&best.p){
-      var cv=best.p*c[3], mg=cv*c[4];
-      r.push({c:c,d:best.d,p:best.p,ch:best.ch,oi:best.oi,mg:Math.round(mg),r:c[4]});
-    }
+    getContracts(c[0]).forEach(function(cd){
+      var qt=q[cd];if(!qt)return;
+      var oi=parseFloat(qt.f8)||0,p=parseFloat(qt.f2),ch=parseFloat(qt.f3)||0;
+      if(oi>bestOI){bestOI=oi;best={d:cd,p:p,ch:ch,oi:oi};}
+    });
+    if(best&&best.oi>=30000&&best.p){var cv=best.p*c[3],mg=cv*c[4];r.push({c:c,d:best.d,p:best.p,ch:best.ch,oi:best.oi,mg:Math.round(mg),r:c[4]});}
   });
   return r;
 }
 
+// Main fetch: try CORS proxy first
 function refresh() {
   show('正在获取数据...','loading');
   var app=document.getElementById('app');
-  if(app) app.innerHTML='<div class="empty-state"><div class="empty-icon">⏳</div><div class="empty-text">正在获取数据...</div></div>';
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'data/data.json?' + Date.now(), true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        try {
-          var data = JSON.parse(xhr.responseText);
-          var results = parseAPI(data);
-          if (results.length > 0) { render(results); }
-          else { setError('暂无符合条件的主力合约（持仓量需大于3万手）'); }
-        } catch(e) { setError('数据解析失败: ' + e.message); }
-      } else {
-        setError('数据尚未就绪\nGitHub Actions 正在首次抓取数据，请5分钟后刷新');
-      }
+  if(app)app.innerHTML='<div class="empty-state"><div class="empty-icon">⏳</div><div class="empty-text">正在获取实时数据...</div></div>';
+  
+  // Build all secids
+  var allSecids=[];
+  FC.forEach(function(c){
+    getContracts(c[0]).forEach(function(cd){
+      allSecids.push(EX[c[2]].c+'.'+cd);
+    });
+  });
+  
+  // Try CORS proxy with East Money API
+  var batchSize=200, batches=[];
+  for(var i=0;i<allSecids.length;i+=batchSize)batches.push(allSecids.slice(i,i+batchSize));
+  var done=0, allData=[];
+  
+  function tryProxy() {
+    if(done>=batches.length){parseAndRender(allData);return;}
+    var batch=batches[done];done++;
+    var url='https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=f2,f3,f4,f5,f8,f10,f12,f14,f15,f16,f17,f18&secids='+batch.join(',');
+    var proxy='https://corsproxy.io/?'+encodeURIComponent(url);
+    
+    fetch(proxy).then(function(r){return r.json();}).then(function(d){
+      if(d&&d.data&&d.data.diff)d.data.diff.forEach(function(i){allData.push(i);});
+      tryProxy();
+    }).catch(function(){tryProxy();});
+  }
+  
+  function parseAndRender(data) {
+    var results=parseEastMoney({data:{diff:data}});
+    if(results.length>0){render(results);}
+    else{trySina();}
+  }
+  
+  function trySina() {
+    show('尝试备用数据源...','loading');
+    // Use Sina Finance API
+    var allCodes=[];
+    FC.forEach(function(c){
+      getContracts(c[0]).forEach(function(cd){allCodes.push('hf_'+cd);});
+    });
+    var batchSize2=50, done2=0, sinaData={};
+    function loadBatch(){
+      if(done2>=allCodes.length){parseSina(sinaData);return;}
+      var batch=allCodes.slice(done2,done2+batchSize2);done2+=batchSize2;
+      var s=document.createElement('script');
+      s.src='https://hq.sinajs.cn/list='+batch.join(',');
+      s.onload=function(){
+        batch.forEach(function(code){
+          var key=code.replace('hf_','');
+          if(window[code]){
+            var parts=window[code].split(',');
+            sinaData[key]={p:parseFloat(parts[3]),oi:parseFloat(parts[9]),ch:0};
+          }
+        });
+        loadBatch();
+      };
+      s.onerror=function(){loadBatch();};
+      document.body.appendChild(s);
     }
-  };
-  xhr.send();
+    loadBatch();
+  }
+  
+  function parseSina(data){
+    var r=[];
+    FC.forEach(function(c){
+      var bestOI=0,best=null;
+      getContracts(c[0]).forEach(function(cd){
+        var qt=data[cd];if(!qt)return;
+        if(qt.oi>bestOI){bestOI=qt.oi;best={d:cd,p:qt.p,oi:qt.oi,ch:0};}
+      });
+      if(best&&best.oi>=30000&&best.p){var cv=best.p*c[3],mg=cv*c[4];r.push({c:c,d:best.d,p:best.p,ch:0,oi:best.oi,mg:Math.round(mg),r:c[4]});}
+    });
+    if(r.length>0){render(r);}
+    else{setError('所有数据源均无法连接\n请稍后重试');}
+  }
+  
+  tryProxy();
 }
-document.addEventListener('DOMContentLoaded',function(){
-  refresh();
-  setInterval(refresh,5000);
-  document.getElementById('refreshBtn').addEventListener('click',refresh);
-});
+
+document.addEventListener('DOMContentLoaded',function(){refresh();setInterval(refresh,5000);document.getElementById('refreshBtn').addEventListener('click',refresh);});
 console.log('Loaded, varieties:'+FC.length);
 </script></body></html>
