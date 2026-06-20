@@ -18,10 +18,10 @@ for ex in ex_order:
     for x in ex_items:
         code = x['code']; name = x['name']; p = x['price']; oi = x['openInterest']; m = x['contractMultiplier']
         rate = x['marginRate']; ml = x['marginPerLot']
-        if p>=100000: ps = str(int(p/10000))+'万'
-        elif p>=1000: ps = f'{p:,.0f}'
-        elif p>=100: ps = f'{p:,.0f}' if p%1==0 else f'{p:,.2f}'
-        else: ps = f'{p:,.2f}'
+        if p >= 1000 or p == int(p):
+            ps = f'{int(p):,}'
+        else:
+            ps = f'{p:,.2f}'
         ois = f'{oi/10000:.1f}万' if oi>=10000 else str(oi)
         rp = int(rate*100)
         ms = f'{ml/10000:.1f}万元' if ml>=10000 else f'{ml:.0f}元'
@@ -33,7 +33,7 @@ html += '<script>'
 html += 'var SC="' + sina_list + '".split(",");'
 html += 'var SI=document.getElementById("loadingIndicator");'
 html += 'var SU=document.getElementById("updateStatus");'
-html += 'function fp(v){if(v>=100000)return Math.round(v/10000)+"万";if(v>=1000)return Math.round(v).toLocaleString();return v.toFixed(2);}'
+html += 'function fp(v){if(v>=1000||Number.isInteger(v))return Math.round(v).toLocaleString();return v.toFixed(2);}'
 html += 'function fo(v){return v>=10000?(v/10000).toFixed(1)+"万":String(v);}'
 html += 'function fm(v){return v>=10000?(v/10000).toFixed(1)+"万元":Math.round(v).toLocaleString()+"元";}'
 html += 'function fq(){SI.textContent="更新中...";'
