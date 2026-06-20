@@ -1,1 +1,19 @@
-<!DOCTYPE html><html><head><title>test</title></head><body><h1>Test OK</h1></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>期货保证金监控 - 测试</title>
+</head>
+<body>
+<h1>期货保证金监控</h1>
+<div id="app">正在加载...</div>
+<p id="status"></p>
+<script>
+var app = document.getElementById("app");
+if(app) app.innerHTML = "<b>JavaScript 运行正常!</b>";
+var st = document.getElementById("status");
+if(st) st.textContent = "状态: OK - " + new Date().toLocaleTimeString();
+console.log("Script executed");
+</script>
+</body>
+</html>
