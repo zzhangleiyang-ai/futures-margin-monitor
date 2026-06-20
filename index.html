@@ -80,7 +80,7 @@ function render(items){
     sec.appendChild(gr);ap.appendChild(sec);
   }
 }
-var items=findMain(ED);render(items);
+var items=findMain(ED);render(items);var x=new XMLHttpRequest();x.open('GET','data/data.json?'+Date.now(),true);x.onload=function(){if(x.status===200){try{var fd=JSON.parse(x.responseText);var fi=findMain(fd);if(fi.length>0)render(fi);}catch(e){}}};x.send();
 </script>
 </body>
 </html>
