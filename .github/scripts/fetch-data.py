@@ -1,4 +1,4 @@
-import json
+﻿import json
 import math
 import os
 from datetime import datetime, timezone
@@ -44,6 +44,8 @@ DEFAULT_PRODUCTS = [
     {"code": "J", "name": "焦炭", "exchange": "DCE", "exchangeName": "大商所", "contractMultiplier": 100},
     {"code": "JM", "name": "焦煤", "exchange": "DCE", "exchangeName": "大商所", "contractMultiplier": 60},
     {"code": "I", "name": "铁矿石", "exchange": "DCE", "exchangeName": "大商所", "contractMultiplier": 100},
+    {"code": "RR", "name": "粳米", "exchange": "DCE", "exchangeName": "大商所", "contractMultiplier": 10},
+    {"code": "BZ", "name": "纯苯", "exchange": "DCE", "exchangeName": "大商所", "contractMultiplier": 5},
     {"code": "PG", "name": "液化气", "exchange": "DCE", "exchangeName": "大商所", "contractMultiplier": 20},
     {"code": "SR", "name": "白糖", "exchange": "CZCE", "exchangeName": "郑商所", "contractMultiplier": 10},
     {"code": "CF", "name": "棉花", "exchange": "CZCE", "exchangeName": "郑商所", "contractMultiplier": 5},
@@ -77,6 +79,7 @@ DEFAULT_PRODUCTS = [
     {"code": "BC", "name": "国际铜", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 5},
     {"code": "EC", "name": "集运欧线", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 50},
     {"code": "LC", "name": "碳酸锂", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 1},
+    {"code": "PS", "name": "多晶硅", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 3},
     {"code": "SI", "name": "工业硅", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 5},
 ]
 
