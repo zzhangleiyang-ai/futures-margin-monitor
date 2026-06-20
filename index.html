@@ -150,13 +150,13 @@ function refresh() {
         var ch=0;
         if(oi>bestOI){bestOI=oi;best={d:cd,p:price,ch:ch,oi:oi};}
       });
-      if(best&&best.oi>=100&&best.p){
+      if(best&&best.oi>=30000&&best.p){
         var cv=best.p*c[3],mg=cv*c[4];
         r.push({c:c,d:best.d,p:best.p,ch:0,oi:best.oi,mg:Math.round(mg),r:c[4]});
       }
     });
     if(r.length>0){render(r);}
-    else{setError('暂无符合条件的主力合约数据');}
+    else{setError('暂无数据\n可能是非交易时段');}
   }
   
   loadBatch();
