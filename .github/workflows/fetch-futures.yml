@@ -1,4 +1,4 @@
-﻿name: Fetch Futures Data
+name: Fetch Futures Data
 
 on:
   schedule:
@@ -11,47 +11,106 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Fetch futures data from East Money
+      - name: Install Python dependencies
+        run: pip install requests beautifulsoup4 lxml
+      
+      - name: Fetch futures data
         run: |
-          # Build secids for East Money API
-          # SHFE(1): RB,HC,CU,AL,ZN,PB,NI,SN,AU,AG,BU,RU,SP,SS,BR
-          # DCE(2): I,J,JM,M,Y,A,B,P,C,CS,L,PP,V,EG,EB,JD,LH,PG
-          # CZCE(3): SR,CF,OI,RM,MA,TA,FG,SA,UR,AP,CJ,SF,SM,PF,PK
-          # CFFEX(4): IF,IC,IH,IM
-          # INE(5): SC,NR,LU,BC
-          # GFEX(6): SI,LC
-          
-          SECIDS=""
-          CONTRACTS="RB,HC,CU,AL,ZN,PB,NI,SN,AU,AG,BU,RU,SP,SS,BR"
-          for c in $(echo $CONTRACTS | tr ',' ' '); do
-            for mo in $(date +%y%m); do
-              m=$((10#$mo))
-              m1=$((m+1))
-              m2=$((m+2))
-              m3=$((m+3))
-              for mm in $m $m1 $m2 $m3; do
-                yr=$((mm/100))
-                mt=$((mm%100))
-                if [ $mt -gt 12 ]; then mt=1; yr=$((yr+1)); fi
-                code=$(printf "%s%02d%02d" "$c" "$yr" "$mt")
-                SECIDS="$SECIDS,1.$code"
-              done
-            done
-          done
-          
-          # Add all varieties for all exchanges
-          echo "Secids length: ${#SECIDS}"
-          
-          # Fetch data (no callback -> returns JSON)
-          curl -s "https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=f2,f3,f4,f5,f8,f10,f12,f14,f15,f16,f17,f18&secids=${SECIDS:1}" -o data.json
-          
-          echo "Data fetched: $(wc -c < data.json) bytes"
+          python -c "
+import json, urllib.request, re, sys
+
+# All futures varieties to query
+FC = [
+  ('RB','SHFE'),('HC','SHFE'),('CU','SHFE'),('AL','SHFE'),('ZN','SHFE'),
+  ('PB','SHFE'),('NI','SHFE'),('SN','SHFE'),('AU','SHFE'),('AG','SHFE'),
+  ('BU','SHFE'),('RU','SHFE'),('SP','SHFE'),('SS','SHFE'),('BR','SHFE'),
+  ('I','DCE'),('J','DCE'),('JM','DCE'),('M','DCE'),('Y','DCE'),
+  ('A','DCE'),('B','DCE'),('P','DCE'),('C','DCE'),('CS','DCE'),
+  ('L','DCE'),('PP','DCE'),('V','DCE'),('EG','DCE'),('EB','DCE'),
+  ('JD','DCE'),('LH','DCE'),('PG','DCE'),
+  ('SR','CZCE'),('CF','CZCE'),('OI','CZCE'),('RM','CZCE'),('MA','CZCE'),
+  ('TA','CZCE'),('FG','CZCE'),('SA','CZCE'),('UR','CZCE'),('AP','CZCE'),
+  ('CJ','CZCE'),('SF','CZCE'),('SM','CZCE'),('PF','CZCE'),('PK','CZCE'),
+  ('IF','CFFEX'),('IC','CFFEX'),('IH','CFFEX'),('IM','CFFEX'),
+  ('SC','INE'),('NR','INE'),('LU','INE'),('BC','INE'),
+  ('SI','GFEX'),('LC','GFEX')
+]
+
+# Build contract codes for next 4 months
+from datetime import datetime
+now = datetime.now()
+current_month = now.month
+year = now.year % 100
+
+all_codes = []
+for vid, ex in FC:
+    for j in range(4):
+        m = current_month + 1 + j
+        y = year
+        if m > 12:
+            m -= 12
+            y += 1
+        code = f'{vid}{y}{m:02d}'
+        all_codes.append(code)
+
+results = []
+batch_size = 200
+
+def try_eastmoney(codes_batch):
+    secids = '1.' + ',1.'.join(codes_batch)
+    url = f'https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=f2,f3,f4,f5,f8,f12,f14&secids={secids}'
+    req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0','Referer':'https://quote.eastmoney.com/'})
+    try:
+        resp = urllib.request.urlopen(req, timeout=10).read()
+        data = json.loads(resp)
+        if data.get('data') and data['data'].get('diff'):
+            for item in data['data']['diff']:
+                results.append({'c':item.get('f12',''),'p':item.get('f2'),'o':item.get('f8'),'ch':item.get('f3'),'ex':'eastmoney'})
+    except:
+        pass
+
+def try_sina(codes_batch):
+    codes_str = ','.join(['hf_'+c for c in codes_batch])
+    url = f'https://hq.sinajs.cn/list={codes_str}'
+    req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0','Referer':'https://finance.sina.com.cn/'})
+    try:
+        resp = urllib.request.urlopen(req, timeout=10).read().decode('gbk')
+        for line in resp.split(';'):
+            if '=' in line:
+                parts = line.split('=')
+                var_name = parts[0].strip()
+                if var_name.startswith('var hq_str_hf_'):
+                    code = var_name.replace('var hq_str_hf_','')
+                    vals = parts[1].strip().strip('\"').split(',')
+                    if len(vals) >= 12:
+                        results.append({'c':code,'p':float(vals[3]) if vals[3] else 0,'o':int(vals[9]) if vals[9] else 0,'ch':0,'ex':'sina'})
+    except:
+        pass
+
+# Try East Money API
+for i in range(0, len(all_codes), batch_size):
+    batch = all_codes[i:i+batch_size]
+    try_eastmoney(batch)
+
+# If no results, try Sina Finance
+if not results:
+    batch_size_sina = 50
+    for i in range(0, len(all_codes), batch_size_sina):
+        batch = all_codes[i:i+batch_size_sina]
+        try_sina(batch)
+
+# Save results
+with open('data.json', 'w') as f:
+    json.dump(results, f)
+print(f'Fetched {len(results)} contracts')
+"
       
       - name: Save to repository
         run: |
           mkdir -p data
-          ls -la data.json 2>/dev/null && mv data.json data/ || echo '{"data":{},"time":"'$(date -Iseconds)'"}' > data/data.json
-          ls -la data/
+          ls -la data.json 2>/dev/null && mv data.json data/ || echo '[]' > data/data.json
+          echo "Data file: $(wc -c < data/data.json) bytes"
+          head -c 200 data/data.json
       
       - name: Commit and push
         run: |
