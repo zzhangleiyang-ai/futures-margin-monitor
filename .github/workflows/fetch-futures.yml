@@ -1,3 +1,4 @@
+# Auto-fetch futures data via TianQin
 name: Fetch Futures Data
 on:
   schedule:
