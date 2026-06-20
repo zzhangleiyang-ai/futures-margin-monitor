@@ -1,26 +1,22 @@
 name: Fetch Futures Data
-
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
-
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup
-        run: pip install requests
-      - name: Run
-        run: python3 .github/scripts/fetch-data.py
-      - name: Save
-        run: |
-          mkdir -p data
-          if [ -f data.json ]; then mv data.json data/; else echo '[]' > data/data.json; fi
-          head -c 200 data/data.json
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add data/data.json
-          git diff --staged --quiet || git commit -m "Update futures data"
-          git push
+    - uses: actions/checkout@v4
+    - run: pip install requests
+    - run: python3 .github/scripts/fetch-data.py
+    - run: |
+        mkdir -p data
+        if [ -f data.json ]; then mv data.json data/; else echo '[]' > data/data.json; fi
+        echo "Size: $(wc -c < data/data.json) bytes"
+        head -c 300 data/data.json
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git add data/data.json
+        git diff --staged --quiet || git commit -m "Update futures data"
+        git push
