@@ -1,7 +1,7 @@
 {
-  "status": "fallback",
-  "message": "TQ_USER/TQ_PASS are not configured",
-  "updatedAt": "2026-06-20T22:00:51+08:00",
+  "status": "ok",
+  "message": "",
+  "updatedAt": "2026-06-20T14:07:11+00:00",
   "source": "TqSdk 主力连续合约 + 交易所标准保证金参数",
   "items": [
     {
@@ -14,7 +14,7 @@
       "contractMultiplier": 1000,
       "marginRate": 0.08,
       "marginPerLot": 75036.8,
-      "contract": ""
+      "contract": "SHFE.au2608"
     },
     {
       "code": "AG",
@@ -26,7 +26,7 @@
       "contractMultiplier": 15,
       "marginRate": 0.09,
       "marginPerLot": 22265.55,
-      "contract": ""
+      "contract": "SHFE.ag2608"
     },
     {
       "code": "CU",
@@ -38,7 +38,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 41912.0,
-      "contract": ""
+      "contract": "SHFE.cu2607"
     },
     {
       "code": "AL",
@@ -50,7 +50,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 9592.0,
-      "contract": ""
+      "contract": "SHFE.al2607"
     },
     {
       "code": "ZN",
@@ -62,7 +62,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 9908.0,
-      "contract": ""
+      "contract": "SHFE.zn2607"
     },
     {
       "code": "PB",
@@ -74,7 +74,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 6560.0,
-      "contract": ""
+      "contract": "SHFE.pb2607"
     },
     {
       "code": "NI",
@@ -86,19 +86,19 @@
       "contractMultiplier": 1,
       "marginRate": 0.1,
       "marginPerLot": 13584.0,
-      "contract": ""
+      "contract": "SHFE.ni2607"
     },
     {
       "code": "SN",
       "name": "沪锡",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": null,
-      "openInterest": 0,
+      "price": 414330.0,
+      "openInterest": 27025,
       "contractMultiplier": 1,
       "marginRate": 0.1,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 41433.0,
+      "contract": "SHFE.sn2607"
     },
     {
       "code": "RB",
@@ -110,7 +110,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 2191.7,
-      "contract": ""
+      "contract": "SHFE.rb2610"
     },
     {
       "code": "HC",
@@ -122,7 +122,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 2344.3,
-      "contract": ""
+      "contract": "SHFE.hc2610"
     },
     {
       "code": "RU",
@@ -134,7 +134,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 14228.0,
-      "contract": ""
+      "contract": "SHFE.ru2609"
     },
     {
       "code": "BU",
@@ -146,19 +146,19 @@
       "contractMultiplier": 10,
       "marginRate": 0.1,
       "marginPerLot": 3943.0,
-      "contract": ""
+      "contract": "SHFE.bu2609"
     },
     {
       "code": "FU",
       "name": "燃油",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": null,
-      "openInterest": 0,
+      "price": 3087.0,
+      "openInterest": 274051,
       "contractMultiplier": 10,
       "marginRate": 0.1,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 3087.0,
+      "contract": "SHFE.fu2609"
     },
     {
       "code": "SP",
@@ -170,7 +170,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 3892.8,
-      "contract": ""
+      "contract": "SHFE.sp2609"
     },
     {
       "code": "SS",
@@ -182,31 +182,31 @@
       "contractMultiplier": 5,
       "marginRate": 0.1,
       "marginPerLot": 7585.0,
-      "contract": ""
+      "contract": "SHFE.ss2608"
     },
     {
       "code": "AO",
       "name": "氧化铝",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": null,
-      "openInterest": 0,
+      "price": 2898.0,
+      "openInterest": 275843,
       "contractMultiplier": 20,
       "marginRate": 0.09,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 5216.4,
+      "contract": "SHFE.ao2609"
     },
     {
       "code": "BR",
       "name": "合成橡胶",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": null,
-      "openInterest": 0,
+      "price": 12955.0,
+      "openInterest": 27224,
       "contractMultiplier": 5,
       "marginRate": 0.09,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 5829.75,
+      "contract": "SHFE.br2607"
     },
     {
       "code": "M",
@@ -218,7 +218,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 2059.4,
-      "contract": ""
+      "contract": "DCE.m2609"
     },
     {
       "code": "Y",
@@ -230,7 +230,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 5847.1,
-      "contract": ""
+      "contract": "DCE.y2609"
     },
     {
       "code": "A",
@@ -242,7 +242,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 3764.0,
-      "contract": ""
+      "contract": "DCE.a2609"
     },
     {
       "code": "B",
@@ -254,7 +254,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 2829.6,
-      "contract": ""
+      "contract": "DCE.b2607"
     },
     {
       "code": "C",
@@ -266,7 +266,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 1630.3,
-      "contract": ""
+      "contract": "DCE.c2609"
     },
     {
       "code": "CS",
@@ -278,7 +278,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 1888.6,
-      "contract": ""
+      "contract": "DCE.cs2607"
     },
     {
       "code": "JD",
@@ -290,7 +290,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 1805.6,
-      "contract": ""
+      "contract": "DCE.jd2608"
     },
     {
       "code": "LH",
@@ -302,7 +302,7 @@
       "contractMultiplier": 16,
       "marginRate": 0.08,
       "marginPerLot": 14912.0,
-      "contract": ""
+      "contract": "DCE.lh2609"
     },
     {
       "code": "P",
@@ -314,7 +314,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 7440.8,
-      "contract": ""
+      "contract": "DCE.p2609"
     },
     {
       "code": "L",
@@ -326,7 +326,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.07,
       "marginPerLot": 2522.1,
-      "contract": ""
+      "contract": "DCE.l2609"
     },
     {
       "code": "PP",
@@ -338,7 +338,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.07,
       "marginPerLot": 2676.45,
-      "contract": ""
+      "contract": "DCE.pp2609"
     },
     {
       "code": "V",
@@ -350,7 +350,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.07,
       "marginPerLot": 1615.6,
-      "contract": ""
+      "contract": "DCE.v2609"
     },
     {
       "code": "EG",
@@ -362,7 +362,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 3367.2,
-      "contract": ""
+      "contract": "DCE.eg2609"
     },
     {
       "code": "EB",
@@ -374,7 +374,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 3116.0,
-      "contract": ""
+      "contract": "DCE.eb2607"
     },
     {
       "code": "J",
@@ -386,7 +386,7 @@
       "contractMultiplier": 100,
       "marginRate": 0.11,
       "marginPerLot": 22214.5,
-      "contract": ""
+      "contract": "DCE.j2609"
     },
     {
       "code": "JM",
@@ -398,7 +398,7 @@
       "contractMultiplier": 60,
       "marginRate": 0.11,
       "marginPerLot": 8388.6,
-      "contract": ""
+      "contract": "DCE.jm2609"
     },
     {
       "code": "I",
@@ -410,19 +410,19 @@
       "contractMultiplier": 100,
       "marginRate": 0.11,
       "marginPerLot": 8217.0,
-      "contract": ""
+      "contract": "DCE.i2609"
     },
     {
       "code": "PG",
       "name": "液化气",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": null,
-      "openInterest": 0,
+      "price": 4790.0,
+      "openInterest": 19596,
       "contractMultiplier": 20,
       "marginRate": 0.08,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 7664.0,
+      "contract": "DCE.pg2607"
     },
     {
       "code": "SR",
@@ -434,7 +434,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 3724.0,
-      "contract": ""
+      "contract": "CZCE.SR609"
     },
     {
       "code": "CF",
@@ -446,19 +446,19 @@
       "contractMultiplier": 5,
       "marginRate": 0.07,
       "marginPerLot": 5603.5,
-      "contract": ""
+      "contract": "CZCE.CF609"
     },
     {
       "code": "CY",
       "name": "棉纱",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": null,
-      "openInterest": 0,
+      "price": 22485.0,
+      "openInterest": 13708,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 7869.75,
+      "contract": "CZCE.CY609"
     },
     {
       "code": "AP",
@@ -470,7 +470,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 6094.4,
-      "contract": ""
+      "contract": "CZCE.AP610"
     },
     {
       "code": "CJ",
@@ -482,7 +482,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 3450.0,
-      "contract": ""
+      "contract": "CZCE.CJ609"
     },
     {
       "code": "TA",
@@ -494,7 +494,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.07,
       "marginPerLot": 2053.8,
-      "contract": ""
+      "contract": "CZCE.TA609"
     },
     {
       "code": "MA",
@@ -506,7 +506,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 2052.8,
-      "contract": ""
+      "contract": "CZCE.MA609"
     },
     {
       "code": "UR",
@@ -518,7 +518,7 @@
       "contractMultiplier": 20,
       "marginRate": 0.08,
       "marginPerLot": 2900.8,
-      "contract": ""
+      "contract": "CZCE.UR609"
     },
     {
       "code": "SA",
@@ -530,7 +530,7 @@
       "contractMultiplier": 20,
       "marginRate": 0.08,
       "marginPerLot": 1803.2,
-      "contract": ""
+      "contract": "CZCE.SA609"
     },
     {
       "code": "FG",
@@ -542,7 +542,7 @@
       "contractMultiplier": 20,
       "marginRate": 0.08,
       "marginPerLot": 1564.8,
-      "contract": ""
+      "contract": "CZCE.FG609"
     },
     {
       "code": "OI",
@@ -554,7 +554,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 7748.0,
-      "contract": ""
+      "contract": "CZCE.OI609"
     },
     {
       "code": "RM",
@@ -566,7 +566,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 1600.2,
-      "contract": ""
+      "contract": "CZCE.RM609"
     },
     {
       "code": "PK",
@@ -578,7 +578,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 3337.6,
-      "contract": ""
+      "contract": "CZCE.PK610"
     },
     {
       "code": "SF",
@@ -590,7 +590,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.1,
       "marginPerLot": 2847.0,
-      "contract": ""
+      "contract": "CZCE.SF609"
     },
     {
       "code": "SM",
@@ -602,7 +602,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.1,
       "marginPerLot": 2928.0,
-      "contract": ""
+      "contract": "CZCE.SM609"
     },
     {
       "code": "PF",
@@ -614,31 +614,31 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 2939.2,
-      "contract": ""
+      "contract": "CZCE.PF608"
     },
     {
       "code": "PX",
       "name": "对二甲苯",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": null,
-      "openInterest": 0,
+      "price": 8104.0,
+      "openInterest": 189534,
       "contractMultiplier": 5,
       "marginRate": 0.1,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 4052.0,
+      "contract": "CZCE.PX609"
     },
     {
       "code": "SH",
       "name": "烧碱",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": null,
-      "openInterest": 0,
+      "price": 2002.0,
+      "openInterest": 256525,
       "contractMultiplier": 30,
       "marginRate": 0.1,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 6006.0,
+      "contract": "CZCE.SH609"
     },
     {
       "code": "IF",
@@ -650,7 +650,7 @@
       "contractMultiplier": 300,
       "marginRate": 0.12,
       "marginPerLot": 175060.8,
-      "contract": ""
+      "contract": "CFFEX.IF2609"
     },
     {
       "code": "IH",
@@ -662,7 +662,7 @@
       "contractMultiplier": 300,
       "marginRate": 0.12,
       "marginPerLot": 104392.8,
-      "contract": ""
+      "contract": "CFFEX.IH2609"
     },
     {
       "code": "IC",
@@ -674,7 +674,7 @@
       "contractMultiplier": 200,
       "marginRate": 0.12,
       "marginPerLot": 204417.6,
-      "contract": ""
+      "contract": "CFFEX.IC2609"
     },
     {
       "code": "IM",
@@ -686,55 +686,55 @@
       "contractMultiplier": 200,
       "marginRate": 0.12,
       "marginPerLot": 204240.0,
-      "contract": ""
+      "contract": "CFFEX.IM2609"
     },
     {
       "code": "T",
       "name": "十年国债",
       "exchange": "CFFEX",
       "exchangeName": "中金所",
-      "price": null,
-      "openInterest": 0,
+      "price": 109.055,
+      "openInterest": 360539,
       "contractMultiplier": 10000,
       "marginRate": 0.02,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 21811.0,
+      "contract": "CFFEX.T2609"
     },
     {
       "code": "TF",
       "name": "五年国债",
       "exchange": "CFFEX",
       "exchangeName": "中金所",
-      "price": null,
-      "openInterest": 0,
+      "price": 106.32,
+      "openInterest": 203869,
       "contractMultiplier": 10000,
       "marginRate": 0.012,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 12758.4,
+      "contract": "CFFEX.TF2609"
     },
     {
       "code": "TS",
       "name": "二年国债",
       "exchange": "CFFEX",
       "exchangeName": "中金所",
-      "price": null,
-      "openInterest": 0,
+      "price": 102.62,
+      "openInterest": 77177,
       "contractMultiplier": 20000,
       "marginRate": 0.005,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 10262.0,
+      "contract": "CFFEX.TS2609"
     },
     {
       "code": "TL",
       "name": "三十年国债",
       "exchange": "CFFEX",
       "exchangeName": "中金所",
-      "price": null,
-      "openInterest": 0,
+      "price": 113.87,
+      "openInterest": 176312,
       "contractMultiplier": 10000,
       "marginRate": 0.035,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 39854.5,
+      "contract": "CFFEX.TL2609"
     },
     {
       "code": "SC",
@@ -746,7 +746,7 @@
       "contractMultiplier": 1000,
       "marginRate": 0.1,
       "marginPerLot": 50850.0,
-      "contract": ""
+      "contract": "INE.sc2608"
     },
     {
       "code": "LU",
@@ -758,7 +758,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.1,
       "marginPerLot": 3954.0,
-      "contract": ""
+      "contract": "INE.lu2608"
     },
     {
       "code": "NR",
@@ -770,31 +770,31 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 12380.0,
-      "contract": ""
+      "contract": "INE.nr2608"
     },
     {
       "code": "BC",
       "name": "国际铜",
       "exchange": "INE",
       "exchangeName": "能源中心",
-      "price": null,
-      "openInterest": 0,
+      "price": 92970.0,
+      "openInterest": 10380,
       "contractMultiplier": 5,
       "marginRate": 0.08,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 37188.0,
+      "contract": "INE.bc2607"
     },
     {
       "code": "EC",
       "name": "集运欧线",
       "exchange": "INE",
       "exchangeName": "能源中心",
-      "price": null,
-      "openInterest": 0,
+      "price": 3809.5,
+      "openInterest": 24029,
       "contractMultiplier": 50,
       "marginRate": 0.18,
-      "marginPerLot": null,
-      "contract": ""
+      "marginPerLot": 34285.5,
+      "contract": "INE.ec2607"
     },
     {
       "code": "LC",
@@ -806,7 +806,7 @@
       "contractMultiplier": 1,
       "marginRate": 0.09,
       "marginPerLot": 14445.0,
-      "contract": ""
+      "contract": "GFEX.lc2609"
     },
     {
       "code": "SI",
@@ -818,7 +818,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.09,
       "marginPerLot": 3852.0,
-      "contract": ""
+      "contract": "GFEX.si2609"
     }
   ]
 }
