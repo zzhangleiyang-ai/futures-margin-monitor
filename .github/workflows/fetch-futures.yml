@@ -1,20 +1,21 @@
 name: Fetch Futures Data
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/10 * * * *"
   workflow_dispatch:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    env:
+      TQ_USER: ${{ secrets.TQ_USER }}
+      TQ_PASS: ${{ secrets.TQ_PASS }}
     steps:
     - uses: actions/checkout@v4
-    - run: pip install requests
+    - run: pip install tqsdk
     - run: python3 .github/scripts/fetch-data.py
     - run: |
         mkdir -p data
         if [ -f data.json ]; then mv data.json data/; else echo '[]' > data/data.json; fi
-        echo "Size: $(wc -c < data/data.json) bytes"
-        head -c 300 data/data.json
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
         git add data/data.json
