@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "message": "",
-  "updatedAt": "2026-06-20T14:10:22+00:00",
-  "source": "TqSdk 主力连续合约 + 交易所标准保证金参数",
+  "updatedAt": "2026-06-20T22:20:11+08:00",
+  "source": "TqSdk 主力连续合约定位实际主力合约；实际合约 quote.margin 反推当前保证金比例",
   "items": [
     {
       "code": "AU",
@@ -12,9 +12,11 @@
       "price": 937.96,
       "openInterest": 167662,
       "contractMultiplier": 1000,
-      "marginRate": 0.08,
-      "marginPerLot": 75036.8,
-      "contract": "SHFE.au2608"
+      "marginRate": 0.05,
+      "marginPerLot": 47163.0,
+      "contract": "SHFE.au2608",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 943.26
     },
     {
       "code": "AG",
@@ -24,9 +26,11 @@
       "price": 16493.0,
       "openInterest": 245422,
       "contractMultiplier": 15,
-      "marginRate": 0.09,
-      "marginPerLot": 22265.55,
-      "contract": "SHFE.ag2608"
+      "marginRate": 0.06,
+      "marginPerLot": 15136.2,
+      "contract": "SHFE.ag2608",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 16818.0
     },
     {
       "code": "CU",
@@ -36,9 +40,11 @@
       "price": 104780.0,
       "openInterest": 112863,
       "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 41912.0,
-      "contract": "SHFE.cu2607"
+      "marginRate": 0.09,
+      "marginPerLot": 47380.5,
+      "contract": "SHFE.cu2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 105290.0
     },
     {
       "code": "AL",
@@ -48,9 +54,11 @@
       "price": 23980.0,
       "openInterest": 206338,
       "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 9592.0,
-      "contract": "SHFE.al2607"
+      "marginRate": 0.07,
+      "marginPerLot": 8361.5,
+      "contract": "SHFE.al2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 23890.0
     },
     {
       "code": "ZN",
@@ -60,9 +68,11 @@
       "price": 24770.0,
       "openInterest": 49172,
       "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 9908.0,
-      "contract": "SHFE.zn2607"
+      "marginRate": 0.07,
+      "marginPerLot": 8636.25,
+      "contract": "SHFE.zn2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 24675.0
     },
     {
       "code": "PB",
@@ -72,9 +82,11 @@
       "price": 16400.0,
       "openInterest": 48590,
       "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 6560.0,
-      "contract": "SHFE.pb2607"
+      "marginRate": 0.07,
+      "marginPerLot": 5748.75,
+      "contract": "SHFE.pb2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 16425.0
     },
     {
       "code": "NI",
@@ -84,9 +96,11 @@
       "price": 135840.0,
       "openInterest": 101450,
       "contractMultiplier": 1,
-      "marginRate": 0.1,
-      "marginPerLot": 13584.0,
-      "contract": "SHFE.ni2607"
+      "marginRate": 0.08,
+      "marginPerLot": 10864.0,
+      "contract": "SHFE.ni2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 135800.0
     },
     {
       "code": "SN",
@@ -96,9 +110,11 @@
       "price": 414330.0,
       "openInterest": 27025,
       "contractMultiplier": 1,
-      "marginRate": 0.1,
-      "marginPerLot": 41433.0,
-      "contract": "SHFE.sn2607"
+      "marginRate": 0.09,
+      "marginPerLot": 38062.8,
+      "contract": "SHFE.sn2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 422920.0
     },
     {
       "code": "RB",
@@ -108,9 +124,11 @@
       "price": 3131.0,
       "openInterest": 1713734,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 2191.7,
-      "contract": "SHFE.rb2610"
+      "marginRate": 0.08,
+      "marginPerLot": 2528.8,
+      "contract": "SHFE.rb2610",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 3161.0
     },
     {
       "code": "HC",
@@ -120,9 +138,11 @@
       "price": 3349.0,
       "openInterest": 1536993,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 2344.3,
-      "contract": "SHFE.hc2610"
+      "marginRate": 0.08,
+      "marginPerLot": 2700.0,
+      "contract": "SHFE.hc2610",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 3375.0
     },
     {
       "code": "RU",
@@ -132,9 +152,11 @@
       "price": 17785.0,
       "openInterest": 154652,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 14228.0,
-      "contract": "SHFE.ru2609"
+      "marginRate": 0.09,
+      "marginPerLot": 16222.5,
+      "contract": "SHFE.ru2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 18025.0
     },
     {
       "code": "BU",
@@ -144,9 +166,11 @@
       "price": 3943.0,
       "openInterest": 285959,
       "contractMultiplier": 10,
-      "marginRate": 0.1,
-      "marginPerLot": 3943.0,
-      "contract": "SHFE.bu2609"
+      "marginRate": 0.09,
+      "marginPerLot": 3608.1,
+      "contract": "SHFE.bu2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 4009.0
     },
     {
       "code": "FU",
@@ -157,8 +181,10 @@
       "openInterest": 274051,
       "contractMultiplier": 10,
       "marginRate": 0.1,
-      "marginPerLot": 3087.0,
-      "contract": "SHFE.fu2609"
+      "marginPerLot": 3198.0,
+      "contract": "SHFE.fu2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 3198.0
     },
     {
       "code": "SP",
@@ -168,9 +194,11 @@
       "price": 4866.0,
       "openInterest": 315835,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 3892.8,
-      "contract": "SHFE.sp2609"
+      "marginRate": 0.07,
+      "marginPerLot": 3458.0,
+      "contract": "SHFE.sp2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 4940.0
     },
     {
       "code": "SS",
@@ -180,9 +208,11 @@
       "price": 15170.0,
       "openInterest": 115912,
       "contractMultiplier": 5,
-      "marginRate": 0.1,
-      "marginPerLot": 7585.0,
-      "contract": "SHFE.ss2608"
+      "marginRate": 0.08,
+      "marginPerLot": 6064.0,
+      "contract": "SHFE.ss2608",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 15160.0
     },
     {
       "code": "AO",
@@ -193,8 +223,10 @@
       "openInterest": 275843,
       "contractMultiplier": 20,
       "marginRate": 0.09,
-      "marginPerLot": 5216.4,
-      "contract": "SHFE.ao2609"
+      "marginPerLot": 5232.6,
+      "contract": "SHFE.ao2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 2907.0
     },
     {
       "code": "BR",
@@ -204,9 +236,11 @@
       "price": 12955.0,
       "openInterest": 27224,
       "contractMultiplier": 5,
-      "marginRate": 0.09,
-      "marginPerLot": 5829.75,
-      "contract": "SHFE.br2607"
+      "marginRate": 0.12,
+      "marginPerLot": 7941.0,
+      "contract": "SHFE.br2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 13235.0
     },
     {
       "code": "M",
@@ -216,9 +250,11 @@
       "price": 2942.0,
       "openInterest": 2038966,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 2059.4,
-      "contract": "DCE.m2609"
+      "marginRate": 0.05,
+      "marginPerLot": 1479.0,
+      "contract": "DCE.m2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 2958.0
     },
     {
       "code": "Y",
@@ -228,9 +264,11 @@
       "price": 8353.0,
       "openInterest": 587653,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 5847.1,
-      "contract": "DCE.y2609"
+      "marginRate": 0.05,
+      "marginPerLot": 4189.0,
+      "contract": "DCE.y2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 8378.0
     },
     {
       "code": "A",
@@ -240,9 +278,11 @@
       "price": 4705.0,
       "openInterest": 240460,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 3764.0,
-      "contract": "DCE.a2609"
+      "marginRate": 0.05,
+      "marginPerLot": 2363.0,
+      "contract": "DCE.a2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 4726.0
     },
     {
       "code": "B",
@@ -252,9 +292,11 @@
       "price": 3537.0,
       "openInterest": 52452,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 2829.6,
-      "contract": "DCE.b2607"
+      "marginRate": 0.05,
+      "marginPerLot": 1768.5,
+      "contract": "DCE.b2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 3537.0
     },
     {
       "code": "C",
@@ -264,9 +306,11 @@
       "price": 2329.0,
       "openInterest": 855611,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 1630.3,
-      "contract": "DCE.c2609"
+      "marginRate": 0.05,
+      "marginPerLot": 1162.0,
+      "contract": "DCE.c2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 2324.0
     },
     {
       "code": "CS",
@@ -276,9 +320,11 @@
       "price": 2698.0,
       "openInterest": 85367,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 1888.6,
-      "contract": "DCE.cs2607"
+      "marginRate": 0.05,
+      "marginPerLot": 1351.0,
+      "contract": "DCE.cs2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 2702.0
     },
     {
       "code": "JD",
@@ -287,10 +333,12 @@
       "exchangeName": "大商所",
       "price": 4514.0,
       "openInterest": 362172,
-      "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 1805.6,
-      "contract": "DCE.jd2608"
+      "contractMultiplier": 10,
+      "marginRate": 0.07,
+      "marginPerLot": 3273.9,
+      "contract": "DCE.jd2608",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 4677.0
     },
     {
       "code": "LH",
@@ -300,9 +348,11 @@
       "price": 11650.0,
       "openInterest": 214118,
       "contractMultiplier": 16,
-      "marginRate": 0.08,
-      "marginPerLot": 14912.0,
-      "contract": "DCE.lh2609"
+      "marginRate": 0.15,
+      "marginPerLot": 28548.0,
+      "contract": "DCE.lh2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 11895.0
     },
     {
       "code": "P",
@@ -312,9 +362,11 @@
       "price": 9301.0,
       "openInterest": 513210,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 7440.8,
-      "contract": "DCE.p2609"
+      "marginRate": 0.05,
+      "marginPerLot": 4682.5,
+      "contract": "DCE.p2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 9365.0
     },
     {
       "code": "L",
@@ -324,9 +376,11 @@
       "price": 7206.0,
       "openInterest": 415152,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 2522.1,
-      "contract": "DCE.l2609"
+      "marginRate": 0.05,
+      "marginPerLot": 1855.5,
+      "contract": "DCE.l2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 7422.0
     },
     {
       "code": "PP",
@@ -336,9 +390,11 @@
       "price": 7647.0,
       "openInterest": 524585,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 2676.45,
-      "contract": "DCE.pp2609"
+      "marginRate": 0.05,
+      "marginPerLot": 1975.5,
+      "contract": "DCE.pp2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 7902.0
     },
     {
       "code": "V",
@@ -348,9 +404,11 @@
       "price": 4616.0,
       "openInterest": 1256297,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 1615.6,
-      "contract": "DCE.v2609"
+      "marginRate": 0.05,
+      "marginPerLot": 1163.5,
+      "contract": "DCE.v2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 4654.0
     },
     {
       "code": "EG",
@@ -360,9 +418,11 @@
       "price": 4209.0,
       "openInterest": 292807,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 3367.2,
-      "contract": "DCE.eg2609"
+      "marginRate": 0.06,
+      "marginPerLot": 2548.2,
+      "contract": "DCE.eg2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 4247.0
     },
     {
       "code": "EB",
@@ -372,9 +432,11 @@
       "price": 7790.0,
       "openInterest": 103832,
       "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 3116.0,
-      "contract": "DCE.eb2607"
+      "marginRate": 0.05,
+      "marginPerLot": 1959.75,
+      "contract": "DCE.eb2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 7839.0
     },
     {
       "code": "J",
@@ -384,9 +446,11 @@
       "price": 2019.5,
       "openInterest": 70619,
       "contractMultiplier": 100,
-      "marginRate": 0.11,
-      "marginPerLot": 22214.5,
-      "contract": "DCE.j2609"
+      "marginRate": 0.08,
+      "marginPerLot": 16656.0,
+      "contract": "DCE.j2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 2082.0
     },
     {
       "code": "JM",
@@ -396,9 +460,11 @@
       "price": 1271.0,
       "openInterest": 476841,
       "contractMultiplier": 60,
-      "marginRate": 0.11,
-      "marginPerLot": 8388.6,
-      "contract": "DCE.jm2609"
+      "marginRate": 0.08,
+      "marginPerLot": 6475.2,
+      "contract": "DCE.jm2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 1349.0
     },
     {
       "code": "I",
@@ -408,9 +474,11 @@
       "price": 747.0,
       "openInterest": 597478,
       "contractMultiplier": 100,
-      "marginRate": 0.11,
-      "marginPerLot": 8217.0,
-      "contract": "DCE.i2609"
+      "marginRate": 0.08,
+      "marginPerLot": 6044.0,
+      "contract": "DCE.i2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 755.5
     },
     {
       "code": "PG",
@@ -420,9 +488,11 @@
       "price": 4790.0,
       "openInterest": 19596,
       "contractMultiplier": 20,
-      "marginRate": 0.08,
-      "marginPerLot": 7664.0,
-      "contract": "DCE.pg2607"
+      "marginRate": 0.05,
+      "marginPerLot": 4923.0,
+      "contract": "DCE.pg2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 4923.0
     },
     {
       "code": "SR",
@@ -432,9 +502,11 @@
       "price": 5320.0,
       "openInterest": 727155,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 3724.0,
-      "contract": "CZCE.SR609"
+      "marginRate": 0.05,
+      "marginPerLot": 2669.5,
+      "contract": "CZCE.SR609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 5339.0
     },
     {
       "code": "CF",
@@ -444,9 +516,11 @@
       "price": 16010.0,
       "openInterest": 563548,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 5603.5,
-      "contract": "CZCE.CF609"
+      "marginRate": 0.05,
+      "marginPerLot": 4001.25,
+      "contract": "CZCE.CF609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 16005.0
     },
     {
       "code": "CY",
@@ -456,9 +530,11 @@
       "price": 22485.0,
       "openInterest": 13708,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 7869.75,
-      "contract": "CZCE.CY609"
+      "marginRate": 0.05,
+      "marginPerLot": 5621.25,
+      "contract": "CZCE.CY609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 22485.0
     },
     {
       "code": "AP",
@@ -468,9 +544,11 @@
       "price": 7618.0,
       "openInterest": 98474,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 6094.4,
-      "contract": "CZCE.AP610"
+      "marginRate": 0.11,
+      "marginPerLot": 8378.7,
+      "contract": "CZCE.AP610",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 7617.0
     },
     {
       "code": "CJ",
@@ -480,9 +558,11 @@
       "price": 8625.0,
       "openInterest": 141100,
       "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 3450.0,
-      "contract": "CZCE.CJ609"
+      "marginRate": 0.07,
+      "marginPerLot": 3060.75,
+      "contract": "CZCE.CJ609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 8745.0
     },
     {
       "code": "TA",
@@ -492,9 +572,11 @@
       "price": 5868.0,
       "openInterest": 1043761,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 2053.8,
-      "contract": "CZCE.TA609"
+      "marginRate": 0.06,
+      "marginPerLot": 1734.0,
+      "contract": "CZCE.TA609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 5780.0
     },
     {
       "code": "MA",
@@ -504,9 +586,11 @@
       "price": 2566.0,
       "openInterest": 715618,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 2052.8,
-      "contract": "CZCE.MA609"
+      "marginRate": 0.07,
+      "marginPerLot": 1849.4,
+      "contract": "CZCE.MA609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 2642.0
     },
     {
       "code": "UR",
@@ -516,9 +600,11 @@
       "price": 1813.0,
       "openInterest": 255292,
       "contractMultiplier": 20,
-      "marginRate": 0.08,
-      "marginPerLot": 2900.8,
-      "contract": "CZCE.UR609"
+      "marginRate": 0.05,
+      "marginPerLot": 1833.0,
+      "contract": "CZCE.UR609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 1833.0
     },
     {
       "code": "SA",
@@ -528,9 +614,11 @@
       "price": 1127.0,
       "openInterest": 1403465,
       "contractMultiplier": 20,
-      "marginRate": 0.08,
-      "marginPerLot": 1803.2,
-      "contract": "CZCE.SA609"
+      "marginRate": 0.07,
+      "marginPerLot": 1626.8,
+      "contract": "CZCE.SA609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 1162.0
     },
     {
       "code": "FG",
@@ -540,9 +628,11 @@
       "price": 978.0,
       "openInterest": 1744848,
       "contractMultiplier": 20,
-      "marginRate": 0.08,
-      "marginPerLot": 1564.8,
-      "contract": "CZCE.FG609"
+      "marginRate": 0.05,
+      "marginPerLot": 1005.0,
+      "contract": "CZCE.FG609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 1005.0
     },
     {
       "code": "OI",
@@ -552,9 +642,11 @@
       "price": 9685.0,
       "openInterest": 277091,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 7748.0,
-      "contract": "CZCE.OI609"
+      "marginRate": 0.05,
+      "marginPerLot": 4907.5,
+      "contract": "CZCE.OI609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 9815.0
     },
     {
       "code": "RM",
@@ -564,9 +656,11 @@
       "price": 2286.0,
       "openInterest": 920784,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 1600.2,
-      "contract": "CZCE.RM609"
+      "marginRate": 0.05,
+      "marginPerLot": 1141.5,
+      "contract": "CZCE.RM609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 2283.0
     },
     {
       "code": "PK",
@@ -577,8 +671,10 @@
       "openInterest": 206223,
       "contractMultiplier": 5,
       "marginRate": 0.08,
-      "marginPerLot": 3337.6,
-      "contract": "CZCE.PK610"
+      "marginPerLot": 3356.0,
+      "contract": "CZCE.PK610",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 8390.0
     },
     {
       "code": "SF",
@@ -588,9 +684,11 @@
       "price": 5694.0,
       "openInterest": 222246,
       "contractMultiplier": 5,
-      "marginRate": 0.1,
-      "marginPerLot": 2847.0,
-      "contract": "CZCE.SF609"
+      "marginRate": 0.07,
+      "marginPerLot": 1993.6,
+      "contract": "CZCE.SF609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 5696.0
     },
     {
       "code": "SM",
@@ -600,9 +698,11 @@
       "price": 5856.0,
       "openInterest": 465726,
       "contractMultiplier": 5,
-      "marginRate": 0.1,
-      "marginPerLot": 2928.0,
-      "contract": "CZCE.SM609"
+      "marginRate": 0.07,
+      "marginPerLot": 2043.3,
+      "contract": "CZCE.SM609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 5838.0
     },
     {
       "code": "PF",
@@ -612,9 +712,11 @@
       "price": 7348.0,
       "openInterest": 142718,
       "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 2939.2,
-      "contract": "CZCE.PF608"
+      "marginRate": 0.07,
+      "marginPerLot": 2541.0,
+      "contract": "CZCE.PF608",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 7260.0
     },
     {
       "code": "PX",
@@ -624,9 +726,11 @@
       "price": 8104.0,
       "openInterest": 189534,
       "contractMultiplier": 5,
-      "marginRate": 0.1,
-      "marginPerLot": 4052.0,
-      "contract": "CZCE.PX609"
+      "marginRate": 0.12,
+      "marginPerLot": 4806.0,
+      "contract": "CZCE.PX609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 8010.0
     },
     {
       "code": "SH",
@@ -636,9 +740,11 @@
       "price": 2002.0,
       "openInterest": 256525,
       "contractMultiplier": 30,
-      "marginRate": 0.1,
-      "marginPerLot": 6006.0,
-      "contract": "CZCE.SH609"
+      "marginRate": 0.09,
+      "marginPerLot": 5418.9,
+      "contract": "CZCE.SH609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 2007.0
     },
     {
       "code": "IF",
@@ -648,9 +754,11 @@
       "price": 4862.8,
       "openInterest": 147088,
       "contractMultiplier": 300,
-      "marginRate": 0.12,
-      "marginPerLot": 175060.8,
-      "contract": "CFFEX.IF2609"
+      "marginRate": 0.1,
+      "marginPerLot": 144060.0,
+      "contract": "CFFEX.IF2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 4802.0
     },
     {
       "code": "IH",
@@ -660,9 +768,11 @@
       "price": 2899.8,
       "openInterest": 64125,
       "contractMultiplier": 300,
-      "marginRate": 0.12,
-      "marginPerLot": 104392.8,
-      "contract": "CFFEX.IH2609"
+      "marginRate": 0.1,
+      "marginPerLot": 86568.0,
+      "contract": "CFFEX.IH2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 2885.6
     },
     {
       "code": "IC",
@@ -673,8 +783,10 @@
       "openInterest": 162104,
       "contractMultiplier": 200,
       "marginRate": 0.12,
-      "marginPerLot": 204417.6,
-      "contract": "CFFEX.IC2609"
+      "marginPerLot": 201609.6,
+      "contract": "CFFEX.IC2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 8400.4
     },
     {
       "code": "IM",
@@ -684,9 +796,11 @@
       "price": 8510.0,
       "openInterest": 204527,
       "contractMultiplier": 200,
-      "marginRate": 0.12,
-      "marginPerLot": 204240.0,
-      "contract": "CFFEX.IM2609"
+      "marginRate": 0.15,
+      "marginPerLot": 252420.0,
+      "contract": "CFFEX.IM2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 8414.0
     },
     {
       "code": "T",
@@ -697,8 +811,10 @@
       "openInterest": 360539,
       "contractMultiplier": 10000,
       "marginRate": 0.02,
-      "marginPerLot": 21811.0,
-      "contract": "CFFEX.T2609"
+      "marginPerLot": 21803.0,
+      "contract": "CFFEX.T2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 109.015
     },
     {
       "code": "TF",
@@ -709,8 +825,10 @@
       "openInterest": 203869,
       "contractMultiplier": 10000,
       "marginRate": 0.012,
-      "marginPerLot": 12758.4,
-      "contract": "CFFEX.TF2609"
+      "marginPerLot": 12751.2,
+      "contract": "CFFEX.TF2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 106.26
     },
     {
       "code": "TS",
@@ -721,8 +839,10 @@
       "openInterest": 77177,
       "contractMultiplier": 20000,
       "marginRate": 0.005,
-      "marginPerLot": 10262.0,
-      "contract": "CFFEX.TS2609"
+      "marginPerLot": 10258.4,
+      "contract": "CFFEX.TS2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 102.584
     },
     {
       "code": "TL",
@@ -734,7 +854,9 @@
       "contractMultiplier": 10000,
       "marginRate": 0.035,
       "marginPerLot": 39854.5,
-      "contract": "CFFEX.TL2609"
+      "contract": "CFFEX.TL2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 113.87
     },
     {
       "code": "SC",
@@ -744,9 +866,11 @@
       "price": 508.5,
       "openInterest": 53313,
       "contractMultiplier": 1000,
-      "marginRate": 0.1,
-      "marginPerLot": 50850.0,
-      "contract": "INE.sc2608"
+      "marginRate": 0.07,
+      "marginPerLot": 35903.0,
+      "contract": "INE.sc2608",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 512.9
     },
     {
       "code": "LU",
@@ -756,9 +880,11 @@
       "price": 3954.0,
       "openInterest": 48837,
       "contractMultiplier": 10,
-      "marginRate": 0.1,
-      "marginPerLot": 3954.0,
-      "contract": "INE.lu2608"
+      "marginRate": 0.15,
+      "marginPerLot": 5902.5,
+      "contract": "INE.lu2608",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 3935.0
     },
     {
       "code": "NR",
@@ -768,9 +894,11 @@
       "price": 15475.0,
       "openInterest": 65118,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 12380.0,
-      "contract": "INE.nr2608"
+      "marginRate": 0.09,
+      "marginPerLot": 14107.5,
+      "contract": "INE.nr2608",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 15675.0
     },
     {
       "code": "BC",
@@ -781,8 +909,10 @@
       "openInterest": 10380,
       "contractMultiplier": 5,
       "marginRate": 0.08,
-      "marginPerLot": 37188.0,
-      "contract": "INE.bc2607"
+      "marginPerLot": 37360.0,
+      "contract": "INE.bc2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 93400.0
     },
     {
       "code": "EC",
@@ -792,9 +922,11 @@
       "price": 3809.5,
       "openInterest": 24029,
       "contractMultiplier": 50,
-      "marginRate": 0.18,
-      "marginPerLot": 34285.5,
-      "contract": "INE.ec2607"
+      "marginRate": 0.12,
+      "marginPerLot": 22203.0,
+      "contract": "INE.ec2607",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 3700.5
     },
     {
       "code": "LC",
@@ -805,8 +937,10 @@
       "openInterest": 450964,
       "contractMultiplier": 1,
       "marginRate": 0.09,
-      "marginPerLot": 14445.0,
-      "contract": "GFEX.lc2609"
+      "marginPerLot": 15462.0,
+      "contract": "GFEX.lc2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 171800.0
     },
     {
       "code": "SI",
@@ -816,9 +950,11 @@
       "price": 8560.0,
       "openInterest": 258535,
       "contractMultiplier": 5,
-      "marginRate": 0.09,
-      "marginPerLot": 3852.0,
-      "contract": "GFEX.si2609"
+      "marginRate": 0.05,
+      "marginPerLot": 2157.5,
+      "contract": "GFEX.si2609",
+      "marginSource": "TqSdk exact contract quote.margin",
+      "preSettlement": 8630.0
     }
   ]
 }

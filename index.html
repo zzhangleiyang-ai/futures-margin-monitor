@@ -258,7 +258,7 @@
     <div class="wrap topbar">
       <div>
         <h1>期货保证金查询</h1>
-        <div class="subtitle">主力连续合约行情 · 交易所标准保证金估算</div>
+        <div class="subtitle">主力连续合约行情 · 当前主力合约保证金比例</div>
       </div>
       <div class="status">
         <div><span id="statusDot" class="dot warn"></span><span id="statusText">正在加载</span></div>
@@ -288,7 +288,7 @@
           <tr>
             <th style="width: 130px;">交易所</th>
             <th style="width: 150px;">品种</th>
-            <th style="width: 90px;">代码</th>
+            <th style="width: 130px;">代码/主力合约</th>
             <th>最新价</th>
             <th>合约乘数</th>
             <th>保证金比例</th>
@@ -303,7 +303,7 @@
     </section>
   </main>
 
-  <footer class="wrap">数据文件每 10 分钟由 GitHub Actions 更新；交易所临时调整保证金时，以交易所公告为准。</footer>
+  <footer class="wrap">数据文件每 10 分钟由 GitHub Actions 更新；保证金比例由当前主力合约保证金金额反推，交易所临时调整时以公告为准。</footer>
 
   <script>
     const EXCHANGE_COLORS = {
@@ -476,7 +476,7 @@
           <tr>
             <td><span class="exchange"><span class="swatch" style="background:${color}"></span>${item.exchangeName || item.exchange}</span></td>
             <td>${item.name || "--"}</td>
-            <td><strong>${item.code}</strong></td>
+            <td><strong>${item.code}</strong><span class="code">${contractText(item.contract)}</span></td>
             <td>${price(item.price)}</td>
             <td>${compact(item.contractMultiplier)}</td>
             <td>${percent(item.marginRate)}</td>
@@ -485,6 +485,12 @@
           </tr>
         `;
       }).join("");
+    }
+
+    function contractText(value) {
+      if (!value) return "";
+      const text = String(value).split(".").pop();
+      return text && text !== value ? ` / ${text}` : ` / ${text}`;
     }
 
     els.query.addEventListener("input", event => {
