@@ -1,8 +1,7 @@
-# Auto-fetch futures data via TianQin
 name: Fetch Futures Data
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "* * * * *"
   workflow_dispatch:
 jobs:
   fetch:
