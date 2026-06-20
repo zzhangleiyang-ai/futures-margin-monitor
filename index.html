@@ -19,15 +19,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Microsoft
 .card-variety{font-size:15px;font-weight:600}.card-code{font-size:12px;color:#9ca3af}
 .card-bottom{display:flex;justify-content:space-between;align-items:flex-start}
 .card-price{font-size:22px;font-weight:700}
-.card-price.up{color:#dc2626}.card-price.down{color:#16a34a}
-.card-change{font-size:12px}
+.card-price.up{color:#dc2626}.card-price.down{color:#16a34a}.card-change{font-size:12px}
 .card-right{text-align:right;min-width:120px}
 .card-info{font-size:12px;color:#6b7280;margin-bottom:4px;display:flex;justify-content:space-between}
 .card-info strong{color:#374151}.card-margin strong{color:var(--ex-color);font-size:14px}
 .empty-state{text-align:center;padding:60px 20px;color:#9ca3af}
 .empty-icon{font-size:48px;margin-bottom:16px}
 .footer{max-width:1400px;margin:0 auto;padding:16px 24px 32px;text-align:center;font-size:12px;color:#9ca3af;border-top:1px solid #e5e7eb}
-</style></head><body><header class="top-header"><div class="header-inner"><div class="header-left"><span class="header-icon">📈</span><span class="header-title">期货保证金监控</span><span class="header-sub">国内期货主力 · 交易所保证金</span></div><div class="header-actions"><button id="refreshBtn">⟳ 刷新</button></div></div></header><div id="statusBar"></div><div id="app"></div><footer class="footer">数据来源：新浪财经 · 每 1 分钟自动更新</footer><script>
+</style></head><body><header class="top-header"><div class="header-inner"><div class="header-left"><span class="header-icon">📈</span><span class="header-title">期货保证金监控</span><span class="header-sub">国内期货主力 · 交易所保证金</span></div><div class="header-actions"><button id="refreshBtn">⟳ 刷新</button></div></div></header><div id="statusBar"></div><div id="app"></div><footer class="footer">数据来源：参考结算价 · 每 1 分钟刷新</footer><script>
 var EX={SHFE:{n:"上期所",c:1,co:"#2563eb"},DCE:{n:"大商所",c:2,co:"#059669"},CZCE:{n:"郑商所",c:3,co:"#d97706"},CFFEX:{n:"中金所",c:4,co:"#7c3aed"},INE:{n:"能源中心",c:5,co:"#0891b2"},GFEX:{n:"广期所",c:6,co:"#db2777"}};
 var FC=[["RB","螺纹钢","SHFE",10,0.07],["HC","热轧卷板","SHFE",10,0.07],["CU","沪铜","SHFE",5,0.08],["AL","沪铝","SHFE",5,0.08],["ZN","沪锌","SHFE",5,0.08],["PB","沪铅","SHFE",5,0.08],["NI","沪镍","SHFE",1,0.12],["SN","沪锡","SHFE",1,0.12],["AU","沪金","SHFE",1000,0.08],["AG","沪银","SHFE",15,0.09],["BU","沥青","SHFE",10,0.10],["RU","天然橡胶","SHFE",10,0.08],["SP","纸浆","SHFE",10,0.08],["SS","不锈钢","SHFE",5,0.10],["BR","丁二烯橡胶","SHFE",5,0.10],["I","铁矿石","DCE",100,0.11],["J","焦炭","DCE",100,0.20],["JM","焦煤","DCE",60,0.20],["M","豆粕","DCE",10,0.07],["Y","豆油","DCE",10,0.07],["A","豆一","DCE",10,0.07],["B","豆二","DCE",10,0.07],["P","棕榈油","DCE",10,0.08],["C","玉米","DCE",10,0.06],["CS","玉米淀粉","DCE",10,0.06],["L","聚乙烯","DCE",5,0.08],["PP","聚丙烯","DCE",5,0.08],["V","PVC","DCE",5,0.08],["EG","乙二醇","DCE",10,0.08],["EB","苯乙烯","DCE",5,0.08],["JD","鸡蛋","DCE",5,0.08],["LH","生猪","DCE",16,0.08],["PG","液化石油气","DCE",20,0.08],["SR","白糖","CZCE",10,0.07],["CF","棉花","CZCE",5,0.07],["OI","菜籽油","CZCE",10,0.07],["RM","菜籽粕","CZCE",10,0.07],["MA","甲醇","CZCE",10,0.08],["TA","PTA","CZCE",5,0.07],["FG","玻璃","CZCE",20,0.09],["SA","纯碱","CZCE",20,0.09],["UR","尿素","CZCE",20,0.07],["AP","苹果","CZCE",10,0.08],["CJ","红枣","CZCE",5,0.10],["SF","硅铁","CZCE",5,0.10],["SM","锰硅","CZCE",5,0.10],["PF","短纤","CZCE",5,0.07],["PK","花生","CZCE",5,0.07],["IF","沪深300","CFFEX",300,0.10],["IC","中证500","CFFEX",200,0.12],["IH","上证50","CFFEX",300,0.10],["IM","中证1000","CFFEX",200,0.12],["SC","原油","INE",1000,0.10],["NR","20号胶","INE",10,0.08],["LU","低硫燃料油","INE",10,0.10],["BC","国际铜","INE",5,0.08],["SI","工业硅","GFEX",5,0.08],["LC","碳酸锂","GFEX",1,0.09]];
 var MO={AU:[2,4,6,8,10,12],M:[1,3,5,7,8,9,11,12],Y:[1,3,5,7,8,9,11,12],A:[1,3,5,7,9,11],C:[1,3,5,7,9,11],CS:[1,3,5,7,9,11],LH:[1,3,5,7,9,11],SR:[1,3,5,7,9,11],CF:[1,3,5,7,9,11],OI:[1,3,5,7,9,11],RM:[1,3,5,7,8,9,11],AP:[1,3,4,5,10,11,12],CJ:[1,3,5,7,9,12],PK:[1,3,4,10,11,12],IF:[1,3,5,7,9,11],IC:[1,3,5,7,9,11],IH:[1,3,5,7,9,11],IM:[1,3,5,7,9,11]};
@@ -37,25 +36,17 @@ function CC(v,y,m){return v+(y%100)+("0"+m).slice(-2)}
 function fmt(n){return(n==null||isNaN(n))?"--":Number(n).toFixed(2)}
 function fw(n){if(n==null||isNaN(n))return"--";return n>=10000?(n/10000).toFixed(1)+"万":Math.round(n).toLocaleString()}
 function show(msg,tp){var e=document.getElementById("statusBar");if(e)e.innerHTML='<span class="status-dot status-'+tp+'"></span>'+msg}
-function err(msg){var e=document.getElementById("app");if(e)e.innerHTML='<div class="empty-state"><div class="empty-icon">⚠️</div><div class="empty-text">'+msg+"</div></div>";show(msg,"error")}
-
-function getCodes(vid){
-  var ms=GM(vid), d=new Date(), y=d.getFullYear()%100, cm=d.getMonth()+1, i=0;
-  while(i<ms.length&&ms[i]<=cm)i++;if(i>=ms.length){i=0;y++}
-  var r=[];
-  for(var j=0;j<4;j++){if(i>=ms.length){i=0;y++}r.push(CC(vid,y,ms[i]));i++}
-  return r;
-}
+function err(msg){var e=document.getElementById("app");if(e)e.innerHTML='<div class="empty-state"><div class="empty-icon">⚠️</div><div class="empty-text">'+msg+"</div></div>"}
 
 function render(items){
-  var ap=document.getElementById("app"); if(!ap) return;
+  var ap=document.getElementById("app");if(!ap)return;
   if(!items||!items.length){err("暂无数据");return;}
   ap.innerHTML="";
-  var g={}, ek=Object.keys(EX); ek.forEach(function(k){g[k]=[]});
+  var g={},ek=Object.keys(EX);ek.forEach(function(k){g[k]=[]});
   items.forEach(function(it){if(g[it.e])g[it.e].push(it)});
   ek.forEach(function(k){g[k].sort(function(a,b){return b.o-a.o})});
   ek.forEach(function(k){
-    var ex=EX[k], its=g[k]; if(!its||!its.length)return;
+    var ex=EX[k],its=g[k];if(!its||!its.length)return;
     var sec=document.createElement("div");sec.className="exchange-section";
     var h=document.createElement("div");h.className="exchange-header";h.style.borderLeftColor=ex.co;
     h.innerHTML='<span class="exchange-name" style="color:'+ex.co+'">'+ex.n+'</span><span class="exchange-count">'+its.length+"个品种</span>";
@@ -69,49 +60,42 @@ function render(items){
     });
     sec.appendChild(gr);ap.appendChild(sec);
   });
-  var n=new Date();
-  show(items.length+"个主力合约 · 新浪财经 · "+n.toLocaleTimeString("zh-CN",{hour12:false}),"success");
 }
 
-function loadData(){
-  show("正在获取实时数据...","loading");
+function refresh(){
+  show("正在获取数据...","loading");
   var ap=document.getElementById("app");
-  if(ap)ap.innerHTML='<div class="empty-state"><div class="empty-icon">⏳</div><div class="empty-text">正在获取实时数据...</div></div>';
-  var allCodes=[], allMap={};
-  FC.forEach(function(c){
-    var cds=getCodes(c[0]);
-    allMap[c[0]]=[];
-    cds.forEach(function(cd){allCodes.push("hf_"+cd);allMap[c[0]].push(cd)});
-  });
-  var batch=50, done=0,items=[];
-  function next(){
-    if(done>=allCodes.length){parseDone();return;}
-    var batchCodes=allCodes.slice(done,done+batch);done+=batch;
-    var s=document.createElement("script");
-    s.src="https://hq.sinajs.cn/list="+batchCodes.join(",");
-    s.async=false;s.charset="gbk";
-    s.onload=function(){next();};
-    s.onerror=function(){next();};
-    document.body.appendChild(s);
-  }
-  function parseDone(){
-    FC.forEach(function(c){
-      var best=null,bo=0;
-      (allMap[c[0]]||[]).forEach(function(cd){
-        var raw=window["hq_str_hf_"+cd];
-        if(!raw)return;
-        var p=raw.split(",");
-        if(!p[3])return;
-        var pr=parseFloat(p[3])||0,oi=parseFloat(p[9])||0;
-        if(oi>bo&&pr>0){bo=oi;best={d:cd,p:pr,o:oi,c:0,e:c[2],m:c[3],r:c[4],n:c[1]};}
-      });
-      if(best&&best.p>0)items.push(best);
-    });
-    if(items.length>0)render(items);
-    else err("非交易时段，暂无实时数据");
-  }
-  next();
+  if(ap)ap.innerHTML='<div class="empty-state"><div class="empty-icon">⏳</div><div class="empty-text">正在加载数据...</div></div>';
+  var xhr=new XMLHttpRequest();
+  xhr.open("GET","data/data.json?"+Date.now(),true);
+  xhr.onreadystatechange=function(){
+    if(xhr.readyState!==4)return;
+    if(xhr.status===200){
+      try{
+        var raw=JSON.parse(xhr.responseText);
+        if(!raw||!raw.length){err("数据为空");return;}
+        var items=[];
+        FC.forEach(function(c){
+          var best=null,bo=0;
+          var ms=GM(c[0]),d=new Date(),y=d.getFullYear()%100,cm=d.getMonth()+1,i=0;
+          while(i<ms.length&&ms[i]<=cm)i++;if(i>=ms.length){i=0;y++}
+          for(var j=0;j<4;j++){
+            if(i>=ms.length){i=0;y++}
+            var cd=CC(c[0],y,ms[i]);i++;
+            var row=raw.find(function(x){return x.c===cd});
+            if(!row)continue;
+            var pr=row.p,oi=row.o,ch=row.ch||0;
+            if(oi>bo&&pr>0){bo=oi;best={d:cd,p:pr,o:oi,c:ch,e:c[2],m:c[3],r:c[4],n:c[1]};}
+          }
+          if(best&&best.p>0)items.push(best);
+        });
+        if(items.length>0){render(items);show(items.length+"个主力合约 · 参考结算价","success");}
+        else err("暂无符合条件的数据");
+      }catch(e){err("数据解析失败:"+e.message)}
+    }else{err("数据加载失败");}
+  };
+  xhr.send();
 }
-document.addEventListener("DOMContentLoaded",function(){loadData();setInterval(loadData,RI);document.getElementById("refreshBtn").addEventListener("click",loadData)});
+document.addEventListener("DOMContentLoaded",function(){refresh();setInterval(refresh,RI);document.getElementById("refreshBtn").addEventListener("click",refresh)});
 console.log("Loaded");
 </script></body></html>
