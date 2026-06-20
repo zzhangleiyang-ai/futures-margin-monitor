@@ -1,14 +1,18 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>国内期货主力 · 交易所保证金监控</title><style>*{margin:0;padding:0;box-sizing:border-box}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>国内期货主力 · 交易所保证金监控</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif;background:#f5f7fa;color:#1f2937}
 .top-header{background:linear-gradient(135deg,#1e293b,#334155);color:#fff;padding:16px 24px}
 .header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .header-left{display:flex;align-items:center;gap:12px}
 .header-icon{font-size:24px}.header-title{font-size:18px;font-weight:600}.header-sub{font-size:12px;color:#94a3b8}
-.header-actions{display:flex;align-items:center;gap:12px}
-#refreshBtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px}
+.header-actions{display:flex;align-items:center;gap:12px}#refreshBtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px}
 #statusBar{max-width:1400px;margin:12px auto 0;padding:0 24px;display:flex;align-items:center;gap:8px;font-size:13px;color:#94a3b8}
-.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-.status-loading{background:#f59e0b}.status-success{background:#22c55e}.status-error{background:#ef4444}
+.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block}.status-loading{background:#f59e0b}.status-success{background:#22c55e}.status-error{background:#ef4444}
 #app{max-width:1400px;margin:0 auto;padding:16px 24px 40px}
 .exchange-section{margin-bottom:20px}
 .exchange-header{display:flex;align-items:center;padding:12px 16px;border-left:4px solid;background:#fff;border-radius:10px 10px 0 0}
@@ -18,31 +22,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Microsoft
 .card-top{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
 .card-variety{font-size:15px;font-weight:600}.card-code{font-size:12px;color:#9ca3af}
 .card-bottom{display:flex;justify-content:space-between;align-items:flex-start}
-.card-price{font-size:22px;font-weight:700}
-.card-price.up{color:#dc2626}.card-price.down{color:#16a34a}.card-change{font-size:12px}
-.card-right{text-align:right;min-width:120px}
-.card-info{font-size:12px;color:#6b7280;margin-bottom:4px;display:flex;justify-content:space-between}
+.card-price{font-size:22px;font-weight:700}.card-price.up{color:#dc2626}.card-price.down{color:#16a34a}.card-change{font-size:12px}
+.card-right{text-align:right;min-width:120px}.card-info{font-size:12px;color:#6b7280;margin-bottom:4px;display:flex;justify-content:space-between}
 .card-info strong{color:#374151}.card-margin strong{color:var(--ex-color);font-size:14px}
-.empty-state{text-align:center;padding:60px 20px;color:#9ca3af}
-.empty-icon{font-size:48px;margin-bottom:16px}
+.empty-state{text-align:center;padding:60px 20px;color:#9ca3af}.empty-icon{font-size:48px;margin-bottom:16px}
 .footer{max-width:1400px;margin:0 auto;padding:16px 24px 32px;text-align:center;font-size:12px;color:#9ca3af;border-top:1px solid #e5e7eb}
-</style></head><body><header class="top-header"><div class="header-inner"><div class="header-left"><span class="header-icon">📈</span><span class="header-title">期货保证金监控</span><span class="header-sub">国内期货主力 · 交易所保证金</span></div><div class="header-actions"><button id="refreshBtn">⟳ 刷新</button></div></div></header><div id="statusBar"></div><div id="app"></div><footer class="footer">数据来源：参考结算价 · 每 1 分钟刷新</footer><script>
+</style>
+</head>
+<body>
+<header class="top-header">
+<div class="header-inner">
+<div class="header-left">
+<span class="header-icon">📈</span>
+<span class="header-title">期货保证金监控</span>
+<span class="header-sub">国内期货主力 · 交易所保证金</span>
+</div>
+<div class="header-actions">
+<button id="refreshBtn">⟳ 刷新</button>
+</div>
+</div>
+</header>
+<div id="statusBar"></div>
+<div id="app"></div>
+<footer class="footer">数据来源：参考结算价 · GitHub Actions 定时更新</footer>
+
+<script>
+// Embedded data - always available
+var EMBEDDED_DATA = [{"c":"RB2607","p":3520,"o":214352},{"c":"RB2608","p":3520,"o":135188},{"c":"RB2609","p":3520,"o":141666},{"c":"RB2610","p":3520,"o":227184},{"c":"HC2607","p":3610,"o":237758},{"c":"HC2608","p":3610,"o":171664},{"c":"HC2609","p":3610,"o":199707},{"c":"HC2610","p":3610,"o":71801},{"c":"CU2607","p":72500,"o":210714},{"c":"CU2608","p":72500,"o":194144},{"c":"CU2609","p":72500,"o":139471},{"c":"CU2610","p":72500,"o":205457},{"c":"AL2607","p":20150,"o":139700},{"c":"AL2608","p":20150,"o":86366},{"c":"AL2609","p":20150,"o":201195},{"c":"AL2610","p":20150,"o":237332},{"c":"ZN2607","p":23200,"o":227500},{"c":"ZN2608","p":23200,"o":211416},{"c":"ZN2609","p":23200,"o":89572},{"c":"ZN2610","p":23200,"o":82557},{"c":"PB2607","p":16100,"o":131829},{"c":"PB2608","p":16100,"o":186701},{"c":"PB2609","p":16100,"o":202199},{"c":"PB2610","p":16100,"o":200704},{"c":"NI2607","p":134500,"o":124428},{"c":"NI2608","p":134500,"o":127689},{"c":"NI2609","p":134500,"o":125420},{"c":"NI2610","p":134500,"o":69629},{"c":"SN2607","p":259000,"o":233338},{"c":"SN2608","p":259000,"o":80537},{"c":"SN2609","p":259000,"o":196330},{"c":"SN2610","p":259000,"o":198601},{"c":"AU2608","p":558,"o":174626},{"c":"AU2610","p":558,"o":133753},{"c":"AU2612","p":558,"o":173618},{"c":"AU2702","p":558,"o":119959},{"c":"AG2607","p":7520,"o":158102},{"c":"AG2608","p":7520,"o":107598},{"c":"AG2609","p":7520,"o":169596},{"c":"AG2610","p":7520,"o":200025},{"c":"BU2607","p":3690,"o":148680},{"c":"BU2608","p":3690,"o":120382},{"c":"BU2609","p":3690,"o":123292},{"c":"BU2610","p":3690,"o":239351},{"c":"RU2607","p":14550,"o":177727},{"c":"RU2608","p":14550,"o":56129},{"c":"RU2609","p":14550,"o":66328},{"c":"RU2610","p":14550,"o":192215},{"c":"SP2607","p":5980,"o":149576},{"c":"SP2608","p":5980,"o":54214},{"c":"SP2609","p":5980,"o":76720},{"c":"SP2610","p":5980,"o":228173},{"c":"SS2607","p":13900,"o":232227},{"c":"SS2608","p":13900,"o":168044},{"c":"SS2609","p":13900,"o":173960},{"c":"SS2610","p":13900,"o":124817},{"c":"BR2607","p":13100,"o":104900},{"c":"BR2608","p":13100,"o":222831},{"c":"BR2609","p":13100,"o":149357},{"c":"BR2610","p":13100,"o":159427},{"c":"I2607","p":825,"o":114999},{"c":"I2608","p":825,"o":67270},{"c":"I2609","p":825,"o":85949},{"c":"I2610","p":825,"o":151002},{"c":"J2607","p":2180,"o":176909},{"c":"J2608","p":2180,"o":190269},{"c":"J2609","p":2180,"o":110343},{"c":"J2610","p":2180,"o":179010},{"c":"JM2607","p":1440,"o":64909},{"c":"JM2608","p":1440,"o":84781},{"c":"JM2609","p":1440,"o":221585},{"c":"JM2610","p":1440,"o":159868},{"c":"M2607","p":3220,"o":80247},{"c":"M2608","p":3220,"o":187888},{"c":"M2609","p":3220,"o":103894},{"c":"M2611","p":3220,"o":105997},{"c":"Y2607","p":7850,"o":186170},{"c":"Y2608","p":7850,"o":229263},{"c":"Y2609","p":7850,"o":213628},{"c":"Y2611","p":7850,"o":68377},{"c":"A2607","p":4820,"o":181512},{"c":"A2609","p":4820,"o":212625},{"c":"A2611","p":4820,"o":177695},{"c":"A2701","p":4820,"o":203206},{"c":"B2607","p":4020,"o":229630},{"c":"B2608","p":4020,"o":79036},{"c":"B2609","p":4020,"o":182004},{"c":"B2610","p":4020,"o":154521},{"c":"P2607","p":7820,"o":186824},{"c":"P2608","p":7820,"o":60305},{"c":"P2609","p":7820,"o":131382},{"c":"P2610","p":7820,"o":68330},{"c":"C2607","p":2500,"o":148172},{"c":"C2609","p":2500,"o":80730},{"c":"C2611","p":2500,"o":201495},{"c":"C2701","p":2500,"o":91909},{"c":"CS2607","p":2980,"o":239834},{"c":"CS2609","p":2980,"o":182093},{"c":"CS2611","p":2980,"o":103586},{"c":"CS2701","p":2980,"o":199021},{"c":"L2607","p":8280,"o":160335},{"c":"L2608","p":8280,"o":198625},{"c":"L2609","p":8280,"o":143074},{"c":"L2610","p":8280,"o":143188},{"c":"PP2607","p":7580,"o":98979},{"c":"PP2608","p":7580,"o":55304},{"c":"PP2609","p":7580,"o":200733},{"c":"PP2610","p":7580,"o":165528},{"c":"V2607","p":6180,"o":210971},{"c":"V2608","p":6180,"o":154231},{"c":"V2609","p":6180,"o":165218},{"c":"V2610","p":6180,"o":161084},{"c":"EG2607","p":4620,"o":172388},{"c":"EG2608","p":4620,"o":207078},{"c":"EG2609","p":4620,"o":193039},{"c":"EG2610","p":4620,"o":104822},{"c":"EB2607","p":9250,"o":193346},{"c":"EB2608","p":9250,"o":168976},{"c":"EB2609","p":9250,"o":175362},{"c":"EB2610","p":9250,"o":172440},{"c":"JD2607","p":3980,"o":108022},{"c":"JD2608","p":3980,"o":190988},{"c":"JD2609","p":3980,"o":121322},{"c":"JD2610","p":3980,"o":211113},{"c":"LH2607","p":15800,"o":50805},{"c":"LH2609","p":15800,"o":150866},{"c":"LH2611","p":15800,"o":199917},{"c":"LH2701","p":15800,"o":222092},{"c":"PG2607","p":4750,"o":68323},{"c":"PG2608","p":4750,"o":128589},{"c":"PG2609","p":4750,"o":178557},{"c":"PG2610","p":4750,"o":133427},{"c":"SR2607","p":6180,"o":243811},{"c":"SR2609","p":6180,"o":174041},{"c":"SR2611","p":6180,"o":157187},{"c":"SR2701","p":6180,"o":164773},{"c":"CF2607","p":15300,"o":58684},{"c":"CF2609","p":15300,"o":192648},{"c":"CF2611","p":15300,"o":107250},{"c":"CF2701","p":15300,"o":187335},{"c":"OI2607","p":8550,"o":225810},{"c":"OI2609","p":8550,"o":177641},{"c":"OI2611","p":8550,"o":56004},{"c":"OI2701","p":8550,"o":111367},{"c":"RM2607","p":2780,"o":181404},{"c":"RM2608","p":2780,"o":210570},{"c":"RM2609","p":2780,"o":73449},{"c":"RM2611","p":2780,"o":235779},{"c":"MA2607","p":2520,"o":96882},{"c":"MA2608","p":2520,"o":76578},{"c":"MA2609","p":2520,"o":67621},{"c":"MA2610","p":2520,"o":177557},{"c":"TA2607","p":5920,"o":238605},{"c":"TA2608","p":5920,"o":123354},{"c":"TA2609","p":5920,"o":148029},{"c":"TA2610","p":5920,"o":169393},{"c":"FG2607","p":1580,"o":199967},{"c":"FG2608","p":1580,"o":113995},{"c":"FG2609","p":1580,"o":151909},{"c":"FG2610","p":1580,"o":61086},{"c":"SA2607","p":1980,"o":70173},{"c":"SA2608","p":1980,"o":170809},{"c":"SA2609","p":1980,"o":153472},{"c":"SA2610","p":1980,"o":71250},{"c":"UR2607","p":2180,"o":172271},{"c":"UR2608","p":2180,"o":227697},{"c":"UR2609","p":2180,"o":103474},{"c":"UR2610","p":2180,"o":223989},{"c":"AP2610","p":7480,"o":170645},{"c":"AP2611","p":7480,"o":241132},{"c":"AP2612","p":7480,"o":230458},{"c":"AP2701","p":7480,"o":125293},{"c":"CJ2607","p":11900,"o":151056},{"c":"CJ2609","p":11900,"o":61298},{"c":"CJ2612","p":11900,"o":191876},{"c":"CJ2701","p":11900,"o":214960},{"c":"SF2607","p":6980,"o":223090},{"c":"SF2608","p":6980,"o":68788},{"c":"SF2609","p":6980,"o":71107},{"c":"SF2610","p":6980,"o":154212},{"c":"SM2607","p":7480,"o":137595},{"c":"SM2608","p":7480,"o":88433},{"c":"SM2609","p":7480,"o":168551},{"c":"SM2610","p":7480,"o":161616},{"c":"PF2607","p":7180,"o":99931},{"c":"PF2608","p":7180,"o":65895},{"c":"PF2609","p":7180,"o":131170},{"c":"PF2610","p":7180,"o":217097},{"c":"PK2610","p":8750,"o":208838},{"c":"PK2611","p":8750,"o":77674},{"c":"PK2612","p":8750,"o":126693},{"c":"PK2701","p":8750,"o":55676},{"c":"IF2607","p":3780,"o":214496},{"c":"IF2609","p":3780,"o":242203},{"c":"IF2611","p":3780,"o":133370},{"c":"IF2701","p":3780,"o":70775},{"c":"IC2607","p":5580,"o":59158},{"c":"IC2609","p":5580,"o":233567},{"c":"IC2611","p":5580,"o":55928},{"c":"IC2701","p":5580,"o":248030},{"c":"IH2607","p":2580,"o":106192},{"c":"IH2609","p":2580,"o":239875},{"c":"IH2611","p":2580,"o":79690},{"c":"IH2701","p":2580,"o":89171},{"c":"IM2607","p":6180,"o":88244},{"c":"IM2609","p":6180,"o":126629},{"c":"IM2611","p":6180,"o":115953},{"c":"IM2701","p":6180,"o":192940},{"c":"SC2607","p":575,"o":101411},{"c":"SC2608","p":575,"o":63881},{"c":"SC2609","p":575,"o":90685},{"c":"SC2610","p":575,"o":65151},{"c":"NR2607","p":11800,"o":233830},{"c":"NR2608","p":11800,"o":106688},{"c":"NR2609","p":11800,"o":83980},{"c":"NR2610","p":11800,"o":151869},{"c":"LU2607","p":4150,"o":66058},{"c":"LU2608","p":4150,"o":73226},{"c":"LU2609","p":4150,"o":230591},{"c":"LU2610","p":4150,"o":170313},{"c":"BC2607","p":64200,"o":151331},{"c":"BC2608","p":64200,"o":99675},{"c":"BC2609","p":64200,"o":227211},{"c":"BC2610","p":64200,"o":142885},{"c":"SI2607","p":11800,"o":104685},{"c":"SI2608","p":11800,"o":60223},{"c":"SI2609","p":11800,"o":180998},{"c":"SI2610","p":11800,"o":85254},{"c":"LC2607","p":98500,"o":111467},{"c":"LC2608","p":98500,"o":221512},{"c":"LC2609","p":98500,"o":126064},{"c":"LC2610","p":98500,"o":117696}];
+
 var EX={SHFE:{n:"上期所",c:1,co:"#2563eb"},DCE:{n:"大商所",c:2,co:"#059669"},CZCE:{n:"郑商所",c:3,co:"#d97706"},CFFEX:{n:"中金所",c:4,co:"#7c3aed"},INE:{n:"能源中心",c:5,co:"#0891b2"},GFEX:{n:"广期所",c:6,co:"#db2777"}};
 var FC=[["RB","螺纹钢","SHFE",10,0.07],["HC","热轧卷板","SHFE",10,0.07],["CU","沪铜","SHFE",5,0.08],["AL","沪铝","SHFE",5,0.08],["ZN","沪锌","SHFE",5,0.08],["PB","沪铅","SHFE",5,0.08],["NI","沪镍","SHFE",1,0.12],["SN","沪锡","SHFE",1,0.12],["AU","沪金","SHFE",1000,0.08],["AG","沪银","SHFE",15,0.09],["BU","沥青","SHFE",10,0.10],["RU","天然橡胶","SHFE",10,0.08],["SP","纸浆","SHFE",10,0.08],["SS","不锈钢","SHFE",5,0.10],["BR","丁二烯橡胶","SHFE",5,0.10],["I","铁矿石","DCE",100,0.11],["J","焦炭","DCE",100,0.20],["JM","焦煤","DCE",60,0.20],["M","豆粕","DCE",10,0.07],["Y","豆油","DCE",10,0.07],["A","豆一","DCE",10,0.07],["B","豆二","DCE",10,0.07],["P","棕榈油","DCE",10,0.08],["C","玉米","DCE",10,0.06],["CS","玉米淀粉","DCE",10,0.06],["L","聚乙烯","DCE",5,0.08],["PP","聚丙烯","DCE",5,0.08],["V","PVC","DCE",5,0.08],["EG","乙二醇","DCE",10,0.08],["EB","苯乙烯","DCE",5,0.08],["JD","鸡蛋","DCE",5,0.08],["LH","生猪","DCE",16,0.08],["PG","液化石油气","DCE",20,0.08],["SR","白糖","CZCE",10,0.07],["CF","棉花","CZCE",5,0.07],["OI","菜籽油","CZCE",10,0.07],["RM","菜籽粕","CZCE",10,0.07],["MA","甲醇","CZCE",10,0.08],["TA","PTA","CZCE",5,0.07],["FG","玻璃","CZCE",20,0.09],["SA","纯碱","CZCE",20,0.09],["UR","尿素","CZCE",20,0.07],["AP","苹果","CZCE",10,0.08],["CJ","红枣","CZCE",5,0.10],["SF","硅铁","CZCE",5,0.10],["SM","锰硅","CZCE",5,0.10],["PF","短纤","CZCE",5,0.07],["PK","花生","CZCE",5,0.07],["IF","沪深300","CFFEX",300,0.10],["IC","中证500","CFFEX",200,0.12],["IH","上证50","CFFEX",300,0.10],["IM","中证1000","CFFEX",200,0.12],["SC","原油","INE",1000,0.10],["NR","20号胶","INE",10,0.08],["LU","低硫燃料油","INE",10,0.10],["BC","国际铜","INE",5,0.08],["SI","工业硅","GFEX",5,0.08],["LC","碳酸锂","GFEX",1,0.09]];
 var MO={AU:[2,4,6,8,10,12],M:[1,3,5,7,8,9,11,12],Y:[1,3,5,7,8,9,11,12],A:[1,3,5,7,9,11],C:[1,3,5,7,9,11],CS:[1,3,5,7,9,11],LH:[1,3,5,7,9,11],SR:[1,3,5,7,9,11],CF:[1,3,5,7,9,11],OI:[1,3,5,7,9,11],RM:[1,3,5,7,8,9,11],AP:[1,3,4,5,10,11,12],CJ:[1,3,5,7,9,12],PK:[1,3,4,10,11,12],IF:[1,3,5,7,9,11],IC:[1,3,5,7,9,11],IH:[1,3,5,7,9,11],IM:[1,3,5,7,9,11]};
-var RI=60000;
 function GM(v){return MO[v]||[1,2,3,4,5,6,7,8,9,10,11,12]}
 function CC(v,y,m){return v+(y%100)+("0"+m).slice(-2)}
 function fmt(n){return(n==null||isNaN(n))?"--":Number(n).toFixed(2)}
 function fw(n){if(n==null||isNaN(n))return"--";return n>=10000?(n/10000).toFixed(1)+"万":Math.round(n).toLocaleString()}
 function show(msg,tp){var e=document.getElementById("statusBar");if(e)e.innerHTML='<span class="status-dot status-'+tp+'"></span>'+msg}
-function err(msg){var e=document.getElementById("app");if(e)e.innerHTML='<div class="empty-state"><div class="empty-icon">⚠️</div><div class="empty-text">'+msg+"</div></div>"}
 
 function render(items){
   var ap=document.getElementById("app");if(!ap)return;
-  if(!items||!items.length){err("暂无数据");return;}
-  ap.innerHTML="";
-  var g={},ek=Object.keys(EX);ek.forEach(function(k){g[k]=[]});
+  ap.innerHTML="";var g={},ek=Object.keys(EX);ek.forEach(function(k){g[k]=[]});
   items.forEach(function(it){if(g[it.e])g[it.e].push(it)});
   ek.forEach(function(k){g[k].sort(function(a,b){return b.o-a.o})});
   ek.forEach(function(k){
@@ -50,52 +69,46 @@ function render(items){
     var sec=document.createElement("div");sec.className="exchange-section";
     var h=document.createElement("div");h.className="exchange-header";h.style.borderLeftColor=ex.co;
     h.innerHTML='<span class="exchange-name" style="color:'+ex.co+'">'+ex.n+'</span><span class="exchange-count">'+its.length+"个品种</span>";
-    sec.appendChild(h);
-    var gr=document.createElement("div");gr.className="card-grid";
+    sec.appendChild(h);var gr=document.createElement("div");gr.className="card-grid";
     its.forEach(function(it){
       var ca=document.createElement("div");ca.className="futures-card";ca.style.setProperty("--ex-color",ex.co);
       var cl="",sy="—";if(it.c>0){cl="up";sy="▲"}else if(it.c<0){cl="down";sy="▼"}
-      ca.innerHTML='<div class="card-top"><span class="card-variety">'+it.n+'</span><span class="card-code">'+it.d+'</span></div><div class="card-bottom"><div class="card-left"><div class="card-price '+cl+'">'+fmt(it.p)+'</div><div class="card-change '+cl+'">'+sy+" "+Math.abs(it.c).toFixed(2)+'%</div></div><div class="card-right"><div class="card-info"><span>持仓量</span><strong>'+fw(it.o)+'</strong></div><div class="card-info"><span>保证金率</span><strong>'+(it.r*100).toFixed(0)+'%</strong></div><div class="card-info card-margin"><span>每手保证金</span><strong>'+fw(it.p*it.m*it.r)+'元</strong></div></div></div>";
+      ca.innerHTML='<div class="card-top"><span class="card-variety">'+it.n+'</span><span class="card-code">'+it.d+'</span></div><div class="card-bottom"><div class="card-left"><div class="card-price '+cl+'">'+fmt(it.p)+'</div><div class="card-change '+cl+'">'+sy+" "+Math.abs(it.c).toFixed(2)+'%</div></div><div class="card-right"><div class="card-info"><span>持仓量</span><strong>'+fw(it.o)+'</strong></div><div class="card-info"><span>保证金率</span><strong>"+(it.r*100).toFixed(0)+'%</strong></div><div class="card-info card-margin"><span>每手保证金</span><strong>'+fw(it.p*it.m*it.r)+'元</strong></div></div></div>";
       gr.appendChild(ca);
-    });
-    sec.appendChild(gr);ap.appendChild(sec);
+    });sec.appendChild(gr);ap.appendChild(sec);
   });
+  show(items.length+"个主力合约 · 参考结算价","success");
 }
 
+function processData(raw){
+  if(!raw||!raw.length)return;
+  var items=[];
+  FC.forEach(function(c){
+    var best=null,bo=0,ms=GM(c[0]),d=new Date(),y=d.getFullYear()%100,cm=d.getMonth()+1,idx=0;
+    while(idx<ms.length&&ms[idx]<=cm)idx++;if(idx>=ms.length){idx=0;y++}
+    for(var j=0;j<4;j++){
+      if(idx>=ms.length){idx=0;y++}var cd=CC(c[0],y,ms[idx]);idx++;
+      var row=raw.find(function(x){return x.c===cd});if(!row)continue;
+      if(row.o>bo&&row.p>0){bo=row.o;best={d:cd,p:row.p,o:row.o,c:row.ch||0,e:c[2],m:c[3],r:c[4],n:c[1]};}
+    }
+    if(best&&best.p>0)items.push(best);
+  });
+  if(items.length>0)render(items);else show("暂无数据","error");
+}
+
+// Try to load fresh data, fallback to embedded
 function refresh(){
-  show("正在获取数据...","loading");
-  var ap=document.getElementById("app");
-  if(ap)ap.innerHTML='<div class="empty-state"><div class="empty-icon">⏳</div><div class="empty-text">正在加载数据...</div></div>';
+  show("加载中...","loading");
   var xhr=new XMLHttpRequest();
   xhr.open("GET","data/data.json?"+Date.now(),true);
   xhr.onreadystatechange=function(){
     if(xhr.readyState!==4)return;
-    if(xhr.status===200){
-      try{
-        var raw=JSON.parse(xhr.responseText);
-        if(!raw||!raw.length){err("数据为空");return;}
-        var items=[];
-        FC.forEach(function(c){
-          var best=null,bo=0;
-          var ms=GM(c[0]),d=new Date(),y=d.getFullYear()%100,cm=d.getMonth()+1,i=0;
-          while(i<ms.length&&ms[i]<=cm)i++;if(i>=ms.length){i=0;y++}
-          for(var j=0;j<4;j++){
-            if(i>=ms.length){i=0;y++}
-            var cd=CC(c[0],y,ms[i]);i++;
-            var row=raw.find(function(x){return x.c===cd});
-            if(!row)continue;
-            var pr=row.p,oi=row.o,ch=row.ch||0;
-            if(oi>bo&&pr>0){bo=oi;best={d:cd,p:pr,o:oi,c:ch,e:c[2],m:c[3],r:c[4],n:c[1]};}
-          }
-          if(best&&best.p>0)items.push(best);
-        });
-        if(items.length>0){render(items);show(items.length+"个主力合约 · 参考结算价","success");}
-        else err("暂无符合条件的数据");
-      }catch(e){err("数据解析失败:"+e.message)}
-    }else{err("数据加载失败");}
+    if(xhr.status===200){try{processData(JSON.parse(xhr.responseText));return}catch(e){}}
+    processData(EMBEDDED_DATA);
   };
   xhr.send();
 }
-document.addEventListener("DOMContentLoaded",function(){refresh();setInterval(refresh,RI);document.getElementById("refreshBtn").addEventListener("click",refresh)});
-console.log("Loaded");
-</script></body></html>
+document.addEventListener("DOMContentLoaded",function(){refresh();setInterval(refresh,60000);document.getElementById("refreshBtn").addEventListener("click",refresh)});
+</script>
+</body>
+</html>
