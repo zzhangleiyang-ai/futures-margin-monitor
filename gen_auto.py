@@ -26,7 +26,7 @@ for ex in ex_order:
         rp = int(rate*100)
         ms = f'{ml/10000:.1f}万元' if ml>=10000 else f'{ml:.0f}元'
         sym = x["contract"]
-        html += '<div class="cd" style="border-color:'+ex_colors[ex]+'" data-code="'+sym+'" data-mult="'+str(m)+'" data-rate="'+str(rate)+'"><div class="ct"><span class="cn">'+name+'</span><span class="ck">'+code+'</span></div><div class="cb"><div class="cp" id="p_'+sym+'">'+ps+'</div><div class="cr"><div class="ci"><span>持仓</span><strong class="ib" id="oi_'+sym+'">'+ois+'</strong></div><div class="ci"><span>保证金</span><strong class="ib" style="color:'+ex_colors[ex]+'" id="mg_'+sym+'">'+str(rp)+'%</strong></div><div class="ci"><span>每手</span><strong class="im" id="ml_'+sym+'">'+ms+'</strong></div></div></div></div>'
+        html += '<div class="cd" style="border-color:'+ex_colors[ex]+'" data-code="'+sym+'" data-mult="'+str(m)+'" data-rate="'+str(rate)+'"><div class="ct"><span class="cn">'+name+'</span><span class="ck">'+code+'</span><span class="ck" style="font-size:11px;color:#64748b">['+sym+']</span></div><div class="cb"><div class="cp" id="p_'+sym+'">'+ps+'</div><div class="cr"><div class="ci"><span>持仓</span><strong class="ib" id="oi_'+sym+'">'+ois+'</strong></div><div class="ci"><span>保证金</span><strong class="ib" style="color:'+ex_colors[ex]+'" id="mg_'+sym+'">'+str(rp)+'%</strong></div><div class="ci"><span>每手</span><strong class="im" id="ml_'+sym+'">'+ms+'</strong></div></div></div></div>'
     html += '</div></div>'
 html += '</div><div class="ft">实时行情来源:新浪财经 每10秒自动更新 价格自动刷新，保证金率同步计算</div>'
 html += '<script>'
