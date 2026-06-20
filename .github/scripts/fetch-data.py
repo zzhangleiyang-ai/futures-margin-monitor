@@ -1,62 +1,51 @@
-import json, requests, sys
+import json, requests
 from datetime import datetime
-
-now = datetime.now(); m = now.month; yr = now.year % 100
-
-# All varieties
-varieties = ['RB','HC','CU','AL','ZN','PB','NI','SN','AU','AG','BU','RU','SP','SS','BR','I','J','JM','M','Y','A','B','P','C','CS','L','PP','V','EG','EB','JD','LH','PG','SR','CF','OI','RM','MA','TA','FG','SA','UR','AP','CJ','SF','SM','PF','PK','IF','IC','IH','IM','SC','NR','LU','BC','SI','LC']
-
-all_codes = []
-for v in varieties:
-    for j in range(4):
-        nxt = m + 1 + j; y = yr
-        if nxt > 12: nxt -= 12; y += 1
-        all_codes.append(v + str(y) + str(nxt).zfill(2))
+now = datetime.now(); m = now.month; y = now.year % 100
+code = "RB" + str(y) + str(m+1).zfill(2)
+print("Testing contract:", code)
 
 results = []
-headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36','Referer':'https://quote.eastmoney.com/'}
+ua = {"User-Agent": "Mozilla/5.0", "Referer": "https://quote.eastmoney.com/"}
 
-# Try East Money with different market codes
-for market in ['1.', '128.', '0.', '100.']:
-    if results: break
-    batch_size = 100
-    for i in range(0, len(all_codes), batch_size):
-        batch = all_codes[i:i+batch_size]
-        secids = market + (',' + market).join(batch)
-        secids = secids.rstrip('.')
-        url = 'https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=f2,f3,f4,f5,f8,f12,f14&secids=' + secids
-        try:
-            r = requests.get(url, headers=headers, timeout=8).json()
-            if r.get('data') and r['data'].get('diff'):
-                for item in r['data']['diff']:
-                    if item.get('f2') and item.get('f12'):
-                        results.append({'c':item['f12'],'p':item['f2'],'o':int(item.get('f8',0)),'r':0.07,'ch':item.get('f3',0)})
-        except:
-            pass
-        if len([x for x in results if x.get('c')]) > 50: break
+# Try East Money with various formats
+formats = ["1." + code, "128." + code, "0." + code, code, "hf_" + code]
+for secid in formats:
+    try:
+        url = "https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=f2,f3,f4,f5,f8,f12,f14&secids=" + secid
+        r = requests.get(url, headers=ua, timeout=5).json()
+        rc = r.get("rc", -1)
+        if rc == 0 and r.get("data"):
+            data = r["data"]
+            price = data.get("f2")
+            oi = data.get("f8")
+            name = data.get("f14")
+            print("OK: format=" + secid + " name=" + str(name) + " price=" + str(price) + " oi=" + str(oi))
+            if price:
+                results.append({"c": code, "p": price, "o": oi or 0, "r": 0.07})
+                break
+        else:
+            print("FAIL: format=" + secid + " rc=" + str(rc))
+    except Exception as e:
+        print("ERR: format=" + secid + " " + str(e)[:50])
 
-# Try Sina if no results
+# Try Sina as fallback
 if not results:
-    h2 = {'User-Agent':'Mozilla/5.0','Referer':'https://finance.sina.com.cn/'}
-    batch_size = 50
-    for i in range(0, len(all_codes), batch_size):
-        batch = all_codes[i:i+batch_size]
-        codes = ','.join(['hf_'+c for c in batch])
-        try:
-            r = requests.get('https://hq.sinajs.cn/list=' + codes, headers=h2, timeout=8)
-            r.encoding = 'gbk'
-            for line in r.text.split(';'):
-                if '=' in line:
-                    parts = line.split('=')
-                    vn = parts[0].strip()
-                    if vn.startswith('var hq_str_hf_'):
-                        code = vn.replace('var hq_str_hf_','')
-                        vals = parts[1].strip().strip('"').split(',')
-                        if len(vals) > 10 and vals[3]:
-                            results.append({'c':code,'p':float(vals[3]),'o':int(vals[9]) if vals[9] else 0,'r':0.07,'ch':0})
-        except:
-            pass
-        if results: break
+    ua2 = {"User-Agent": "Mozilla/5.0", "Referer": "https://finance.sina.com.cn/"}
+    try:
+        r = requests.get("https://hq.sinajs.cn/list=hf_" + code, headers=ua2, timeout=5)
+        r.encoding = "gbk"
+        if '"' in r.text:
+            parts = r.text.split('"')
+            if len(parts) > 1:
+                vals = parts[1].split(",")
+                if len(vals) > 10 and vals[3]:
+                    price = float(vals[3])
+                    oi = int(vals[9]) if vals[9] else 0
+                    print("OK: sina price=" + str(price) + " oi=" + str(oi))
+                    results.append({"c": code, "p": price, "o": oi, "r": 0.07})
+    except Exception as e:
+        print("SINA ERR: " + str(e)[:50])
 
-print(json.dumps({'fetched':len(results)}))
-with open('data.json','w') as f: json.dump(results, f)
+print("Results:", len(results))
+with open("data.json", "w") as f:
+    json.dump(results, f)
