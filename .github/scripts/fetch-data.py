@@ -80,6 +80,7 @@ DEFAULT_PRODUCTS = [
     {"code": "EC", "name": "集运欧线", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 50},
     {"code": "LC", "name": "碳酸锂", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 1},
     {"code": "PS", "name": "多晶硅", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 3},
+    {"code": "PT", "name": "铂", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 1000},
     {"code": "SI", "name": "工业硅", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 5},
 ]
 
