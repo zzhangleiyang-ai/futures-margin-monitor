@@ -12,110 +12,79 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Install Python dependencies
-        run: pip install requests beautifulsoup4 lxml
+        run: pip install requests
       
       - name: Fetch futures data
         run: |
-          python -c "
-import json, urllib.request, re, sys
-
-# All futures varieties to query
-FC = [
-  ('RB','SHFE'),('HC','SHFE'),('CU','SHFE'),('AL','SHFE'),('ZN','SHFE'),
-  ('PB','SHFE'),('NI','SHFE'),('SN','SHFE'),('AU','SHFE'),('AG','SHFE'),
-  ('BU','SHFE'),('RU','SHFE'),('SP','SHFE'),('SS','SHFE'),('BR','SHFE'),
-  ('I','DCE'),('J','DCE'),('JM','DCE'),('M','DCE'),('Y','DCE'),
-  ('A','DCE'),('B','DCE'),('P','DCE'),('C','DCE'),('CS','DCE'),
-  ('L','DCE'),('PP','DCE'),('V','DCE'),('EG','DCE'),('EB','DCE'),
-  ('JD','DCE'),('LH','DCE'),('PG','DCE'),
-  ('SR','CZCE'),('CF','CZCE'),('OI','CZCE'),('RM','CZCE'),('MA','CZCE'),
-  ('TA','CZCE'),('FG','CZCE'),('SA','CZCE'),('UR','CZCE'),('AP','CZCE'),
-  ('CJ','CZCE'),('SF','CZCE'),('SM','CZCE'),('PF','CZCE'),('PK','CZCE'),
-  ('IF','CFFEX'),('IC','CFFEX'),('IH','CFFEX'),('IM','CFFEX'),
-  ('SC','INE'),('NR','INE'),('LU','INE'),('BC','INE'),
-  ('SI','GFEX'),('LC','GFEX')
-]
-
-# Build contract codes for next 4 months
+          python3 -c "
+import json, requests, sys
 from datetime import datetime
-now = datetime.now()
-current_month = now.month
-year = now.year % 100
 
+FC = [('RB','SHFE'),('HC','SHFE'),('CU','SHFE'),('AL','SHFE'),('ZN','SHFE'),('PB','SHFE'),('NI','SHFE'),('SN','SHFE'),('AU','SHFE'),('AG','SHFE'),('BU','SHFE'),('RU','SHFE'),('SP','SHFE'),('SS','SHFE'),('BR','SHFE'),('I','DCE'),('J','DCE'),('JM','DCE'),('M','DCE'),('Y','DCE'),('A','DCE'),('B','DCE'),('P','DCE'),('C','DCE'),('CS','DCE'),('L','DCE'),('PP','DCE'),('V','DCE'),('EG','DCE'),('EB','DCE'),('JD','DCE'),('LH','DCE'),('PG','DCE'),('SR','CZCE'),('CF','CZCE'),('OI','CZCE'),('RM','CZCE'),('MA','CZCE'),('TA','CZCE'),('FG','CZCE'),('SA','CZCE'),('UR','CZCE'),('AP','CZCE'),('CJ','CZCE'),('SF','CZCE'),('SM','CZCE'),('PF','CZCE'),('PK','CZCE'),('IF','CFFEX'),('IC','CFFEX'),('IH','CFFEX'),('IM','CFFEX'),('SC','INE'),('NR','INE'),('LU','INE'),('BC','INE'),('SI','GFEX'),('LC','GFEX')]
+
+now = datetime.now()
+cm = now.month
+yr = now.year % 100
 all_codes = []
 for vid, ex in FC:
     for j in range(4):
-        m = current_month + 1 + j
-        y = year
-        if m > 12:
-            m -= 12
-            y += 1
+        m = cm + 1 + j
+        y = yr
+        if m > 12: m -= 12; y += 1
         code = f'{vid}{y}{m:02d}'
         all_codes.append(code)
 
 results = []
-batch_size = 200
+headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36','Referer':'https://quote.eastmoney.com/'}
 
-def try_eastmoney(codes_batch):
-    secids = '1.' + ',1.'.join(codes_batch)
+# Method 1: Try East Money
+for i in range(0, len(all_codes), 200):
+    batch = all_codes[i:i+200]
+    secids = '1.' + ',1.'.join(batch)
     url = f'https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=f2,f3,f4,f5,f8,f12,f14&secids={secids}'
-    req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0','Referer':'https://quote.eastmoney.com/'})
     try:
-        resp = urllib.request.urlopen(req, timeout=10).read()
-        data = json.loads(resp)
-        if data.get('data') and data['data'].get('diff'):
-            for item in data['data']['diff']:
-                results.append({'c':item.get('f12',''),'p':item.get('f2'),'o':item.get('f8'),'ch':item.get('f3'),'ex':'eastmoney'})
-    except:
-        pass
+        r = requests.get(url, headers=headers, timeout=10).json()
+        if r.get('data') and r['data'].get('diff'):
+            for item in r['data']['diff']:
+                if item.get('f2'):
+                    results.append({'c':item['f12'],'p':item['f2'],'o':item.get('f8',0),'ch':item.get('f3',0)})
+    except: pass
+    if len([x for x in results if x.get('c')]) > 0: break
 
-def try_sina(codes_batch):
-    codes_str = ','.join(['hf_'+c for c in codes_batch])
-    url = f'https://hq.sinajs.cn/list={codes_str}'
-    req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0','Referer':'https://finance.sina.com.cn/'})
-    try:
-        resp = urllib.request.urlopen(req, timeout=10).read().decode('gbk')
-        for line in resp.split(';'):
-            if '=' in line:
-                parts = line.split('=')
-                var_name = parts[0].strip()
-                if var_name.startswith('var hq_str_hf_'):
-                    code = var_name.replace('var hq_str_hf_','')
-                    vals = parts[1].strip().strip('\"').split(',')
-                    if len(vals) >= 12:
-                        results.append({'c':code,'p':float(vals[3]) if vals[3] else 0,'o':int(vals[9]) if vals[9] else 0,'ch':0,'ex':'sina'})
-    except:
-        pass
+if len([x for x in results if x.get('c')]) == 0:
+    # Method 2: Try Sina
+    headers2 = {'User-Agent':'Mozilla/5.0','Referer':'https://finance.sina.com.cn/'}
+    for i in range(0, len(all_codes), 50):
+        batch = all_codes[i:i+50]
+        codes_str = ','.join(['hf_'+c for c in batch])
+        url = f'https://hq.sinajs.cn/list={codes_str}'
+        try:
+            r = requests.get(url, headers=headers2, timeout=10)
+            r.encoding = 'gbk'
+            for line in r.text.split(';'):
+                if '=' in line:
+                    p = line.split('=')
+                    vn = p[0].strip()
+                    if vn.startswith('var hq_str_hf_'):
+                        code = vn.replace('var hq_str_hf_','')
+                        vals = p[1].strip().strip('\"').split(',')
+                        if len(vals) >= 12 and vals[3]:
+                            results.append({'c':code,'p':float(vals[3]),'o':int(vals[9]) if vals[9] else 0,'ch':0})
+        except: pass
+        if len([x for x in results if x.get('c')]) > 0: break
 
-# Try East Money API
-for i in range(0, len(all_codes), batch_size):
-    batch = all_codes[i:i+batch_size]
-    try_eastmoney(batch)
-
-# If no results, try Sina Finance
-if not results:
-    batch_size_sina = 50
-    for i in range(0, len(all_codes), batch_size_sina):
-        batch = all_codes[i:i+batch_size_sina]
-        try_sina(batch)
-
-# Save results
-with open('data.json', 'w') as f:
-    json.dump(results, f)
 print(f'Fetched {len(results)} contracts')
+with open('data.json','w') as f: json.dump(results, f)
 "
       
-      - name: Save to repository
+      - name: Save and commit
         run: |
           mkdir -p data
-          ls -la data.json 2>/dev/null && mv data.json data/ || echo '[]' > data/data.json
-          echo "Data file: $(wc -c < data/data.json) bytes"
-          head -c 200 data/data.json
-      
-      - name: Commit and push
-        run: |
+          if [ -f data.json ]; then mv data.json data/; else echo '[]' > data/data.json; fi
+          echo "Size: $(wc -c < data/data.json) bytes"
+          head -c 500 data/data.json
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add data/data.json
-          git diff --staged --quiet || git commit -m "Update futures data $(date +%Y-%m-%d_%H:%M)"
+          git diff --staged --quiet || git commit -m "Update futures data"
           git push
