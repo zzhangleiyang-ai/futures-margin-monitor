@@ -1,0 +1,62 @@
+﻿name: Fetch Futures Data
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Fetch futures data from East Money
+        run: |
+          # Build secids for East Money API
+          # SHFE(1): RB,HC,CU,AL,ZN,PB,NI,SN,AU,AG,BU,RU,SP,SS,BR
+          # DCE(2): I,J,JM,M,Y,A,B,P,C,CS,L,PP,V,EG,EB,JD,LH,PG
+          # CZCE(3): SR,CF,OI,RM,MA,TA,FG,SA,UR,AP,CJ,SF,SM,PF,PK
+          # CFFEX(4): IF,IC,IH,IM
+          # INE(5): SC,NR,LU,BC
+          # GFEX(6): SI,LC
+          
+          SECIDS=""
+          CONTRACTS="RB,HC,CU,AL,ZN,PB,NI,SN,AU,AG,BU,RU,SP,SS,BR"
+          for c in $(echo $CONTRACTS | tr ',' ' '); do
+            for mo in $(date +%y%m); do
+              m=$((10#$mo))
+              m1=$((m+1))
+              m2=$((m+2))
+              m3=$((m+3))
+              for mm in $m $m1 $m2 $m3; do
+                yr=$((mm/100))
+                mt=$((mm%100))
+                if [ $mt -gt 12 ]; then mt=1; yr=$((yr+1)); fi
+                code=$(printf "%s%02d%02d" "$c" "$yr" "$mt")
+                SECIDS="$SECIDS,1.$code"
+              done
+            done
+          done
+          
+          # Add all varieties for all exchanges
+          echo "Secids length: ${#SECIDS}"
+          
+          # Fetch data (no callback -> returns JSON)
+          curl -s "https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=f2,f3,f4,f5,f8,f10,f12,f14,f15,f16,f17,f18&secids=${SECIDS:1}" -o data.json
+          
+          echo "Data fetched: $(wc -c < data.json) bytes"
+      
+      - name: Save to repository
+        run: |
+          mkdir -p data
+          ls -la data.json 2>/dev/null && mv data.json data/ || echo '{"data":{},"time":"'$(date -Iseconds)'"}' > data/data.json
+          ls -la data/
+      
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/data.json
+          git diff --staged --quiet || git commit -m "Update futures data $(date +%Y-%m-%d_%H:%M)"
+          git push
