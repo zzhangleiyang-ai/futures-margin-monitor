@@ -1,24 +1,40 @@
-name: Fetch Futures Data
+name: Fetch Futures Margin Data
+
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/10 * * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-futures-margin-data
+  cancel-in-progress: true
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    env:
-      TQ_USER: ${{ secrets.TQ_USER }}
-      TQ_PASS: ${{ secrets.TQ_PASS }}
     steps:
-    - uses: actions/checkout@v4
-    - run: pip install tqsdk
-    - run: python3 .github/scripts/fetch-data.py
-    - run: |
-        mkdir -p data
-        if [ -f data.json ]; then mv data.json data/; else echo '[]' > data/data.json; fi
-        git config user.name "github-actions"
-        git config user.email "github-actions@github.com"
-        git add data/data.json
-        git diff --staged --quiet || git commit -m "Update futures data"
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-        git push
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install quote dependency
+        run: python -m pip install --upgrade tqsdk
+
+      - name: Build data file
+        env:
+          TQ_USER: ${{ secrets.TQ_USER }}
+          TQ_PASS: ${{ secrets.TQ_PASS }}
+        run: python .github/scripts/fetch-data.py
+
+      - name: Commit data update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/data.json
+          git diff --staged --quiet || git commit -m "Update futures margin data"
+          git push

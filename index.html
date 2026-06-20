@@ -1,11 +1,505 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>国内期货主力 · 交易所保证金监控</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:sans-serif;background:#f5f7fa;color:#1f2937}.hdr{background:linear-gradient(135deg,#1e293b,#334155);color:#fff;padding:16px 24px}.hin{max-width:1400px;margin:0 auto}.hti{font-size:18px;font-weight:600}.hts{font-size:12px;color:#94a3b8}#sb{max-width:1400px;margin:12px auto 0;padding:0 24px;font-size:13px;color:#64748b}.sd{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:6px}.app{max-width:1400px;margin:0 auto;padding:16px 24px 40px}.sec{margin-bottom:20px}.eh{display:flex;align-items:center;padding:12px 16px;border-left:4px solid;background:#fff;border-radius:10px 10px 0 0}.en{font-size:16px;font-weight:700;margin-right:12px}.ec{font-size:12px;color:#9ca3af}.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}.fc{background:#fff;border-radius:0 0 10px 10px;padding:14px 16px;border:1px solid #f0f0f0;border-top:2px solid var(--c)}.ct{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}.cv{font-size:15px;font-weight:600}.cc{font-size:12px;color:#9ca3af;margin-left:6px}.cb{display:flex;justify-content:space-between;align-items:flex-start}.cp{font-size:22px;font-weight:700}.cr{text-align:right;min-width:120px}.ci{font-size:12px;color:#6b7280;margin-bottom:4px;display:flex;justify-content:space-between;gap:6px}.cib{color:#374151;font-weight:600}.cim{color:var(--c);font-size:14px;font-weight:600}.ft{max-width:1400px;margin:0 auto;padding:16px 24px 32px;text-align:center;font-size:12px;color:#9ca3af;border-top:1px solid #e5e7eb}@media(max-width:768px){.cg{grid-template-columns:1fr}}</style></head><body><div class="hdr"><div class="hin"><span class="hti">📈 期货保证金监控</span><span class="hts">数据时间：2026-06-20</span></div></div><div id="sb"><span class="sd"></span>加载中...</div><div class="app" id="app"></div><div class="ft">数据来源：天勤量化 · 每分钟自动刷新</div><script>
-var ED=[{"c": "RB", "p": 3131.0, "o": 1713734, "r": 0.07}, {"c": "HC", "p": 3349.0, "o": 1536993, "r": 0.07}, {"c": "CU", "p": 104780.0, "o": 112863, "r": 0.08}, {"c": "AL", "p": 23980.0, "o": 206338, "r": 0.08}, {"c": "ZN", "p": 24770.0, "o": 49172, "r": 0.08}, {"c": "PB", "p": 16400.0, "o": 48590, "r": 0.08}, {"c": "NI", "p": 135840.0, "o": 101450, "r": 0.1}, {"c": "SN", "p": 414330.0, "o": 27025, "r": 0.1}, {"c": "AU", "p": 937.96, "o": 167662, "r": 0.08}, {"c": "AG", "p": 16493.0, "o": 245422, "r": 0.09}, {"c": "BU", "p": 3943.0, "o": 285959, "r": 0.1}, {"c": "RU", "p": 17785.0, "o": 154652, "r": 0.08}, {"c": "SP", "p": 4866.0, "o": 315835, "r": 0.08}, {"c": "SS", "p": 15170.0, "o": 115912, "r": 0.1}, {"c": "BR", "p": 12955.0, "o": 27224, "r": 0.08}, {"c": "I", "p": 747.0, "o": 597478, "r": 0.11}, {"c": "J", "p": 2019.5, "o": 70619, "r": 0.11}, {"c": "JM", "p": 1271.0, "o": 476841, "r": 0.11}, {"c": "M", "p": 2942.0, "o": 2038966, "r": 0.07}, {"c": "Y", "p": 8353.0, "o": 587653, "r": 0.07}, {"c": "A", "p": 4705.0, "o": 240460, "r": 0.08}, {"c": "B", "p": 3537.0, "o": 52452, "r": 0.08}, {"c": "P", "p": 9301.0, "o": 513210, "r": 0.08}, {"c": "C", "p": 2329.0, "o": 855611, "r": 0.07}, {"c": "CS", "p": 2698.0, "o": 85367, "r": 0.07}, {"c": "L", "p": 7206.0, "o": 415152, "r": 0.07}, {"c": "PP", "p": 7647.0, "o": 524585, "r": 0.07}, {"c": "V", "p": 4616.0, "o": 1256297, "r": 0.07}, {"c": "EG", "p": 4209.0, "o": 292807, "r": 0.08}, {"c": "EB", "p": 7790.0, "o": 103832, "r": 0.08}, {"c": "JD", "p": 4514.0, "o": 362172, "r": 0.08}, {"c": "LH", "p": 11650.0, "o": 214118, "r": 0.08}, {"c": "PG", "p": 4790.0, "o": 19596, "r": 0.08}, {"c": "SR", "p": 5320.0, "o": 727155, "r": 0.07}, {"c": "CF", "p": 16010.0, "o": 563548, "r": 0.07}, {"c": "OI", "p": 9685.0, "o": 277091, "r": 0.08}, {"c": "RM", "p": 2286.0, "o": 920784, "r": 0.07}, {"c": "MA", "p": 2566.0, "o": 715618, "r": 0.08}, {"c": "TA", "p": 5868.0, "o": 1043761, "r": 0.07}, {"c": "FG", "p": 978.0, "o": 1744848, "r": 0.08}, {"c": "SA", "p": 1127.0, "o": 1403465, "r": 0.08}, {"c": "UR", "p": 1813.0, "o": 255292, "r": 0.08}, {"c": "AP", "p": 7618.0, "o": 98474, "r": 0.08}, {"c": "CJ", "p": 8625.0, "o": 141100, "r": 0.08}, {"c": "SF", "p": 5694.0, "o": 222246, "r": 0.1}, {"c": "SM", "p": 5856.0, "o": 465726, "r": 0.1}, {"c": "PF", "p": 7348.0, "o": 142718, "r": 0.08}, {"c": "PK", "p": 8344.0, "o": 206223, "r": 0.08}, {"c": "IF", "p": 4862.8, "o": 147088, "r": 0.12}, {"c": "IC", "p": 8517.4, "o": 162104, "r": 0.12}, {"c": "IH", "p": 2899.8, "o": 64125, "r": 0.12}, {"c": "IM", "p": 8510.0, "o": 204527, "r": 0.12}, {"c": "SC", "p": 508.5, "o": 53313, "r": 0.1}, {"c": "NR", "p": 15475.0, "o": 65118, "r": 0.08}, {"c": "LU", "p": 3954.0, "o": 48837, "r": 0.1}, {"c": "BC", "p": 92970.0, "o": 10380, "r": 0.08}, {"c": "SI", "p": 8560.0, "o": 258535, "r": 0.09}, {"c": "LC", "p": 160500.0, "o": 450964, "r": 0.09}];
-var EX={SHFE:{n:"上期所",c:"#2563eb"},DCE:{n:"大商所",c:"#059669"},CZCE:{n:"郑商所",c:"#d97706"},CFFEX:{n:"中金所",c:"#7c3aed"},INE:{n:"能源中心",c:"#0891b2"},GFEX:{n:"广期所",c:"#db2777"}};
-var FC=[["IM","中证1000","CFFEX",200,0.12],["IC","中证500","CFFEX",200,0.12],["IF","沪深300","CFFEX",300,0.12],["IH","上证50","CFFEX",300,0.12],["AU","沪金","SHFE",1000,0.08],["AG","沪银","SHFE",15,0.09],["CU","沪铜","SHFE",5,0.08],["AL","沪铝","SHFE",5,0.08],["ZN","沪锌","SHFE",5,0.08],["PB","沪铅","SHFE",5,0.08],["NI","沪镍","SHFE",1,0.10],["RB","螺纹钢","SHFE",10,0.07],["HC","热卷","SHFE",10,0.07],["RU","橡胶","SHFE",10,0.08],["BU","沥青","SHFE",10,0.10],["SP","纸浆","SHFE",10,0.08],["SS","不锈钢","SHFE",5,0.10],["I","铁矿石","DCE",100,0.11],["J","焦炭","DCE",100,0.11],["JM","焦煤","DCE",60,0.11],["M","豆粕","DCE",10,0.07],["Y","豆油","DCE",10,0.07],["A","豆一","DCE",10,0.08],["B","豆二","DCE",10,0.08],["P","棕榈油","DCE",10,0.08],["C","玉米","DCE",10,0.07],["CS","淀粉","DCE",10,0.07],["L","聚乙烯","DCE",5,0.07],["PP","聚丙烯","DCE",5,0.07],["V","聚氯乙烯","DCE",5,0.07],["EG","乙二醇","DCE",10,0.08],["EB","苯乙烯","DCE",5,0.08],["JD","鸡蛋","DCE",5,0.08],["LH","生猪","DCE",16,0.08],["SR","白糖","CZCE",10,0.07],["CF","棉花","CZCE",5,0.07],["OI","菜油","CZCE",10,0.08],["RM","菜粕","CZCE",10,0.07],["MA","甲醇","CZCE",10,0.08],["TA","PTA","CZCE",5,0.07],["FG","玻璃","CZCE",20,0.08],["SA","纯碱","CZCE",20,0.08],["UR","尿素","CZCE",20,0.08],["AP","苹果","CZCE",10,0.08],["CJ","红枣","CZCE",5,0.08],["SF","硅铁","CZCE",5,0.10],["SM","锰硅","CZCE",5,0.10],["PF","短纤","CZCE",5,0.08],["PK","花生","CZCE",5,0.08],["SC","原油","INE",1000,0.10],["NR","20号胶","INE",10,0.08],["LU","低硫燃料油","INE",10,0.10],["SI","工业硅","GFEX",5,0.09],["LC","碳酸锂","GFEX",1,0.09]];
-function fw(n){return n>=10000?(n/10000).toFixed(1)+"\u4e07":Math.round(n).toLocaleString()}
-function show(m,t){var e=document.getElementById("sb");if(e)e.innerHTML='<span class="sd"></span>'+m}
-function render(its){var ap=document.getElementById("app");if(!ap)return;ap.innerHTML="";var g={},ek=Object.keys(EX);ek.forEach(function(k){g[k]=[]});its.forEach(function(it){if(g[it.e])g[it.e].push(it)});ek.forEach(function(k){g[k].sort(function(a,b){return b.o-a.o})});ek.forEach(function(k){var ex=EX[k],items=g[k];if(!items||!items.length)return;var sec=document.createElement("div");sec.className="sec";var h=document.createElement("div");h.className="eh";h.style.borderLeftColor=ex.c;h.innerHTML='<span class="en" style="color:'+ex.c+'">'+ex.n+'</span><span class="ec">'+items.length+"个品种</span>";sec.appendChild(h);var gr=document.createElement("div");gr.className="cg";items.forEach(function(it){var ca=document.createElement("div");ca.className="fc";ca.style.setProperty("--c",ex.c);ca.innerHTML='<div class="ct"><span class="cv">'+it.n+'</span><span class="cc">'+it.d+'</span></div><div class="cb"><div class="cl"><div class="cp">'+it.p.toFixed(2)+'</div></div><div class="cr"><div class="ci"><span>持仓</span><strong class="cib">'+fw(it.o)+'</strong></div><div class="ci"><span>保证金</span><strong class="cib">'+(it.r*100).toFixed(0)+'%</strong></div><div class="ci"><span>每手</span><strong class="cim">'+fw(Math.round(it.p*it.m*it.r))+'\u5143</strong></div></div></div>";gr.appendChild(ca)});sec.appendChild(gr);ap.appendChild(sec)});show(its.length+"个主力合约","success")}
-function findMain(raw){if(!raw||!raw.length)return[];var r=[];FC.forEach(function(c){var b=null,bo=0;raw.forEach(function(d){if(d.c.indexOf(c[0])===0&&d.o>bo&&d.p>0){bo=d.o;b={d:d.c,p:d.p,o:d.o,n:c[1],e:c[2],m:c[3],r:d.r||c[4]}}});if(b&&b.o>0)r.push(b)});return r}
-function load(){show("加载中...","loading");var items=findMain(ED);if(items.length>0)render(items);else show("暂无数据","error");var x=new XMLHttpRequest();x.open("GET","data/data.json?"+Date.now(),true);x.onload=function(){if(x.status===200){try{var fd=JSON.parse(x.responseText);var fi=findMain(fd);if(fi.length>0)render(fi)}catch(e){}}};x.send()}
-load();setInterval(load,60000);
-</script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>期货保证金查询</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e2ec;
+      --panel: #ffffff;
+      --soft: #f4f7fb;
+      --brand: #1166d8;
+      --brand-soft: #e8f1ff;
+      --green: #07815f;
+      --orange: #c46a17;
+      --violet: #6a4bc3;
+      --cyan: #087f9c;
+      --rose: #c23270;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--soft);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wrap {
+      width: min(1280px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 50%;
+      background: var(--green);
+      margin-right: 7px;
+    }
+
+    .dot.warn { background: var(--orange); }
+    .dot.bad { background: #cc2b2b; }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto auto;
+      gap: 10px;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .search, select, button {
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    .search {
+      width: 100%;
+      padding: 0 14px;
+    }
+
+    select {
+      min-width: 150px;
+      padding: 0 34px 0 12px;
+    }
+
+    .refresh {
+      padding: 0 14px;
+      cursor: pointer;
+      color: #fff;
+      background: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .board {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #edf1f5;
+      text-align: right;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    th {
+      color: var(--muted);
+      background: #f8fafc;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    th:first-child, td:first-child,
+    th:nth-child(2), td:nth-child(2),
+    th:nth-child(3), td:nth-child(3) {
+      text-align: left;
+    }
+
+    tbody tr:hover {
+      background: var(--brand-soft);
+    }
+
+    .exchange {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 76px;
+    }
+
+    .swatch {
+      width: 8px;
+      height: 22px;
+      border-radius: 5px;
+      background: var(--brand);
+      flex: 0 0 auto;
+    }
+
+    .code {
+      color: var(--muted);
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .money {
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    .empty {
+      padding: 44px 16px;
+      text-align: center;
+      color: var(--muted);
+      background: var(--panel);
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 12px;
+      padding: 18px 0 32px;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      .status { align-items: flex-start; text-align: left; }
+
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .board {
+        overflow-x: auto;
+      }
+
+      table {
+        min-width: 760px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div>
+        <h1>期货保证金查询</h1>
+        <div class="subtitle">主力连续合约行情 · 交易所标准保证金估算</div>
+      </div>
+      <div class="status">
+        <div><span id="statusDot" class="dot warn"></span><span id="statusText">正在加载</span></div>
+        <div id="updatedAt">--</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="toolbar" aria-label="查询条件">
+      <input id="query" class="search" type="search" placeholder="输入品种、代码或交易所" autocomplete="off">
+      <select id="exchange">
+        <option value="">全部交易所</option>
+      </select>
+      <button id="refresh" class="refresh" type="button">刷新数据</button>
+    </section>
+
+    <section class="stats" aria-label="数据概览">
+      <div class="stat"><span>可查询品种</span><strong id="totalCount">0</strong></div>
+      <div class="stat"><span>当前显示</span><strong id="visibleCount">0</strong></div>
+      <div class="stat"><span>最高每手保证金</span><strong id="maxMargin">--</strong></div>
+    </section>
+
+    <section class="board" aria-label="保证金列表">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 130px;">交易所</th>
+            <th style="width: 150px;">品种</th>
+            <th style="width: 90px;">代码</th>
+            <th>最新价</th>
+            <th>合约乘数</th>
+            <th>保证金比例</th>
+            <th>每手保证金</th>
+            <th>持仓量</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <tr><td colspan="8" class="empty">正在加载数据</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="wrap">数据文件每 10 分钟由 GitHub Actions 更新；交易所临时调整保证金时，以交易所公告为准。</footer>
+
+  <script>
+    const EXCHANGE_COLORS = {
+      SHFE: "#1166d8",
+      DCE: "#07815f",
+      CZCE: "#c46a17",
+      CFFEX: "#6a4bc3",
+      INE: "#087f9c",
+      GFEX: "#c23270"
+    };
+
+    const state = {
+      items: [],
+      payload: null,
+      query: "",
+      exchange: ""
+    };
+
+    const els = {
+      query: document.getElementById("query"),
+      exchange: document.getElementById("exchange"),
+      refresh: document.getElementById("refresh"),
+      rows: document.getElementById("rows"),
+      totalCount: document.getElementById("totalCount"),
+      visibleCount: document.getElementById("visibleCount"),
+      maxMargin: document.getElementById("maxMargin"),
+      statusDot: document.getElementById("statusDot"),
+      statusText: document.getElementById("statusText"),
+      updatedAt: document.getElementById("updatedAt")
+    };
+
+    function numberValue(value) {
+      if (value === null || value === undefined || value === "") return null;
+      const parsed = Number(value);
+      return Number.isFinite(parsed) ? parsed : null;
+    }
+
+    function money(value) {
+      const number = numberValue(value);
+      if (number === null) return "--";
+      if (number >= 10000) return `${(number / 10000).toFixed(number >= 100000 ? 1 : 2)}万元`;
+      return `${Math.round(number).toLocaleString("zh-CN")}元`;
+    }
+
+    function compact(value) {
+      const number = numberValue(value);
+      if (number === null || number <= 0) return "--";
+      if (number >= 10000) return `${(number / 10000).toFixed(1)}万`;
+      return Math.round(number).toLocaleString("zh-CN");
+    }
+
+    function price(value) {
+      const number = numberValue(value);
+      if (number === null) return "--";
+      return number >= 100 ? number.toFixed(number % 1 ? 2 : 0) : number.toFixed(2);
+    }
+
+    function percent(value) {
+      const number = numberValue(value);
+      return number === null ? "--" : `${(number * 100).toFixed(1)}%`;
+    }
+
+    function timeText(value) {
+      if (!value) return "更新时间：--";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return `更新时间：${value}`;
+      return `更新时间：${date.toLocaleString("zh-CN", { hour12: false })}`;
+    }
+
+    function normalizePayload(raw) {
+      if (Array.isArray(raw)) {
+        return {
+          status: "legacy",
+          updatedAt: "",
+          items: raw.map(item => ({
+            code: item.c,
+            name: item.n || item.c,
+            exchange: item.e || "",
+            exchangeName: item.e || "",
+            price: item.p,
+            openInterest: item.o,
+            contractMultiplier: item.mul,
+            marginRate: item.r || item.mr,
+            marginPerLot: item.p && item.mul && (item.r || item.mr) ? item.p * item.mul * (item.r || item.mr) : null
+          }))
+        };
+      }
+      return raw;
+    }
+
+    async function loadData() {
+      setStatus("loading", "正在加载");
+      const cache = `?t=${Date.now()}`;
+      const urls = [`data/data.json${cache}`, `data.json${cache}`];
+      let lastError;
+
+      for (const url of urls) {
+        try {
+          const res = await fetch(url, { cache: "no-store" });
+          if (!res.ok) throw new Error(`${url} ${res.status}`);
+          const payload = normalizePayload(await res.json());
+          if (!payload || !Array.isArray(payload.items)) throw new Error("数据格式不正确");
+          state.payload = payload;
+          state.items = payload.items
+            .filter(item => item && item.code)
+            .map(item => ({
+              ...item,
+              code: String(item.code).toUpperCase(),
+              searchText: `${item.name || ""} ${item.code || ""} ${item.exchange || ""} ${item.exchangeName || ""}`.toLowerCase()
+            }))
+            .sort((a, b) => (numberValue(b.marginPerLot) || 0) - (numberValue(a.marginPerLot) || 0));
+          fillExchangeOptions();
+          render();
+          setStatus(payload.status, payload.status === "fallback" ? "备用数据" : "数据正常");
+          els.updatedAt.textContent = timeText(payload.updatedAt);
+          return;
+        } catch (err) {
+          lastError = err;
+        }
+      }
+
+      state.items = [];
+      render();
+      setStatus("bad", "加载失败");
+      els.updatedAt.textContent = lastError ? String(lastError.message || lastError) : "数据不可用";
+    }
+
+    function setStatus(status, text) {
+      els.statusDot.className = "dot";
+      if (status === "fallback" || status === "legacy" || status === "loading") els.statusDot.classList.add("warn");
+      if (status === "bad") els.statusDot.classList.add("bad");
+      els.statusText.textContent = text;
+    }
+
+    function fillExchangeOptions() {
+      const current = els.exchange.value;
+      const exchanges = Array.from(new Map(
+        state.items.map(item => [item.exchange, item.exchangeName || item.exchange]).filter(row => row[0])
+      ));
+      els.exchange.innerHTML = `<option value="">全部交易所</option>` + exchanges
+        .map(([code, name]) => `<option value="${code}">${name}</option>`)
+        .join("");
+      els.exchange.value = exchanges.some(([code]) => code === current) ? current : "";
+    }
+
+    function filteredItems() {
+      const query = state.query.trim().toLowerCase();
+      return state.items.filter(item => {
+        const matchesQuery = !query || item.searchText.includes(query);
+        const matchesExchange = !state.exchange || item.exchange === state.exchange;
+        return matchesQuery && matchesExchange;
+      });
+    }
+
+    function render() {
+      const rows = filteredItems();
+      els.totalCount.textContent = state.items.length;
+      els.visibleCount.textContent = rows.length;
+      const maxMargin = rows.reduce((max, item) => Math.max(max, numberValue(item.marginPerLot) || 0), 0);
+      els.maxMargin.textContent = maxMargin ? money(maxMargin) : "--";
+
+      if (!rows.length) {
+        els.rows.innerHTML = `<tr><td colspan="8" class="empty">没有匹配的品种</td></tr>`;
+        return;
+      }
+
+      els.rows.innerHTML = rows.map(item => {
+        const color = EXCHANGE_COLORS[item.exchange] || "#667085";
+        return `
+          <tr>
+            <td><span class="exchange"><span class="swatch" style="background:${color}"></span>${item.exchangeName || item.exchange}</span></td>
+            <td>${item.name || "--"}</td>
+            <td><strong>${item.code}</strong></td>
+            <td>${price(item.price)}</td>
+            <td>${compact(item.contractMultiplier)}</td>
+            <td>${percent(item.marginRate)}</td>
+            <td class="money">${money(item.marginPerLot)}</td>
+            <td>${compact(item.openInterest)}</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    els.query.addEventListener("input", event => {
+      state.query = event.target.value;
+      render();
+    });
+
+    els.exchange.addEventListener("change", event => {
+      state.exchange = event.target.value;
+      render();
+    });
+
+    els.refresh.addEventListener("click", loadData);
+
+    loadData();
+  </script>
+</body>
+</html>
