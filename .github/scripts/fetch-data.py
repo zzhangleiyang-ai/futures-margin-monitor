@@ -1,4 +1,4 @@
-import csv
+﻿import csv
 import json
 import math
 from datetime import datetime, timezone
@@ -78,6 +78,7 @@ DEFAULT_PRODUCTS = [
     {"code": "LU", "name": "低硫燃油", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 10},
     {"code": "NR", "name": "20号胶", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 10},
     {"code": "BC", "name": "国际铜", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 5},
+    {"code": "EC", "name": "集运指数欧线期货", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 50},
     {"code": "EC", "name": "集运欧线", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 50},
     {"code": "LC", "name": "碳酸锂", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 1},
     {"code": "PS", "name": "多晶硅", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 3},
