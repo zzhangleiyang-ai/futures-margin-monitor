@@ -55,15 +55,10 @@ jobs:
           name: local-site-check
           path: .artifacts
 
-      - name: Copy to root and generate HTML
-        run: |
-          cp data/data.json data.json
-          python gen_auto.py
-
-      - name: Commit all updates
+      - name: Commit data update
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/data.json data/data.csv data.json index.html docs/index.html gen_auto.py
-          git diff --staged --quiet || git commit -m "Auto update: futures data + site refresh"
+          git add data/data.json
+          git diff --staged --quiet || git commit -m "Update futures margin data"
           git push

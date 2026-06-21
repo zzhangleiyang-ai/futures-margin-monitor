@@ -1,4 +1,3 @@
-﻿import csv
 import json
 import math
 from datetime import datetime, timezone
@@ -7,7 +6,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "data" / "data.json"
-CSV_OUT = ROOT / "data" / "data.csv"
 LEGACY = ROOT / "data.json"
 
 DEFAULT_PRODUCTS = [
@@ -78,7 +76,6 @@ DEFAULT_PRODUCTS = [
     {"code": "LU", "name": "低硫燃油", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 10},
     {"code": "NR", "name": "20号胶", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 10},
     {"code": "BC", "name": "国际铜", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 5},
-    {"code": "EC", "name": "集运指数欧线期货", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 50},
     {"code": "EC", "name": "集运欧线", "exchange": "INE", "exchangeName": "能源中心", "contractMultiplier": 50},
     {"code": "LC", "name": "碳酸锂", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 1},
     {"code": "PS", "name": "多晶硅", "exchange": "GFEX", "exchangeName": "广期所", "contractMultiplier": 3},
@@ -244,34 +241,6 @@ def build_payload(status, products, latest, previous, message="", updated_at=Non
     }
 
 
-CSV_COLUMNS = [
-    ("code", "品种代码"),
-    ("name", "品种名称"),
-    ("exchange", "交易所代码"),
-    ("exchangeName", "交易所"),
-    ("contract", "主力合约"),
-    ("marginRate", "保证金比例"),
-    ("marginPerLot", "每手保证金_元"),
-    ("price", "最新价"),
-    ("preSettlement", "昨结算"),
-    ("openInterest", "持仓量"),
-    ("contractMultiplier", "合约乘数"),
-    ("priceUpdatedAt", "价格时间"),
-    ("marginSource", "保证金来源"),
-]
-
-
-def write_csv(payload):
-    CSV_OUT.parent.mkdir(parents=True, exist_ok=True)
-    with CSV_OUT.open("w", encoding="utf-8-sig", newline="") as handle:
-        writer = csv.writer(handle)
-        writer.writerow(["数据状态", "数据更新时间", *[header for _, header in CSV_COLUMNS]])
-        for item in payload["items"]:
-            writer.writerow(
-                [payload["status"], payload["updatedAt"], *[item.get(key) for key, _ in CSV_COLUMNS]]
-            )
-
-
 def main():
     products = read_products()
     previous = read_previous_items()
@@ -292,14 +261,10 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     payload = build_payload(status, products, latest, previous, message, updated_at)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    write_csv(payload)
 
     priced = sum(1 for item in payload["items"] if item["price"])
     margins = sum(1 for item in payload["items"] if item["marginRate"])
-    print(
-        f"wrote {OUT} and {CSV_OUT} with "
-        f"{priced}/{len(payload['items'])} prices and {margins}/{len(payload['items'])} margin rates ({status})"
-    )
+    print(f"wrote {OUT} with {priced}/{len(payload['items'])} prices and {margins}/{len(payload['items'])} margin rates ({status})")
 
 
 if __name__ == "__main__":
