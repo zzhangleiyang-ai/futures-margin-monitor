@@ -1,0 +1,57 @@
+name: Site Health Check
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Fetch Futures Margin Data"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  healthcheck:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install browser check dependency
+        run: |
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Download live data
+        run: |
+          mkdir -p .artifacts
+          python - <<'PY'
+          import urllib.request
+          from pathlib import Path
+          url = "https://zzhangleiyang-ai.github.io/futures-margin-monitor/data/data.json"
+          target = Path(".artifacts/live-data.json")
+          target.write_bytes(urllib.request.urlopen(url, timeout=30).read())
+          print(f"downloaded {target}")
+          PY
+
+      - name: Validate live data
+        run: python .github/scripts/validate-data.py .artifacts/live-data.json
+
+      - name: Check live site
+        run: node .github/scripts/check-site.mjs https://zzhangleiyang-ai.github.io/futures-margin-monitor/ .artifacts/live-site-check.png 6 30000
+
+      - name: Upload health check artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-site-healthcheck
+          path: .artifacts

@@ -31,6 +31,33 @@ jobs:
           TQ_PASS: ${{ secrets.TQ_PASS }}
         run: python .github/scripts/fetch-data.py
 
+      - name: Validate data file
+        run: python .github/scripts/validate-data.py data/data.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install browser check dependency
+        run: |
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Verify site locally
+        run: |
+          mkdir -p .artifacts
+          python -m http.server 4173 --bind 127.0.0.1 > /tmp/site-server.log 2>&1 &
+          SERVER_PID=$!
+          trap "kill $SERVER_PID" EXIT
+          node .github/scripts/check-site.mjs http://127.0.0.1:4173/ .artifacts/local-site-check.png 1 1000
+
+      - name: Upload local check artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-site-check
+          path: .artifacts
+
       - name: Commit data update
         run: |
           git config user.name "github-actions[bot]"
