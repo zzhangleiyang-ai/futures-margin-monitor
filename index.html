@@ -100,6 +100,19 @@
       box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
     }
 
+    .self-check {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .self-check.ok {
+      color: #86efac;
+    }
+
+    .self-check.bad {
+      color: #fca5a5;
+    }
+
     main {
       padding: 22px 0 40px;
     }
@@ -167,10 +180,6 @@
     .sections {
       display: grid;
       gap: 18px;
-    }
-
-    .exchange-section {
-      padding: 0;
     }
 
     .exchange-head {
@@ -322,10 +331,6 @@
         align-items: flex-start;
         text-align: left;
       }
-
-      .summary {
-        display: grid;
-      }
     }
   </style>
 </head>
@@ -342,6 +347,7 @@
           <span id="statusText">正在加载数据</span>
         </div>
         <div id="updatedAt">更新时间：--</div>
+        <div id="selfCheckText" class="self-check">自检：等待首次执行</div>
       </div>
     </div>
   </header>
@@ -379,7 +385,7 @@
     </section>
   </main>
 
-  <footer class="wrap">数据由 GitHub Actions 自动更新；页面会自动重载最新保证金比例。</footer>
+  <footer class="wrap">页面每 1 分钟自动刷新并执行一次自检；后台自动任务会调到 GitHub 允许的最高频率。</footer>
 
   <script>
     const EXCHANGE_ORDER = ["SHFE", "DCE", "CZCE", "CFFEX", "INE", "GFEX"];
@@ -397,7 +403,8 @@
       query: "",
       exchange: "",
       updatedAt: "",
-      status: "loading"
+      status: "loading",
+      lastPayload: null
     };
 
     const els = {
@@ -411,7 +418,8 @@
       maxMargin: document.getElementById("maxMargin"),
       statusDot: document.getElementById("statusDot"),
       statusText: document.getElementById("statusText"),
-      updatedAt: document.getElementById("updatedAt")
+      updatedAt: document.getElementById("updatedAt"),
+      selfCheckText: document.getElementById("selfCheckText")
     };
 
     function asNumber(value) {
@@ -464,6 +472,40 @@
       if (status === "loading" || status === "fallback") els.statusDot.classList.add("warn");
       if (status === "bad") els.statusDot.classList.add("bad");
       els.statusText.textContent = text;
+    }
+
+    function runSelfCheck(payload, error) {
+      const now = new Date().toLocaleTimeString("zh-CN", { hour12: false });
+      const issues = [];
+      const items = Array.isArray(state.items) ? state.items : [];
+
+      if (error) issues.push("数据拉取失败");
+      if (!payload || !Array.isArray(payload.items)) issues.push("数据结构不完整");
+      if (items.length < 60) issues.push(`品种数量过少(${items.length})`);
+
+      const priced = items.filter(item => asNumber(item.price)).length;
+      const margined = items.filter(item => asNumber(item.marginRate)).length;
+      const contracts = items.filter(item => item.contract).length;
+      const required = Math.max(60, Math.floor(items.length * 0.85));
+
+      if (items.length && priced < required) issues.push(`价格缺失(${priced}/${items.length})`);
+      if (items.length && margined < required) issues.push(`保证金比例缺失(${margined}/${items.length})`);
+      if (items.length && contracts < required) issues.push(`合约缺失(${contracts}/${items.length})`);
+
+      const updatedAtText = payload && payload.updatedAt ? payload.updatedAt : "";
+      const updatedAtDate = updatedAtText ? new Date(updatedAtText) : null;
+      if (!updatedAtDate || Number.isNaN(updatedAtDate.getTime())) {
+        issues.push("更新时间无效");
+      } else {
+        const ageHours = (Date.now() - updatedAtDate.getTime()) / 36e5;
+        if (ageHours > 72) issues.push("数据已超过 72 小时");
+      }
+
+      const ok = issues.length === 0;
+      els.selfCheckText.className = `self-check ${ok ? "ok" : "bad"}`;
+      els.selfCheckText.textContent = ok
+        ? `自检：通过 ${now}`
+        : `自检：异常 ${now} · ${issues[0]}`;
     }
 
     function normalizePayload(payload) {
@@ -590,10 +632,12 @@
           state.items = normalizePayload(payload);
           state.updatedAt = payload.updatedAt || "";
           state.status = payload.status || "ok";
+          state.lastPayload = payload;
           fillExchangeOptions(state.items);
           render();
           setStatus(payload.status === "ok" ? "ok" : "fallback", payload.status === "ok" ? "数据正常" : "备用数据");
           els.updatedAt.textContent = formatUpdatedAt(payload.updatedAt);
+          runSelfCheck(payload);
           return;
         } catch (error) {
           lastError = error;
@@ -601,9 +645,11 @@
       }
 
       state.items = [];
+      state.lastPayload = null;
       render();
       setStatus("bad", "加载失败");
       els.updatedAt.textContent = lastError ? `更新时间：${lastError.message}` : "更新时间：--";
+      runSelfCheck(null, lastError);
     }
 
     els.query.addEventListener("input", event => {
@@ -619,7 +665,7 @@
     els.refresh.addEventListener("click", loadData);
 
     loadData();
-    setInterval(loadData, 120000);
+    setInterval(loadData, 60000);
   </script>
 </body>
 </html>

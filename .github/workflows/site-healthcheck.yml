@@ -2,7 +2,7 @@ name: Site Health Check
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
   workflow_run:
     workflows: ["Fetch Futures Margin Data"]
@@ -10,6 +10,10 @@ on:
 
 permissions:
   contents: read
+
+concurrency:
+  group: site-health-check
+  cancel-in-progress: true
 
 jobs:
   healthcheck:
