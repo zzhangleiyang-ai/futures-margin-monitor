@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "message": "",
-  "updatedAt": "2026-06-20T22:54:44+00:00",
-  "source": "TqSdk 主力连续合约定位实际主力合约；实际合约 quote.margin 反推当前保证金比例",
+  "updatedAt": "2026-06-20T10:59:41+08:00",
+  "source": "AKShare futures_fees_info / openctp 参考表，按持仓量最大合约选取当前主力并读取保证金比例",
   "items": [
     {
       "code": "AU",
@@ -12,11 +12,12 @@
       "price": 937.96,
       "openInterest": 167662,
       "contractMultiplier": 1000,
-      "marginRate": 0.05,
-      "marginPerLot": 47163.0,
-      "contract": "SHFE.au2608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 943.26
+      "marginRate": 0.19,
+      "marginPerLot": 178212.4,
+      "contract": "AU2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 943.26,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "AG",
@@ -26,81 +27,87 @@
       "price": 16493.0,
       "openInterest": 245422,
       "contractMultiplier": 15,
-      "marginRate": 0.06,
-      "marginPerLot": 15136.2,
-      "contract": "SHFE.ag2608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 16818.0
+      "marginRate": 0.22,
+      "marginPerLot": 54426.9,
+      "contract": "AG2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 16818.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "CU",
       "name": "沪铜",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 104780.0,
-      "openInterest": 112863,
+      "price": 104860.0,
+      "openInterest": 146280,
       "contractMultiplier": 5,
-      "marginRate": 0.09,
-      "marginPerLot": 47380.5,
-      "contract": "SHFE.cu2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 105290.0
+      "marginRate": 0.12,
+      "marginPerLot": 62916.0,
+      "contract": "CU2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 105380.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "AL",
       "name": "沪铝",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 23980.0,
-      "openInterest": 206338,
+      "price": 24035.0,
+      "openInterest": 209011,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 8361.5,
-      "contract": "SHFE.al2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 23890.0
+      "marginRate": 0.12,
+      "marginPerLot": 14421.0,
+      "contract": "AL2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 23940.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "ZN",
       "name": "沪锌",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 24770.0,
-      "openInterest": 49172,
+      "price": 24820.0,
+      "openInterest": 90404,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 8636.25,
-      "contract": "SHFE.zn2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 24675.0
+      "marginRate": 0.12,
+      "marginPerLot": 14892.0,
+      "contract": "ZN2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 24710.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "PB",
       "name": "沪铅",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 16400.0,
-      "openInterest": 48590,
+      "price": 16450.0,
+      "openInterest": 67728,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 5748.75,
-      "contract": "SHFE.pb2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 16425.0
+      "marginRate": 0.12,
+      "marginPerLot": 9870.0,
+      "contract": "PB2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 16465.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "NI",
       "name": "沪镍",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 135840.0,
-      "openInterest": 101450,
+      "price": 136700.0,
+      "openInterest": 120607,
       "contractMultiplier": 1,
-      "marginRate": 0.08,
-      "marginPerLot": 10864.0,
-      "contract": "SHFE.ni2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 135800.0
+      "marginRate": 0.14,
+      "marginPerLot": 19138.0,
+      "contract": "NI2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 136730.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SN",
@@ -110,11 +117,12 @@
       "price": 414330.0,
       "openInterest": 27025,
       "contractMultiplier": 1,
-      "marginRate": 0.09,
-      "marginPerLot": 38062.8,
-      "contract": "SHFE.sn2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 422920.0
+      "marginRate": 0.14,
+      "marginPerLot": 58006.2,
+      "contract": "SN2607",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 422920.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "RB",
@@ -124,11 +132,12 @@
       "price": 3131.0,
       "openInterest": 1713734,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 2528.8,
-      "contract": "SHFE.rb2610",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 3161.0
+      "marginRate": 0.07,
+      "marginPerLot": 2191.7,
+      "contract": "RB2610",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 3161.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "HC",
@@ -138,11 +147,12 @@
       "price": 3349.0,
       "openInterest": 1536993,
       "contractMultiplier": 10,
-      "marginRate": 0.08,
-      "marginPerLot": 2700.0,
-      "contract": "SHFE.hc2610",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 3375.0
+      "marginRate": 0.07,
+      "marginPerLot": 2344.3,
+      "contract": "HC2610",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 3375.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "RU",
@@ -152,11 +162,12 @@
       "price": 17785.0,
       "openInterest": 154652,
       "contractMultiplier": 10,
-      "marginRate": 0.09,
-      "marginPerLot": 16222.5,
-      "contract": "SHFE.ru2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 18025.0
+      "marginRate": 0.11,
+      "marginPerLot": 19563.5,
+      "contract": "RU2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 18025.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "BU",
@@ -166,11 +177,12 @@
       "price": 3943.0,
       "openInterest": 285959,
       "contractMultiplier": 10,
-      "marginRate": 0.09,
-      "marginPerLot": 3608.1,
-      "contract": "SHFE.bu2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 4009.0
+      "marginRate": 0.14,
+      "marginPerLot": 5520.2,
+      "contract": "BU2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 4009.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "FU",
@@ -180,11 +192,12 @@
       "price": 3087.0,
       "openInterest": 274051,
       "contractMultiplier": 10,
-      "marginRate": 0.1,
-      "marginPerLot": 3198.0,
-      "contract": "SHFE.fu2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 3198.0
+      "marginRate": 0.19,
+      "marginPerLot": 5865.3,
+      "contract": "FU2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 3198.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SP",
@@ -194,11 +207,12 @@
       "price": 4866.0,
       "openInterest": 315835,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 3458.0,
-      "contract": "SHFE.sp2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 4940.0
+      "marginRate": 0.09,
+      "marginPerLot": 4379.4,
+      "contract": "SP2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 4940.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SS",
@@ -209,10 +223,11 @@
       "openInterest": 115912,
       "contractMultiplier": 5,
       "marginRate": 0.08,
-      "marginPerLot": 6064.0,
-      "contract": "SHFE.ss2608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 15160.0
+      "marginPerLot": 6068.0,
+      "contract": "SS2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 15160.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "AO",
@@ -222,25 +237,27 @@
       "price": 2898.0,
       "openInterest": 275843,
       "contractMultiplier": 20,
-      "marginRate": 0.09,
-      "marginPerLot": 5232.6,
-      "contract": "SHFE.ao2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 2907.0
+      "marginRate": 0.12,
+      "marginPerLot": 6955.2,
+      "contract": "AO2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 2907.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "BR",
       "name": "合成橡胶",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 12955.0,
-      "openInterest": 27224,
+      "price": 12845.0,
+      "openInterest": 78013,
       "contractMultiplier": 5,
-      "marginRate": 0.12,
-      "marginPerLot": 7941.0,
-      "contract": "SHFE.br2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 13235.0
+      "marginRate": 0.14,
+      "marginPerLot": 8991.5,
+      "contract": "BR2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 13270.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "M",
@@ -250,11 +267,12 @@
       "price": 2942.0,
       "openInterest": 2038966,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 1479.0,
-      "contract": "DCE.m2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 2958.0
+      "marginRate": 0.07,
+      "marginPerLot": 2059.4,
+      "contract": "M2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 2958.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "Y",
@@ -264,11 +282,12 @@
       "price": 8353.0,
       "openInterest": 587653,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 4189.0,
-      "contract": "DCE.y2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 8378.0
+      "marginRate": 0.07,
+      "marginPerLot": 5847.1,
+      "contract": "Y2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 8378.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "A",
@@ -278,25 +297,27 @@
       "price": 4705.0,
       "openInterest": 240460,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 2363.0,
-      "contract": "DCE.a2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 4726.0
+      "marginRate": 0.07,
+      "marginPerLot": 3293.5,
+      "contract": "A2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 4726.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "B",
       "name": "豆二",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 3537.0,
-      "openInterest": 52452,
+      "price": 3660.0,
+      "openInterest": 101601,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 1768.5,
-      "contract": "DCE.b2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 3537.0
+      "marginRate": 0.07,
+      "marginPerLot": 2562.0,
+      "contract": "B2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 3681.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "C",
@@ -306,25 +327,27 @@
       "price": 2329.0,
       "openInterest": 855611,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 1162.0,
-      "contract": "DCE.c2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 2324.0
+      "marginRate": 0.07,
+      "marginPerLot": 1630.3,
+      "contract": "C2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 2324.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "CS",
       "name": "淀粉",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 2698.0,
-      "openInterest": 85367,
+      "price": 2700.0,
+      "openInterest": 144579,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 1351.0,
-      "contract": "DCE.cs2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 2702.0
+      "marginRate": 0.06,
+      "marginPerLot": 1620.0,
+      "contract": "CS2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 2699.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "JD",
@@ -335,10 +358,11 @@
       "openInterest": 362172,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 3273.9,
-      "contract": "DCE.jd2608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 4677.0
+      "marginPerLot": 3159.8,
+      "contract": "JD2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 4677.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "LH",
@@ -348,11 +372,12 @@
       "price": 11650.0,
       "openInterest": 214118,
       "contractMultiplier": 16,
-      "marginRate": 0.15,
-      "marginPerLot": 28548.0,
-      "contract": "DCE.lh2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 11895.0
+      "marginRate": 0.08,
+      "marginPerLot": 14912.0,
+      "contract": "LH2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 11895.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "P",
@@ -362,11 +387,12 @@
       "price": 9301.0,
       "openInterest": 513210,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 4682.5,
-      "contract": "DCE.p2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 9365.0
+      "marginRate": 0.08,
+      "marginPerLot": 7440.8,
+      "contract": "P2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 9365.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "L",
@@ -376,11 +402,12 @@
       "price": 7206.0,
       "openInterest": 415152,
       "contractMultiplier": 5,
-      "marginRate": 0.05,
-      "marginPerLot": 1855.5,
-      "contract": "DCE.l2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 7422.0
+      "marginRate": 0.11,
+      "marginPerLot": 3963.3,
+      "contract": "L2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 7422.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "PP",
@@ -390,11 +417,12 @@
       "price": 7647.0,
       "openInterest": 524585,
       "contractMultiplier": 5,
-      "marginRate": 0.05,
-      "marginPerLot": 1975.5,
-      "contract": "DCE.pp2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 7902.0
+      "marginRate": 0.11,
+      "marginPerLot": 4205.85,
+      "contract": "PP2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 7902.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "V",
@@ -404,11 +432,12 @@
       "price": 4616.0,
       "openInterest": 1256297,
       "contractMultiplier": 5,
-      "marginRate": 0.05,
-      "marginPerLot": 1163.5,
-      "contract": "DCE.v2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 4654.0
+      "marginRate": 0.11,
+      "marginPerLot": 2538.8,
+      "contract": "V2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 4654.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "EG",
@@ -418,25 +447,27 @@
       "price": 4209.0,
       "openInterest": 292807,
       "contractMultiplier": 10,
-      "marginRate": 0.06,
-      "marginPerLot": 2548.2,
-      "contract": "DCE.eg2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 4247.0
+      "marginRate": 0.13,
+      "marginPerLot": 5471.7,
+      "contract": "EG2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 4247.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "EB",
       "name": "苯乙烯",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 7790.0,
-      "openInterest": 103832,
+      "price": 7716.0,
+      "openInterest": 324065,
       "contractMultiplier": 5,
-      "marginRate": 0.05,
-      "marginPerLot": 1959.75,
-      "contract": "DCE.eb2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 7839.0
+      "marginRate": 0.13,
+      "marginPerLot": 5015.4,
+      "contract": "EB2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 7771.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "J",
@@ -446,11 +477,12 @@
       "price": 2019.5,
       "openInterest": 70619,
       "contractMultiplier": 100,
-      "marginRate": 0.08,
-      "marginPerLot": 16656.0,
-      "contract": "DCE.j2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 2082.0
+      "marginRate": 0.12,
+      "marginPerLot": 24234.0,
+      "contract": "J2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 2082.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "JM",
@@ -460,11 +492,12 @@
       "price": 1271.0,
       "openInterest": 476841,
       "contractMultiplier": 60,
-      "marginRate": 0.08,
-      "marginPerLot": 6475.2,
-      "contract": "DCE.jm2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 1349.0
+      "marginRate": 0.12,
+      "marginPerLot": 9151.2,
+      "contract": "JM2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 1349.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "I",
@@ -474,11 +507,12 @@
       "price": 747.0,
       "openInterest": 597478,
       "contractMultiplier": 100,
-      "marginRate": 0.08,
-      "marginPerLot": 6044.0,
-      "contract": "DCE.i2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 755.5
+      "marginRate": 0.11,
+      "marginPerLot": 8217.0,
+      "contract": "I2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 755.5,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "RR",
@@ -488,39 +522,42 @@
       "price": 3603.0,
       "openInterest": 39808,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 1801.5,
-      "contract": "DCE.rr2608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 3603.0
+      "marginRate": 0.06,
+      "marginPerLot": 2161.8,
+      "contract": "RR2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 3603.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "BZ",
       "name": "纯苯",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 6965.0,
-      "openInterest": 6156,
+      "price": 6736.0,
+      "openInterest": 12307,
       "contractMultiplier": 30,
-      "marginRate": 0.08,
-      "marginPerLot": 16617.6,
-      "contract": "DCE.bz2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 6924.0
+      "marginRate": 0.14,
+      "marginPerLot": 28291.2,
+      "contract": "BZ2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 6738.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "PG",
       "name": "液化气",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 4790.0,
-      "openInterest": 19596,
+      "price": 4682.0,
+      "openInterest": 78818,
       "contractMultiplier": 20,
-      "marginRate": 0.05,
-      "marginPerLot": 4923.0,
-      "contract": "DCE.pg2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 4923.0
+      "marginRate": 0.16,
+      "marginPerLot": 14982.4,
+      "contract": "PG2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 4790.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SR",
@@ -530,11 +567,12 @@
       "price": 5320.0,
       "openInterest": 727155,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 2669.5,
-      "contract": "CZCE.SR609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 5339.0
+      "marginRate": 0.06,
+      "marginPerLot": 3192.0,
+      "contract": "SR609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 5339.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "CF",
@@ -544,11 +582,12 @@
       "price": 16010.0,
       "openInterest": 563548,
       "contractMultiplier": 5,
-      "marginRate": 0.05,
-      "marginPerLot": 4001.25,
-      "contract": "CZCE.CF609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 16005.0
+      "marginRate": 0.07,
+      "marginPerLot": 5603.5,
+      "contract": "CF609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 16005.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "CY",
@@ -558,11 +597,12 @@
       "price": 22485.0,
       "openInterest": 13708,
       "contractMultiplier": 5,
-      "marginRate": 0.05,
-      "marginPerLot": 5621.25,
-      "contract": "CZCE.CY609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 22485.0
+      "marginRate": 0.15,
+      "marginPerLot": 16863.75,
+      "contract": "CY609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 22485.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "AP",
@@ -572,11 +612,12 @@
       "price": 7618.0,
       "openInterest": 98474,
       "contractMultiplier": 10,
-      "marginRate": 0.11,
-      "marginPerLot": 8378.7,
-      "contract": "CZCE.AP610",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 7617.0
+      "marginRate": 0.09,
+      "marginPerLot": 6856.2,
+      "contract": "AP610",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 7617.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "CJ",
@@ -586,11 +627,12 @@
       "price": 8625.0,
       "openInterest": 141100,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 3060.75,
-      "contract": "CZCE.CJ609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 8745.0
+      "marginRate": 0.08,
+      "marginPerLot": 3450.0,
+      "contract": "CJ609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 8745.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "TA",
@@ -600,11 +642,12 @@
       "price": 5868.0,
       "openInterest": 1043761,
       "contractMultiplier": 5,
-      "marginRate": 0.06,
-      "marginPerLot": 1734.0,
-      "contract": "CZCE.TA609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 5780.0
+      "marginRate": 0.13,
+      "marginPerLot": 3814.2,
+      "contract": "TA609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 5780.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "MA",
@@ -614,11 +657,12 @@
       "price": 2566.0,
       "openInterest": 715618,
       "contractMultiplier": 10,
-      "marginRate": 0.07,
-      "marginPerLot": 1849.4,
-      "contract": "CZCE.MA609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 2642.0
+      "marginRate": 0.13,
+      "marginPerLot": 3335.8,
+      "contract": "MA609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 2642.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "UR",
@@ -628,11 +672,12 @@
       "price": 1813.0,
       "openInterest": 255292,
       "contractMultiplier": 20,
-      "marginRate": 0.05,
-      "marginPerLot": 1833.0,
-      "contract": "CZCE.UR609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 1833.0
+      "marginRate": 0.08,
+      "marginPerLot": 2900.8,
+      "contract": "UR609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 1833.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SA",
@@ -642,11 +687,12 @@
       "price": 1127.0,
       "openInterest": 1403465,
       "contractMultiplier": 20,
-      "marginRate": 0.07,
-      "marginPerLot": 1626.8,
-      "contract": "CZCE.SA609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 1162.0
+      "marginRate": 0.08,
+      "marginPerLot": 1803.2,
+      "contract": "SA609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 1162.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "FG",
@@ -656,11 +702,12 @@
       "price": 978.0,
       "openInterest": 1744848,
       "contractMultiplier": 20,
-      "marginRate": 0.05,
-      "marginPerLot": 1005.0,
-      "contract": "CZCE.FG609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 1005.0
+      "marginRate": 0.09,
+      "marginPerLot": 1760.4,
+      "contract": "FG609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 1005.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "OI",
@@ -670,11 +717,12 @@
       "price": 9685.0,
       "openInterest": 277091,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 4907.5,
-      "contract": "CZCE.OI609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 9815.0
+      "marginRate": 0.07,
+      "marginPerLot": 6779.5,
+      "contract": "OI609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 9815.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "RM",
@@ -684,11 +732,12 @@
       "price": 2286.0,
       "openInterest": 920784,
       "contractMultiplier": 10,
-      "marginRate": 0.05,
-      "marginPerLot": 1141.5,
-      "contract": "CZCE.RM609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 2283.0
+      "marginRate": 0.07,
+      "marginPerLot": 1600.2,
+      "contract": "RM609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 2283.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "PK",
@@ -698,11 +747,12 @@
       "price": 8344.0,
       "openInterest": 206223,
       "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 3356.0,
-      "contract": "CZCE.PK610",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 8390.0
+      "marginRate": 0.07,
+      "marginPerLot": 2920.4,
+      "contract": "PK610",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 8390.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SF",
@@ -712,11 +762,12 @@
       "price": 5694.0,
       "openInterest": 222246,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 1993.6,
-      "contract": "CZCE.SF609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 5696.0
+      "marginRate": 0.08,
+      "marginPerLot": 2277.6,
+      "contract": "SF609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 5696.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SM",
@@ -726,11 +777,12 @@
       "price": 5856.0,
       "openInterest": 465726,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 2043.3,
-      "contract": "CZCE.SM609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 5838.0
+      "marginRate": 0.08,
+      "marginPerLot": 2342.4,
+      "contract": "SM609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 5838.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "PF",
@@ -740,11 +792,12 @@
       "price": 7348.0,
       "openInterest": 142718,
       "contractMultiplier": 5,
-      "marginRate": 0.07,
-      "marginPerLot": 2541.0,
-      "contract": "CZCE.PF608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 7260.0
+      "marginRate": 0.13,
+      "marginPerLot": 4776.2,
+      "contract": "PF608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 7260.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "PX",
@@ -754,11 +807,12 @@
       "price": 8104.0,
       "openInterest": 189534,
       "contractMultiplier": 5,
-      "marginRate": 0.12,
-      "marginPerLot": 4806.0,
-      "contract": "CZCE.PX609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 8010.0
+      "marginRate": 0.13,
+      "marginPerLot": 5267.6,
+      "contract": "PX609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 8010.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SH",
@@ -768,11 +822,12 @@
       "price": 2002.0,
       "openInterest": 256525,
       "contractMultiplier": 30,
-      "marginRate": 0.09,
-      "marginPerLot": 5418.9,
-      "contract": "CZCE.SH609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 2007.0
+      "marginRate": 0.08,
+      "marginPerLot": 4804.8,
+      "contract": "SH609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 2007.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "IF",
@@ -782,11 +837,12 @@
       "price": 4862.8,
       "openInterest": 147088,
       "contractMultiplier": 300,
-      "marginRate": 0.1,
-      "marginPerLot": 144060.0,
-      "contract": "CFFEX.IF2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 4802.0
+      "marginRate": 0.12,
+      "marginPerLot": 175060.8,
+      "contract": "IF2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 4802.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "IH",
@@ -796,11 +852,12 @@
       "price": 2899.8,
       "openInterest": 64125,
       "contractMultiplier": 300,
-      "marginRate": 0.1,
-      "marginPerLot": 86568.0,
-      "contract": "CFFEX.IH2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 2885.6
+      "marginRate": 0.12,
+      "marginPerLot": 104392.8,
+      "contract": "IH2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 2885.6,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "IC",
@@ -811,10 +868,11 @@
       "openInterest": 162104,
       "contractMultiplier": 200,
       "marginRate": 0.12,
-      "marginPerLot": 201609.6,
-      "contract": "CFFEX.IC2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 8400.4
+      "marginPerLot": 204417.6,
+      "contract": "IC2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 8400.4,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "IM",
@@ -824,11 +882,12 @@
       "price": 8510.0,
       "openInterest": 204527,
       "contractMultiplier": 200,
-      "marginRate": 0.15,
-      "marginPerLot": 252420.0,
-      "contract": "CFFEX.IM2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 8414.0
+      "marginRate": 0.12,
+      "marginPerLot": 204240.0,
+      "contract": "IM2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 8414.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "T",
@@ -839,10 +898,11 @@
       "openInterest": 360539,
       "contractMultiplier": 10000,
       "marginRate": 0.02,
-      "marginPerLot": 21803.0,
-      "contract": "CFFEX.T2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 109.015
+      "marginPerLot": 21811.0,
+      "contract": "T2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 109.015,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "TF",
@@ -853,10 +913,11 @@
       "openInterest": 203869,
       "contractMultiplier": 10000,
       "marginRate": 0.012,
-      "marginPerLot": 12751.2,
-      "contract": "CFFEX.TF2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 106.26
+      "marginPerLot": 12758.4,
+      "contract": "TF2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 106.26,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "TS",
@@ -867,10 +928,11 @@
       "openInterest": 77177,
       "contractMultiplier": 20000,
       "marginRate": 0.005,
-      "marginPerLot": 10258.4,
-      "contract": "CFFEX.TS2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 102.584
+      "marginPerLot": 10262.0,
+      "contract": "TS2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 102.584,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "TL",
@@ -882,9 +944,10 @@
       "contractMultiplier": 10000,
       "marginRate": 0.035,
       "marginPerLot": 39854.5,
-      "contract": "CFFEX.TL2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 113.87
+      "contract": "TL2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 113.87,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SC",
@@ -894,11 +957,12 @@
       "price": 508.5,
       "openInterest": 53313,
       "contractMultiplier": 1000,
-      "marginRate": 0.07,
-      "marginPerLot": 35903.0,
-      "contract": "INE.sc2608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 512.9
+      "marginRate": 0.19,
+      "marginPerLot": 96615.0,
+      "contract": "SC2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 512.9,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "LU",
@@ -908,11 +972,12 @@
       "price": 3954.0,
       "openInterest": 48837,
       "contractMultiplier": 10,
-      "marginRate": 0.15,
-      "marginPerLot": 5902.5,
-      "contract": "INE.lu2608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 3935.0
+      "marginRate": 0.19,
+      "marginPerLot": 7512.6,
+      "contract": "LU2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 3935.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "NR",
@@ -922,11 +987,12 @@
       "price": 15475.0,
       "openInterest": 65118,
       "contractMultiplier": 10,
-      "marginRate": 0.09,
-      "marginPerLot": 14107.5,
-      "contract": "INE.nr2608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 15675.0
+      "marginRate": 0.11,
+      "marginPerLot": 17022.5,
+      "contract": "NR2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 15675.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "BC",
@@ -936,11 +1002,12 @@
       "price": 92970.0,
       "openInterest": 10380,
       "contractMultiplier": 5,
-      "marginRate": 0.08,
-      "marginPerLot": 37360.0,
-      "contract": "INE.bc2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 93400.0
+      "marginRate": 0.12,
+      "marginPerLot": 55782.0,
+      "contract": "BC2607",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 93400.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "EC",
@@ -950,11 +1017,12 @@
       "price": 3809.5,
       "openInterest": 24029,
       "contractMultiplier": 50,
-      "marginRate": 0.12,
-      "marginPerLot": 22203.0,
-      "contract": "INE.ec2607",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 3700.5
+      "marginRate": 0.31,
+      "marginPerLot": 59047.25,
+      "contract": "EC2607",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 3700.5,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "LC",
@@ -964,11 +1032,12 @@
       "price": 160500.0,
       "openInterest": 450964,
       "contractMultiplier": 1,
-      "marginRate": 0.09,
-      "marginPerLot": 15462.0,
-      "contract": "GFEX.lc2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 171800.0
+      "marginRate": 0.15,
+      "marginPerLot": 24075.0,
+      "contract": "LC2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 171800.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "PS",
@@ -978,11 +1047,12 @@
       "price": 35840.0,
       "openInterest": 101573,
       "contractMultiplier": 3,
-      "marginRate": 0.09,
-      "marginPerLot": 9666.0,
-      "contract": "GFEX.ps2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 35800.0
+      "marginRate": 0.13,
+      "marginPerLot": 13977.6,
+      "contract": "PS2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 35800.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "PT",
@@ -992,11 +1062,12 @@
       "price": 431.2,
       "openInterest": 12570,
       "contractMultiplier": 1000,
-      "marginRate": 0.09,
-      "marginPerLot": 40054.5,
-      "contract": "GFEX.pt2608",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 445.05
+      "marginRate": 0.19,
+      "marginPerLot": 81928.0,
+      "contract": "PT2608",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 445.05,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     },
     {
       "code": "SI",
@@ -1006,11 +1077,12 @@
       "price": 8560.0,
       "openInterest": 258535,
       "contractMultiplier": 5,
-      "marginRate": 0.05,
-      "marginPerLot": 2157.5,
-      "contract": "GFEX.si2609",
-      "marginSource": "TqSdk exact contract quote.margin",
-      "preSettlement": 8630.0
+      "marginRate": 0.1,
+      "marginPerLot": 4280.0,
+      "contract": "SI2609",
+      "marginSource": "AKShare futures_fees_info (openctp)",
+      "preSettlement": 8630.0,
+      "priceUpdatedAt": "2026-06-20 02:59:41"
     }
   ]
 }

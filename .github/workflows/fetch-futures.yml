@@ -23,12 +23,9 @@ jobs:
           python-version: "3.11"
 
       - name: Install quote dependency
-        run: python -m pip install --upgrade tqsdk
+        run: python -m pip install --upgrade akshare
 
       - name: Build data file
-        env:
-          TQ_USER: ${{ secrets.TQ_USER }}
-          TQ_PASS: ${{ secrets.TQ_PASS }}
         run: python .github/scripts/fetch-data.py
 
       - name: Validate data file

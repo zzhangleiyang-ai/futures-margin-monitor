@@ -1,6 +1,5 @@
-﻿import json
+import json
 import math
-import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -97,11 +96,21 @@ def finite_number(value):
     return number if math.isfinite(number) and number > 0 else None
 
 
-def tq_variety_code(product):
-    code = product["code"]
-    if product["exchange"] in {"SHFE", "DCE", "INE", "GFEX"}:
-        return code.lower()
-    return code.upper()
+def normalize_contract(contract):
+    text = str(contract or "").strip()
+    return text.upper()
+
+
+def parse_source_timestamp(value):
+    text = str(value or "").strip()
+    if not text:
+        return None
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M:%S.%f"):
+        try:
+            return datetime.strptime(text, fmt).replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+    return None
 
 
 def read_previous_items():
@@ -127,8 +136,7 @@ def read_products():
     previous = read_previous_items()
     defaults = {item["code"]: item for item in DEFAULT_PRODUCTS}
     products = []
-    for code in defaults:
-        base = defaults[code]
+    for code, base in defaults.items():
         row = previous.get(code, {})
         products.append({
             "code": code,
@@ -140,63 +148,62 @@ def read_products():
     return products
 
 
-def fetch_with_tqsdk(products):
-    user = os.environ.get("TQ_USER")
-    password = os.environ.get("TQ_PASS")
-    if not user or not password:
-        raise RuntimeError("TQ_USER/TQ_PASS are not configured")
-
-    from tqsdk import TqApi, TqAuth, TqSim
-
-    api = TqApi(TqSim(), auth=TqAuth(user, password))
-    main_quotes = {}
-    exact_quotes = {}
-    try:
-        for product in products:
-            symbol = f"KQ.m@{product['exchange']}.{tq_variety_code(product)}"
-            main_quotes[product["code"]] = api.get_quote(symbol)
-
-        for _ in range(20):
-            api.wait_update(deadline=0.5)
-            if sum(1 for q in main_quotes.values() if getattr(q, "underlying_symbol", "")) >= 20:
-                break
-
-        for code, quote in main_quotes.items():
-            contract = getattr(quote, "underlying_symbol", "") or ""
-            if contract:
-                exact_quotes[code] = api.get_quote(contract)
-
-        for _ in range(30):
-            api.wait_update(deadline=0.5)
-            if sum(1 for q in exact_quotes.values() if finite_number(getattr(q, "margin", None))) >= 20:
-                break
-
-        results = {}
-        for code, main in main_quotes.items():
-            exact = exact_quotes.get(code)
-            if not exact:
-                continue
-            price = finite_number(getattr(main, "last_price", None)) or finite_number(getattr(exact, "last_price", None))
-            pre_settlement = finite_number(getattr(exact, "pre_settlement", None))
-            multiplier = finite_number(getattr(exact, "volume_multiple", None))
-            margin = finite_number(getattr(exact, "margin", None))
-            margin_rate = round(margin / (multiplier * pre_settlement), 4) if margin and multiplier and pre_settlement else None
-            results[code] = {
-                "price": price,
-                "openInterest": int(getattr(main, "open_interest", 0) or getattr(exact, "open_interest", 0) or 0),
-                "contract": getattr(exact, "instrument_id", "") or getattr(main, "underlying_symbol", "") or "",
-                "contractMultiplier": int(multiplier) if multiplier and float(multiplier).is_integer() else multiplier,
-                "marginRate": margin_rate,
-                "marginPerLot": round(margin, 2) if margin else None,
-                "marginSource": "TqSdk exact contract quote.margin",
-                "preSettlement": pre_settlement,
-            }
-        return results
-    finally:
-        api.close()
+def choose_main_row(rows):
+    rows = rows.copy()
+    rows["_hold"] = rows["持仓量"].apply(lambda x: finite_number(x) or 0)
+    rows["_volume"] = rows["成交量"].apply(lambda x: finite_number(x) or 0)
+    rows = rows.sort_values(["_hold", "_volume"], ascending=[False, False])
+    return rows.iloc[0]
 
 
-def build_payload(status, products, latest, previous, message=""):
+def fetch_with_akshare(products):
+    import akshare as ak
+
+    frame = ak.futures_fees_info()
+    if frame.empty:
+        raise RuntimeError("AKShare futures_fees_info returned no rows")
+
+    frame = frame.copy()
+    frame["品种代码"] = frame["品种代码"].astype(str).str.upper()
+    results = {}
+    latest_source_time = None
+
+    for product in products:
+        code = product["code"]
+        rows = frame[frame["品种代码"] == code]
+        if rows.empty:
+            continue
+
+        row = choose_main_row(rows)
+        source_time = parse_source_timestamp(row.get("更新时间"))
+        if source_time and (latest_source_time is None or source_time > latest_source_time):
+            latest_source_time = source_time
+
+        price = finite_number(row.get("最新价"))
+        multiplier = finite_number(row.get("合约乘数")) or product["contractMultiplier"]
+        margin_rate = finite_number(row.get("做多保证金率"))
+        margin_per_lot = finite_number(row.get("做多1手保证金"))
+        if not margin_per_lot and price and multiplier and margin_rate:
+            margin_per_lot = round(price * multiplier * margin_rate, 2)
+
+        results[code] = {
+            "price": price,
+            "openInterest": int(finite_number(row.get("持仓量")) or 0),
+            "contract": normalize_contract(row.get("合约代码")),
+            "contractMultiplier": int(multiplier) if multiplier and float(multiplier).is_integer() else multiplier,
+            "marginRate": margin_rate,
+            "marginPerLot": margin_per_lot,
+            "marginSource": "AKShare futures_fees_info (openctp)",
+            "preSettlement": finite_number(row.get("上日结算价")),
+            "priceUpdatedAt": str(row.get("更新时间") or ""),
+        }
+
+    if not results:
+        raise RuntimeError("AKShare futures_fees_info produced no matched products")
+    return results, latest_source_time
+
+
+def build_payload(status, products, latest, previous, message="", updated_at=None):
     items = []
     for product in products:
         code = product["code"]
@@ -222,13 +229,14 @@ def build_payload(status, products, latest, previous, message=""):
             "contract": quote.get("contract") or old.get("contract", ""),
             "marginSource": quote.get("marginSource") or old.get("marginSource", "previous data"),
             "preSettlement": quote.get("preSettlement") or old.get("preSettlement"),
+            "priceUpdatedAt": quote.get("priceUpdatedAt") or old.get("priceUpdatedAt", ""),
         })
 
     return {
         "status": status,
         "message": message,
-        "updatedAt": now_iso(),
-        "source": "TqSdk 主力连续合约定位实际主力合约；实际合约 quote.margin 反推当前保证金比例",
+        "updatedAt": updated_at or now_iso(),
+        "source": "AKShare futures_fees_info / openctp 参考表，按持仓量最大合约选取当前主力并读取保证金比例",
         "items": items,
     }
 
@@ -238,17 +246,20 @@ def main():
     previous = read_previous_items()
     status = "ok"
     message = ""
+    updated_at = now_iso()
     try:
-        latest = fetch_with_tqsdk(products)
+        latest, latest_source_time = fetch_with_akshare(products)
         if not latest:
-            raise RuntimeError("TqSdk returned no contract margin data")
+            raise RuntimeError("AKShare returned no contract margin data")
+        if latest_source_time:
+            updated_at = latest_source_time.astimezone().isoformat(timespec="seconds")
     except Exception as exc:
         latest = {}
         status = "fallback"
         message = str(exc)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    payload = build_payload(status, products, latest, previous, message)
+    payload = build_payload(status, products, latest, previous, message, updated_at)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
     priced = sum(1 for item in payload["items"] if item["price"])
