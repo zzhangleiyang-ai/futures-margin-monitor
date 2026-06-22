@@ -44,7 +44,7 @@ html += 'var _psnap={};function deepCheck(){var n=document.getElementById("selfC
 html += 'var s=document.createElement("script");'
 html += 's.src="https://hq.sinajs.cn/list='+sina_list+'&_t="+Date.now();'
 html += 'document.body.appendChild(s);'
-html += 'setTimeout(function(){try{for(var i=0;i<SC.length;i++){var sm=SC[i];var v=window["hq_str_"+sm];if(v){var fd=v.split(",");if(fd.length>10){var pr=parseFloat(fd[3]);var o=parseFloat(fd[7]);if(pr>0){var ca=document.querySelector("[data-code=\'"+sm+"\']");if(ca){var mu=parseFloat(ca.dataset.mult);var ra=parseFloat(ca.dataset.rate);var pe=document.getElementById("p_"+sm);var oe=document.getElementById("oi_"+sm);var me=document.getElementById("mg_"+sm);var le=document.getElementById("ml_"+sm);if(pe)pe.textContent=fp(pr);if(oe)oe.textContent=fo(o);var ma=pr*mu*ra;if(le)le.textContent=fm(ma);}}}}}catch(e){console.log(e)}'
+html += 'setTimeout(function(){try{for(var i=0;i<SC.length;i++){var sm=SC[i];var v=window["hq_str_"+sm];if(v){var fd=v.split(",");if(fd.length>10){var pr=parseFloat(fd[3]);var o=parseFloat(fd[7]);if(pr>0){var ca=document.querySelector("[data-code=\'"+sm+"\']");if(ca){var mu=parseFloat(ca.dataset.mult);var ra=parseFloat(ca.dataset.rate);var pe=document.getElementById("p_"+sm);var oe=document.getElementById("oi_"+sm);var me=document.getElementById("mg_"+sm);var le=document.getElementById("ml_"+sm);if(pe)pe.textContent=fp(pr);if(oe)oe.textContent=fo(o);var ma=pr*mu*ra;if(le)le.textContent=fm(ma);}}}}}}catch(e){console.log(e)}'
 html += 'SI.textContent="";'
 html += 'var _ck=selfCheck();SU.textContent=new Date().toLocaleTimeString()+" \u5b9e\u65f6 ("+_ck.ok+"/"+SC.length+")";'
 html += '},500);'
