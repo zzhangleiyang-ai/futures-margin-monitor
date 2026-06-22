@@ -66,6 +66,12 @@ html += '</script></body></html>'
 for fn in ['index.html','docs/index.html']:
     with open(os.path.join(base,fn),'w',encoding='utf-8') as f:
         f.write(html)
+with open(os.path.join(base,'docs','data.json'),'w',encoding='utf-8') as f:
+    import json
+    json.dump(d, f, ensure_ascii=False, indent=2)
+print('OK',len(html),'bytes')
+    with open(os.path.join(base,fn),'w',encoding='utf-8') as f:
+        f.write(html)
 print('OK',len(html),'bytes')
 
 
