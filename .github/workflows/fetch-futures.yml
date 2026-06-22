@@ -29,7 +29,13 @@ jobs:
         run: python .github/scripts/fetch-data.py
 
       - name: Validate data file
-        run: python .github/scripts/validate-data.py data/data.json
+        run: |
+          python .github/scripts/validate-data.py data/data.json
+          python .github/scripts/validate-data.py data.json
+          python .github/scripts/validate-data.py docs/data.json
+
+      - name: Regenerate card pages
+        run: python gen_auto.py
 
       - uses: actions/setup-node@v4
         with:
@@ -59,6 +65,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/data.json
+          git add data/data.json data.json docs/data.json index.html docs/index.html
           git diff --staged --quiet || git commit -m "Update futures margin data"
           git push
