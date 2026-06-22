@@ -90,7 +90,8 @@ def build_html(payload):
 """.strip()
         )
 
-    updated_date = str(payload.get("updatedAt", ""))[:10]
+    updated_at = str(payload.get("updatedAt", ""))
+    updated_date = updated_at[:10]
     total = len(items)
 
     return f"""<!DOCTYPE html>
@@ -158,7 +159,11 @@ def build_html(payload):
     <button id="refresh" type="button">刷新</button>
   </div>
   <div class="w tc">共 <span id="totalCount">{total}</span> 个合约，显示 <span id="visibleCount">{total}</span> 个</div>
-  <div class="w st">{total} 个主力合约 <span id="loadingIndicator" style="color:#facc15;font-size:12px"></span></div>
+  <div class="w st">
+    <span>后台数据时间：<strong id="dataUpdatedAt" style="color:#e2e8f0;font-weight:600">{updated_at}</strong></span>
+    <span style="margin-left:16px">页面检查时间：<strong id="pageCheckedAt" style="color:#94a3b8;font-weight:600">--</strong></span>
+    <span id="loadingIndicator" style="color:#facc15;font-size:12px;margin-left:16px"></span>
+  </div>
   <div class="w">
     {"".join(sections)}
   </div>
@@ -166,7 +171,13 @@ def build_html(payload):
   <script>
     const loading = document.getElementById("loadingIndicator");
     const updateStatus = document.getElementById("updateStatus");
+    const dataUpdatedAtEl = document.getElementById("dataUpdatedAt");
+    const pageCheckedAtEl = document.getElementById("pageCheckedAt");
     let lastUpdatedAt = {json.dumps(payload.get("updatedAt", ""))};
+
+    function fmtCheckTime() {{
+      return new Date().toLocaleTimeString("zh-CN", {{ hour12: false }});
+    }}
 
     function fmtPrice(value) {{
       if (value == null || Number.isNaN(Number(value))) return "--";
@@ -200,6 +211,7 @@ def build_html(payload):
       if (payload.updatedAt) {{
         lastUpdatedAt = payload.updatedAt;
         updateStatus.textContent = payload.updatedAt.slice(0, 10) + " 自动同步中";
+        if (dataUpdatedAtEl) dataUpdatedAtEl.textContent = payload.updatedAt;
       }}
     }}
 
@@ -209,8 +221,10 @@ def build_html(payload):
         const response = await fetch("data.json?_t=" + Date.now(), {{ cache: "no-store" }});
         const payload = await response.json();
         applyData(payload);
+        if (pageCheckedAtEl) pageCheckedAtEl.textContent = fmtCheckTime();
         loading.textContent = "";
       }} catch (error) {{
+        if (pageCheckedAtEl) pageCheckedAtEl.textContent = fmtCheckTime();
         loading.textContent = "更新失败";
       }}
     }}
