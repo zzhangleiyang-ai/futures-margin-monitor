@@ -1,0 +1,34 @@
+﻿name: AKShare Live Data
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: live-data
+  cancel-in-progress: true
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install akshare
+        run: pip install akshare
+      - name: Fetch live data with AKShare
+        run: python .github/scripts/fetch-akshare.py
+      - name: Copy to root and generate HTML
+        run: |
+          cp data/data.json data.json
+          cp data/data.json docs/data.json
+          python gen_auto.py
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/data.json data/data.csv data.json index.html docs/index.html docs/data.json gen_auto.py
+          git diff --staged --quiet || git commit -m "Live update $(date)"
+          git push
