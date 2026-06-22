@@ -14,7 +14,7 @@
       "contractMultiplier": 1000,
       "marginRate": 0.19,
       "marginPerLot": 178212.4,
-      "contract": "AU2608",
+      "contract": "au2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 943.26,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -29,7 +29,7 @@
       "contractMultiplier": 15,
       "marginRate": 0.22,
       "marginPerLot": 54426.9,
-      "contract": "AG2608",
+      "contract": "ag2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 16818.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -44,7 +44,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.12,
       "marginPerLot": 62916.0,
-      "contract": "CU2608",
+      "contract": "cu2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 105380.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -59,7 +59,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.12,
       "marginPerLot": 14421.0,
-      "contract": "AL2608",
+      "contract": "al2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 23940.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -74,7 +74,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.12,
       "marginPerLot": 14892.0,
-      "contract": "ZN2608",
+      "contract": "zn2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 24710.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -89,7 +89,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.12,
       "marginPerLot": 9870.0,
-      "contract": "PB2608",
+      "contract": "pb2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 16465.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -104,7 +104,7 @@
       "contractMultiplier": 1,
       "marginRate": 0.14,
       "marginPerLot": 19138.0,
-      "contract": "NI2609",
+      "contract": "ni2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 136730.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -119,7 +119,7 @@
       "contractMultiplier": 1,
       "marginRate": 0.14,
       "marginPerLot": 58006.2,
-      "contract": "SN2607",
+      "contract": "sn2607",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 422920.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -134,7 +134,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 2191.7,
-      "contract": "RB2610",
+      "contract": "rb2610",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 3161.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -149,7 +149,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 2344.3,
-      "contract": "HC2610",
+      "contract": "hc2610",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 3375.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -164,7 +164,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.11,
       "marginPerLot": 19563.5,
-      "contract": "RU2609",
+      "contract": "ru2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 18025.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -179,7 +179,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.14,
       "marginPerLot": 5520.2,
-      "contract": "BU2609",
+      "contract": "bu2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 4009.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -194,7 +194,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.19,
       "marginPerLot": 5865.3,
-      "contract": "FU2609",
+      "contract": "fu2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 3198.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -209,7 +209,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.09,
       "marginPerLot": 4379.4,
-      "contract": "SP2609",
+      "contract": "sp2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 4940.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -224,7 +224,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.08,
       "marginPerLot": 6068.0,
-      "contract": "SS2608",
+      "contract": "ss2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 15160.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -239,7 +239,7 @@
       "contractMultiplier": 20,
       "marginRate": 0.12,
       "marginPerLot": 6955.2,
-      "contract": "AO2609",
+      "contract": "ao2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 2907.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -254,7 +254,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.14,
       "marginPerLot": 8991.5,
-      "contract": "BR2609",
+      "contract": "br2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 13270.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -269,7 +269,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 2059.4,
-      "contract": "M2609",
+      "contract": "m2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 2958.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -284,7 +284,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 5847.1,
-      "contract": "Y2609",
+      "contract": "y2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 8378.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -299,7 +299,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 3293.5,
-      "contract": "A2609",
+      "contract": "a2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 4726.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -314,7 +314,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 2562.0,
-      "contract": "B2609",
+      "contract": "b2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 3681.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -329,7 +329,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 1630.3,
-      "contract": "C2609",
+      "contract": "c2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 2324.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -344,7 +344,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.06,
       "marginPerLot": 1620.0,
-      "contract": "CS2609",
+      "contract": "cs2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 2699.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -359,7 +359,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 3159.8,
-      "contract": "JD2608",
+      "contract": "jd2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 4677.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -374,7 +374,7 @@
       "contractMultiplier": 16,
       "marginRate": 0.08,
       "marginPerLot": 14912.0,
-      "contract": "LH2609",
+      "contract": "lh2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 11895.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -389,7 +389,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.08,
       "marginPerLot": 7440.8,
-      "contract": "P2609",
+      "contract": "p2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 9365.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -404,7 +404,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.11,
       "marginPerLot": 3963.3,
-      "contract": "L2609",
+      "contract": "l2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 7422.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -419,7 +419,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.11,
       "marginPerLot": 4205.85,
-      "contract": "PP2609",
+      "contract": "pp2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 7902.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -434,7 +434,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.11,
       "marginPerLot": 2538.8,
-      "contract": "V2609",
+      "contract": "v2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 4654.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -449,7 +449,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.13,
       "marginPerLot": 5471.7,
-      "contract": "EG2609",
+      "contract": "eg2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 4247.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -464,7 +464,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.13,
       "marginPerLot": 5015.4,
-      "contract": "EB2608",
+      "contract": "eb2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 7771.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -479,7 +479,7 @@
       "contractMultiplier": 100,
       "marginRate": 0.12,
       "marginPerLot": 24234.0,
-      "contract": "J2609",
+      "contract": "j2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 2082.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -494,7 +494,7 @@
       "contractMultiplier": 60,
       "marginRate": 0.12,
       "marginPerLot": 9151.2,
-      "contract": "JM2609",
+      "contract": "jm2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 1349.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -509,7 +509,7 @@
       "contractMultiplier": 100,
       "marginRate": 0.11,
       "marginPerLot": 8217.0,
-      "contract": "I2609",
+      "contract": "i2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 755.5,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -524,7 +524,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.06,
       "marginPerLot": 2161.8,
-      "contract": "RR2608",
+      "contract": "rr2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 3603.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -539,7 +539,7 @@
       "contractMultiplier": 30,
       "marginRate": 0.14,
       "marginPerLot": 28291.2,
-      "contract": "BZ2608",
+      "contract": "bz2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 6738.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -554,7 +554,7 @@
       "contractMultiplier": 20,
       "marginRate": 0.16,
       "marginPerLot": 14982.4,
-      "contract": "PG2608",
+      "contract": "pg2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 4790.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -959,7 +959,7 @@
       "contractMultiplier": 1000,
       "marginRate": 0.19,
       "marginPerLot": 96615.0,
-      "contract": "SC2608",
+      "contract": "sc2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 512.9,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -974,7 +974,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.19,
       "marginPerLot": 7512.6,
-      "contract": "LU2608",
+      "contract": "lu2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 3935.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -989,7 +989,7 @@
       "contractMultiplier": 10,
       "marginRate": 0.11,
       "marginPerLot": 17022.5,
-      "contract": "NR2608",
+      "contract": "nr2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 15675.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -1004,7 +1004,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.12,
       "marginPerLot": 55782.0,
-      "contract": "BC2607",
+      "contract": "bc2607",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 93400.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -1019,7 +1019,7 @@
       "contractMultiplier": 50,
       "marginRate": 0.31,
       "marginPerLot": 59047.25,
-      "contract": "EC2607",
+      "contract": "ec2607",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 3700.5,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -1034,7 +1034,7 @@
       "contractMultiplier": 1,
       "marginRate": 0.15,
       "marginPerLot": 24075.0,
-      "contract": "LC2609",
+      "contract": "lc2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 171800.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -1049,7 +1049,7 @@
       "contractMultiplier": 3,
       "marginRate": 0.13,
       "marginPerLot": 13977.6,
-      "contract": "PS2609",
+      "contract": "ps2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 35800.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -1064,7 +1064,7 @@
       "contractMultiplier": 1000,
       "marginRate": 0.19,
       "marginPerLot": 81928.0,
-      "contract": "PT2608",
+      "contract": "pt2608",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 445.05,
       "priceUpdatedAt": "2026-06-20 02:59:41"
@@ -1079,7 +1079,7 @@
       "contractMultiplier": 5,
       "marginRate": 0.1,
       "marginPerLot": 4280.0,
-      "contract": "SI2609",
+      "contract": "si2609",
       "marginSource": "AKShare futures_fees_info (openctp)",
       "preSettlement": 8630.0,
       "priceUpdatedAt": "2026-06-20 02:59:41"
