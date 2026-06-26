@@ -96,7 +96,7 @@ def build_html(payload):
     display_message = (
         "本次抓取失败，当前显示最近一次有效数据"
         if "using cached data after fetch error" in message
-        else (message or "数据同步正常")
+        else ("最新数据已同步" if "fees=" in message else (message or "数据同步正常"))
     )
     updated_date = updated_at[:10]
     total = len(items)
@@ -203,6 +203,9 @@ def build_html(payload):
       if (!value) return "数据同步正常";
       if (String(value).includes("using cached data after fetch error")) {{
         return "本次抓取失败，当前显示最近一次有效数据";
+      }}
+      if (String(value).includes("fees=")) {{
+        return "最新数据已同步";
       }}
       return value;
     }}
