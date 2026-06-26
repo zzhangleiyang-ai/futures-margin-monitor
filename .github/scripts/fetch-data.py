@@ -11,9 +11,22 @@ DATA_PATHS = [
     ROOT / "data.json",
     ROOT / "docs" / "data.json",
 ]
+SOURCE_NAME = "AKShare futures_fees_info"
 
 
-def load_catalog():
+def now_iso():
+    return datetime.now().astimezone().isoformat(timespec="seconds")
+
+
+def num(value):
+    try:
+        result = float(value)
+    except (TypeError, ValueError):
+        return None
+    return result if result > 0 else None
+
+
+def load_payload():
     for path in DATA_PATHS:
         if not path.exists():
             continue
@@ -23,16 +36,8 @@ def load_catalog():
             continue
         items = payload.get("items")
         if isinstance(items, list) and items:
-            return items
+            return payload
     raise RuntimeError("No existing catalog found in data.json")
-
-
-def num(value):
-    try:
-        result = float(value)
-    except (TypeError, ValueError):
-        return None
-    return result if result > 0 else None
 
 
 def choose_main_contract(rows):
@@ -57,16 +62,17 @@ def build_items(catalog, frame):
     updated_at = None
 
     for base in catalog:
+        item = dict(base)
         code = str(base.get("code") or "").upper()
         rows = frame[frame["品种代码"] == code]
         if rows.empty:
-            items.append(base)
+            items.append(item)
             continue
 
         row = choose_main_contract(rows)
-        price = num(row.get("最新价")) or num(row.get("上日结算价")) or base.get("price")
+        price = num(row.get("最新价")) or num(row.get("上日结算价")) or num(base.get("price"))
         multiplier = num(row.get("合约乘数")) or base.get("contractMultiplier")
-        margin_rate = num(row.get("做多保证金率")) or base.get("marginRate")
+        margin_rate = num(row.get("做多保证金率")) or num(base.get("marginRate"))
         margin_per_lot = num(row.get("做多1手保证金"))
 
         if not margin_per_lot and price and multiplier and margin_rate:
@@ -76,42 +82,44 @@ def build_items(catalog, frame):
         if row_updated_at and (updated_at is None or row_updated_at > updated_at):
             updated_at = row_updated_at
 
-        items.append(
+        item.update(
             {
                 "code": code,
-                "name": base.get("name"),
-                "exchange": base.get("exchange"),
-                "exchangeName": base.get("exchangeName"),
                 "price": price,
                 "openInterest": int(num(row.get("持仓量")) or 0),
                 "contractMultiplier": int(multiplier) if multiplier and float(multiplier).is_integer() else multiplier,
                 "marginRate": margin_rate,
                 "marginPerLot": margin_per_lot,
                 "contract": str(row.get("合约代码") or base.get("contract") or "").strip().lower(),
-                "marginSource": "AKShare futures_fees_info",
+                "marginSource": SOURCE_NAME,
                 "preSettlement": num(row.get("上日结算价")) or base.get("preSettlement"),
                 "priceUpdatedAt": row_updated_at,
             }
         )
+        items.append(item)
 
     return items, updated_at
 
 
-def build_payload(items, updated_at):
-    iso_updated_at = datetime.now().astimezone().isoformat(timespec="seconds")
-    if updated_at:
-        try:
-            iso_updated_at = datetime.strptime(updated_at, "%Y-%m-%d %H:%M:%S").astimezone().isoformat(timespec="seconds")
-        except ValueError:
-            pass
-
-    return {
+def build_payload(previous_payload, items, updated_at, message):
+    payload = {
         "status": "ok",
-        "message": "",
-        "updatedAt": iso_updated_at,
-        "source": "AKShare futures_fees_info",
+        "message": message,
+        "updatedAt": previous_payload.get("updatedAt") or now_iso(),
+        "source": SOURCE_NAME,
         "items": items,
     }
+    if updated_at:
+        try:
+            payload["updatedAt"] = (
+                datetime.strptime(updated_at, "%Y-%m-%d %H:%M:%S")
+                .astimezone()
+                .isoformat(timespec="seconds")
+            )
+        except ValueError:
+            payload["updatedAt"] = previous_payload.get("updatedAt") or now_iso()
+    payload["lastAttemptAt"] = now_iso()
+    return payload
 
 
 def write_payload(payload):
@@ -122,16 +130,26 @@ def write_payload(payload):
 
 
 def main():
-    catalog = load_catalog()
-    frame = fetch_latest_rows()
-    items, updated_at = build_items(catalog, frame)
-    payload = build_payload(items, updated_at)
+    previous_payload = load_payload()
+    catalog = previous_payload["items"]
+    items = catalog
+    updated_at = None
+    message = ""
+
+    try:
+        frame = fetch_latest_rows()
+        items, updated_at = build_items(catalog, frame)
+    except Exception as exc:
+        message = f"using cached data after fetch error: {exc}"
+
+    payload = build_payload(previous_payload, items, updated_at, message)
     write_payload(payload)
 
-    priced = sum(1 for item in items if num(item.get("price")))
-    margined = sum(1 for item in items if num(item.get("marginRate")))
+    priced = sum(1 for item in payload["items"] if num(item.get("price")))
+    margined = sum(1 for item in payload["items"] if num(item.get("marginRate")))
     print(
-        f"wrote {len(items)} items, priced={priced}, margins={margined}, updatedAt={payload['updatedAt']}"
+        f"wrote {len(payload['items'])} items, priced={priced}, "
+        f"margins={margined}, updatedAt={payload['updatedAt']}, message={payload['message']!r}"
     )
 
 
