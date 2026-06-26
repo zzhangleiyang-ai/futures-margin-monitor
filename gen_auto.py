@@ -91,6 +91,13 @@ def build_html(payload):
         )
 
     updated_at = str(payload.get("updatedAt", ""))
+    last_attempt_at = str(payload.get("lastAttemptAt", ""))
+    message = str(payload.get("message", ""))
+    display_message = (
+        "本次抓取失败，当前显示最近一次有效数据"
+        if "using cached data after fetch error" in message
+        else (message or "数据同步正常")
+    )
     updated_date = updated_at[:10]
     total = len(items)
 
@@ -141,7 +148,7 @@ def build_html(payload):
   <div class="hd">
     <div class="hi">
       <span class="ht">期货保证金监控</span>
-      <span class="hs" id="updateStatus">{updated_date} 每10秒检查最新数据</span>
+      <span class="hs" id="updateStatus">{updated_date} 每1分钟检查最新数据</span>
       <button class="rb" onclick="refreshData(true)">刷新</button>
     </div>
   </div>
@@ -161,8 +168,10 @@ def build_html(payload):
   <div class="w tc">共 <span id="totalCount">{total}</span> 个合约，显示 <span id="visibleCount">{total}</span> 个</div>
   <div class="w st">
     <span>后台数据时间：<strong id="dataUpdatedAt" style="color:#e2e8f0;font-weight:600">{updated_at}</strong></span>
+    <span style="margin-left:16px">最近尝试刷新：<strong id="lastAttemptAt" style="color:#94a3b8;font-weight:600">{last_attempt_at}</strong></span>
     <span style="margin-left:16px">页面检查时间：<strong id="pageCheckedAt" style="color:#94a3b8;font-weight:600">--</strong></span>
     <span style="margin-left:16px">更新状态：<strong id="syncStatus" style="font-weight:600;color:#22c55e">正常</strong></span>
+    <span id="dataMessage" style="color:#94a3b8;font-size:12px;margin-left:16px">{display_message}</span>
     <span id="loadingIndicator" style="color:#facc15;font-size:12px;margin-left:16px"></span>
   </div>
   <div class="w">
@@ -173,8 +182,10 @@ def build_html(payload):
     const loading = document.getElementById("loadingIndicator");
     const updateStatus = document.getElementById("updateStatus");
     const dataUpdatedAtEl = document.getElementById("dataUpdatedAt");
+    const lastAttemptAtEl = document.getElementById("lastAttemptAt");
     const pageCheckedAtEl = document.getElementById("pageCheckedAt");
     const syncStatusEl = document.getElementById("syncStatus");
+    const dataMessageEl = document.getElementById("dataMessage");
     let lastUpdatedAt = {json.dumps(payload.get("updatedAt", ""))};
 
     function fmtCheckTime() {{
@@ -186,6 +197,14 @@ def build_html(payload):
       const date = new Date(value);
       if (Number.isNaN(date.getTime())) return value;
       return date.toLocaleString("zh-CN", {{ hour12: false }});
+    }}
+
+    function fmtMessage(value) {{
+      if (!value) return "数据同步正常";
+      if (String(value).includes("using cached data after fetch error")) {{
+        return "本次抓取失败，当前显示最近一次有效数据";
+      }}
+      return value;
     }}
 
     function updateSyncStatus(value, failed) {{
@@ -245,10 +264,12 @@ def build_html(payload):
       }});
       if (payload.updatedAt) {{
         lastUpdatedAt = payload.updatedAt;
-        updateStatus.textContent = payload.updatedAt.slice(0, 10) + " 自动同步中";
+        updateStatus.textContent = payload.updatedAt.slice(0, 10) + " 每1分钟自动检查";
         if (dataUpdatedAtEl) dataUpdatedAtEl.textContent = fmtDataTime(payload.updatedAt);
         updateSyncStatus(payload.updatedAt, false);
       }}
+      if (lastAttemptAtEl) lastAttemptAtEl.textContent = fmtDataTime(payload.lastAttemptAt);
+      if (dataMessageEl) dataMessageEl.textContent = fmtMessage(payload.message);
     }}
 
     async function refreshData(manual) {{
@@ -291,7 +312,7 @@ def build_html(payload):
     document.getElementById("refresh").addEventListener("click", () => refreshData(true));
 
     refreshData(false);
-    setInterval(() => refreshData(false), 10000);
+    setInterval(() => refreshData(false), 60000);
   </script>
 </body>
 </html>
@@ -302,7 +323,7 @@ def main():
     payload = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     html = build_html(payload)
     for path in OUTPUTS:
-      path.write_text(html, encoding="utf-8")
+        path.write_text(html, encoding="utf-8")
     print(f"OK {len(html)} bytes")
 
 
