@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "message": "fees=72; settlement=0; quotes=0; fallback=sina:<urlopen error [Errno 101] Network is unreachable>",
+  "message": "fees=72; settlement=0; quotes=0",
   "updatedAt": "2026-08-01T02:35:14+00:00",
   "source": "AKShare futures_fees_info",
   "items": [
@@ -1085,5 +1085,5 @@
       "priceUpdatedAt": "2026-08-01 02:35:14"
     }
   ],
-  "lastAttemptAt": "2026-07-31T23:36:10+00:00"
+  "lastAttemptAt": "2026-08-01T01:08:50+00:00"
 }
