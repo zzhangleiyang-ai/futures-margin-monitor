@@ -1,7 +1,7 @@
 {
   "status": "ok",
   "message": "fees=72; settlement=0; quotes=0",
-  "updatedAt": "2026-08-13T23:35:21+00:00",
+  "updatedAt": "2026-08-14T00:28:13+00:00",
   "source": "AKShare futures_fees_info",
   "items": [
     {
@@ -9,120 +9,120 @@
       "name": "沪金",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 948.52,
-      "openInterest": 198421,
+      "price": 947.6,
+      "openInterest": 198197,
       "contractMultiplier": 1000,
       "marginRate": 0.16,
-      "marginPerLot": 151763.2,
+      "marginPerLot": 151616.0,
       "contract": "au2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 959.4,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "AG",
       "name": "沪银",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 15783.0,
-      "openInterest": 322069,
+      "price": 15796.0,
+      "openInterest": 320758,
       "contractMultiplier": 15,
       "marginRate": 0.22,
-      "marginPerLot": 52083.9,
+      "marginPerLot": 52126.8,
       "contract": "ag2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 16043.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "CU",
       "name": "沪铜",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 107850.0,
-      "openInterest": 205898,
+      "price": 107760.0,
+      "openInterest": 205610,
       "contractMultiplier": 5,
       "marginRate": 0.11,
-      "marginPerLot": 59317.5,
+      "marginPerLot": 59268.0,
       "contract": "cu2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 107820.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "AL",
       "name": "沪铝",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 24035.0,
-      "openInterest": 227766,
+      "price": 24010.0,
+      "openInterest": 227487,
       "contractMultiplier": 5,
       "marginRate": 0.11,
-      "marginPerLot": 13219.25,
+      "marginPerLot": 13205.5,
       "contract": "al2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 24160.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "ZN",
       "name": "沪锌",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 25765.0,
-      "openInterest": 128491,
+      "price": 25730.0,
+      "openInterest": 128656,
       "contractMultiplier": 5,
       "marginRate": 0.11,
-      "marginPerLot": 14170.75,
+      "marginPerLot": 14151.5,
       "contract": "zn2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 25750.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "PB",
       "name": "沪铅",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 15875.0,
-      "openInterest": 73439,
+      "price": 15855.0,
+      "openInterest": 73793,
       "contractMultiplier": 5,
       "marginRate": 0.11,
-      "marginPerLot": 8731.25,
+      "marginPerLot": 8720.25,
       "contract": "pb2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 15985.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "NI",
       "name": "沪镍",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 128070.0,
-      "openInterest": 142592,
+      "price": 127790.0,
+      "openInterest": 142872,
       "contractMultiplier": 1,
       "marginRate": 0.12,
-      "marginPerLot": 15368.4,
+      "marginPerLot": 15334.8,
       "contract": "ni2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 128740.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SN",
       "name": "沪锡",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 428010.0,
-      "openInterest": 46018,
+      "price": 427810.0,
+      "openInterest": 45736,
       "contractMultiplier": 1,
       "marginRate": 0.14,
-      "marginPerLot": 59921.4,
+      "marginPerLot": 59893.4,
       "contract": "sn2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 427210.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "RB",
@@ -137,7 +137,7 @@
       "contract": "rb2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3003.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "HC",
@@ -152,7 +152,7 @@
       "contract": "hc2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3235.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "RU",
@@ -167,7 +167,7 @@
       "contract": "ru2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 17885.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "BU",
@@ -182,7 +182,7 @@
       "contract": "bu2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4152.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "FU",
@@ -197,7 +197,7 @@
       "contract": "fu2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3483.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SP",
@@ -212,37 +212,37 @@
       "contract": "sp2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4660.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SS",
       "name": "不锈钢",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 14335.0,
-      "openInterest": 111264,
+      "price": 14325.0,
+      "openInterest": 111031,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 5017.25,
+      "marginPerLot": 5013.75,
       "contract": "ss2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 14435.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "AO",
       "name": "氧化铝",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 2692.0,
-      "openInterest": 273164,
+      "price": 2693.0,
+      "openInterest": 272556,
       "contractMultiplier": 20,
       "marginRate": 0.11,
-      "marginPerLot": 5922.4,
+      "marginPerLot": 5924.6,
       "contract": "ao2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2685.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "BR",
@@ -257,7 +257,7 @@
       "contract": "br2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 13455.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "M",
@@ -272,7 +272,7 @@
       "contract": "m2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3154.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "Y",
@@ -287,7 +287,7 @@
       "contract": "y2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8453.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "A",
@@ -302,7 +302,7 @@
       "contract": "a2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4916.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "B",
@@ -317,7 +317,7 @@
       "contract": "b2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3861.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "C",
@@ -332,7 +332,7 @@
       "contract": "c2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2226.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "CS",
@@ -347,7 +347,7 @@
       "contract": "cs2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2518.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "JD",
@@ -362,7 +362,7 @@
       "contract": "jd2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3914.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "LH",
@@ -377,7 +377,7 @@
       "contract": "lh2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 12150.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "P",
@@ -392,7 +392,7 @@
       "contract": "p2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 9699.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "L",
@@ -407,7 +407,7 @@
       "contract": "l2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7830.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "PP",
@@ -422,7 +422,7 @@
       "contract": "pp2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8379.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "V",
@@ -437,7 +437,7 @@
       "contract": "v2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4502.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "EG",
@@ -452,7 +452,7 @@
       "contract": "eg2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4861.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "EB",
@@ -467,7 +467,7 @@
       "contract": "eb2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8223.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "J",
@@ -482,7 +482,7 @@
       "contract": "j2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1894.5,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "JM",
@@ -497,7 +497,7 @@
       "contract": "jm2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1466.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "I",
@@ -512,7 +512,7 @@
       "contract": "i2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 707.5,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "RR",
@@ -527,7 +527,7 @@
       "contract": "rr2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3625.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "BZ",
@@ -542,7 +542,7 @@
       "contract": "bz2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7223.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "PG",
@@ -557,7 +557,7 @@
       "contract": "pg2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5374.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SR",
@@ -572,7 +572,7 @@
       "contract": "sr701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5302.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "CF",
@@ -587,7 +587,7 @@
       "contract": "cf701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 16750.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "CY",
@@ -602,7 +602,7 @@
       "contract": "cy611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 22765.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "AP",
@@ -617,7 +617,7 @@
       "contract": "ap610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7840.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "CJ",
@@ -632,7 +632,7 @@
       "contract": "cj701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8260.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "TA",
@@ -647,7 +647,7 @@
       "contract": "ta611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5670.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "MA",
@@ -662,7 +662,7 @@
       "contract": "ma610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2630.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "UR",
@@ -677,7 +677,7 @@
       "contract": "ur609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1672.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SA",
@@ -692,7 +692,7 @@
       "contract": "sa701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1031.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "FG",
@@ -707,7 +707,7 @@
       "contract": "fg609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 869.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "OI",
@@ -722,7 +722,7 @@
       "contract": "oi611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 10147.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "RM",
@@ -737,7 +737,7 @@
       "contract": "rm611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2176.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "PK",
@@ -752,7 +752,7 @@
       "contract": "pk611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8186.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SF",
@@ -767,7 +767,7 @@
       "contract": "sf611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5890.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SM",
@@ -782,7 +782,7 @@
       "contract": "sm611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5800.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "PF",
@@ -797,7 +797,7 @@
       "contract": "pf610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7366.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "PX",
@@ -812,7 +812,7 @@
       "contract": "px611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7958.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SH",
@@ -827,7 +827,7 @@
       "contract": "sh611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1887.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "IF",
@@ -842,7 +842,7 @@
       "contract": "if2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4637.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "IH",
@@ -857,7 +857,7 @@
       "contract": "ih2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2907.8,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "IC",
@@ -872,7 +872,7 @@
       "contract": "ic2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7907.8,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "IM",
@@ -887,7 +887,7 @@
       "contract": "im2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7662.8,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "T",
@@ -902,7 +902,7 @@
       "contract": "t2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 109.475,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "TF",
@@ -917,7 +917,7 @@
       "contract": "tf2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 106.56,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "TS",
@@ -932,7 +932,7 @@
       "contract": "ts2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 102.622,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "TL",
@@ -947,22 +947,22 @@
       "contract": "tl2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 116.28,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SC",
       "name": "原油",
       "exchange": "INE",
       "exchangeName": "能源中心",
-      "price": 554.9,
-      "openInterest": 32791,
+      "price": 555.5,
+      "openInterest": 33521,
       "contractMultiplier": 1000,
       "marginRate": 0.16,
-      "marginPerLot": 88784.0,
+      "marginPerLot": 88880.0,
       "contract": "sc2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 550.6,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "LU",
@@ -977,7 +977,7 @@
       "contract": "lu2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4646.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "NR",
@@ -992,22 +992,22 @@
       "contract": "nr2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 14865.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "BC",
       "name": "国际铜",
       "exchange": "INE",
       "exchangeName": "能源中心",
-      "price": 96210.0,
-      "openInterest": 14687,
+      "price": 96130.0,
+      "openInterest": 14669,
       "contractMultiplier": 5,
       "marginRate": 0.11,
-      "marginPerLot": 52915.5,
+      "marginPerLot": 52871.5,
       "contract": "bc2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 96110.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "EC",
@@ -1022,7 +1022,7 @@
       "contract": "ec2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1614.5,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "LC",
@@ -1037,7 +1037,7 @@
       "contract": "lc2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 150280.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "PS",
@@ -1052,7 +1052,7 @@
       "contract": "ps2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 38275.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "PT",
@@ -1067,7 +1067,7 @@
       "contract": "pt2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 432.9,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     },
     {
       "code": "SI",
@@ -1082,8 +1082,8 @@
       "contract": "si2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8600.0,
-      "priceUpdatedAt": "2026-08-13 23:35:21"
+      "priceUpdatedAt": "2026-08-14 00:28:13"
     }
   ],
-  "lastAttemptAt": "2026-08-13T15:35:53+00:00"
+  "lastAttemptAt": "2026-08-13T16:29:14+00:00"
 }
