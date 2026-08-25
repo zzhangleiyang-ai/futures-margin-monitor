@@ -1,7 +1,7 @@
 {
   "status": "ok",
   "message": "fees=72; settlement=0; quotes=0",
-  "updatedAt": "2026-08-25T21:04:02+00:00",
+  "updatedAt": "2026-08-25T21:55:50+00:00",
   "source": "AKShare futures_fees_info",
   "items": [
     {
@@ -9,75 +9,75 @@
       "name": "沪金",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 1002.1,
-      "openInterest": 201351,
+      "price": 996.36,
+      "openInterest": 200722,
       "contractMultiplier": 1000,
       "marginRate": 0.16,
-      "marginPerLot": 160336.0,
+      "marginPerLot": 159417.6,
       "contract": "au2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1008.92,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "AG",
       "name": "沪银",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 16475.0,
-      "openInterest": 274981,
+      "price": 16431.0,
+      "openInterest": 276833,
       "contractMultiplier": 15,
       "marginRate": 0.22,
-      "marginPerLot": 54367.5,
+      "marginPerLot": 54222.3,
       "contract": "ag2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 16775.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "CU",
       "name": "沪铜",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 108110.0,
-      "openInterest": 204709,
+      "price": 107930.0,
+      "openInterest": 204442,
       "contractMultiplier": 5,
       "marginRate": 0.11,
-      "marginPerLot": 59460.5,
+      "marginPerLot": 59361.5,
       "contract": "cu2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 108160.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "AL",
       "name": "沪铝",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 23775.0,
-      "openInterest": 267976,
+      "price": 23790.0,
+      "openInterest": 267296,
       "contractMultiplier": 5,
       "marginRate": 0.11,
-      "marginPerLot": 13076.25,
+      "marginPerLot": 13084.5,
       "contract": "al2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 23800.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "ZN",
       "name": "沪锌",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 26095.0,
-      "openInterest": 153246,
+      "price": 26085.0,
+      "openInterest": 154372,
       "contractMultiplier": 5,
       "marginRate": 0.11,
-      "marginPerLot": 14352.25,
+      "marginPerLot": 14346.75,
       "contract": "zn2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 26055.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "PB",
@@ -85,59 +85,59 @@
       "exchange": "SHFE",
       "exchangeName": "上期所",
       "price": 16095.0,
-      "openInterest": 75219,
+      "openInterest": 74668,
       "contractMultiplier": 5,
       "marginRate": 0.11,
       "marginPerLot": 8852.25,
       "contract": "pb2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 16085.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "NI",
       "name": "沪镍",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 128830.0,
-      "openInterest": 125963,
+      "price": 129320.0,
+      "openInterest": 128635,
       "contractMultiplier": 1,
       "marginRate": 0.12,
-      "marginPerLot": 15459.6,
+      "marginPerLot": 15518.4,
       "contract": "ni2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 129660.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SN",
       "name": "沪锡",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 424440.0,
-      "openInterest": 40082,
+      "price": 423310.0,
+      "openInterest": 41769,
       "contractMultiplier": 1,
       "marginRate": 0.14,
-      "marginPerLot": 59421.6,
+      "marginPerLot": 59263.4,
       "contract": "sn2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 426080.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "RB",
       "name": "螺纹钢",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 3067.0,
-      "openInterest": 1497887,
+      "price": 3062.0,
+      "openInterest": 1489199,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 2146.9,
+      "marginPerLot": 2143.4,
       "contract": "rb2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3070.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "HC",
@@ -145,179 +145,179 @@
       "exchange": "SHFE",
       "exchangeName": "上期所",
       "price": 3335.0,
-      "openInterest": 921766,
+      "openInterest": 916022,
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 2334.5,
       "contract": "hc2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3350.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "RU",
       "name": "橡胶",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 18485.0,
-      "openInterest": 147695,
+      "price": 18455.0,
+      "openInterest": 149192,
       "contractMultiplier": 10,
       "marginRate": 0.09,
-      "marginPerLot": 16636.5,
+      "marginPerLot": 16609.5,
       "contract": "ru2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 18685.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "BU",
       "name": "沥青",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 4519.0,
-      "openInterest": 292388,
+      "price": 4544.0,
+      "openInterest": 298246,
       "contractMultiplier": 10,
       "marginRate": 0.12,
-      "marginPerLot": 5422.8,
+      "marginPerLot": 5452.8,
       "contract": "bu2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4608.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "FU",
       "name": "燃料油",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 3728.0,
-      "openInterest": 275758,
+      "price": 3709.0,
+      "openInterest": 275939,
       "contractMultiplier": 10,
       "marginRate": 0.16,
-      "marginPerLot": 5964.8,
+      "marginPerLot": 5934.4,
       "contract": "fu2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3935.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SP",
       "name": "纸浆",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 4834.0,
-      "openInterest": 228194,
+      "price": 4830.0,
+      "openInterest": 231076,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 3383.8,
+      "marginPerLot": 3381.0,
       "contract": "sp2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4842.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SS",
       "name": "不锈钢",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 14055.0,
-      "openInterest": 121891,
+      "price": 14320.0,
+      "openInterest": 119899,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 4919.25,
+      "marginPerLot": 5012.0,
       "contract": "ss2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 14150.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "AO",
       "name": "氧化铝",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 2666.0,
-      "openInterest": 233233,
+      "price": 2663.0,
+      "openInterest": 238307,
       "contractMultiplier": 20,
       "marginRate": 0.11,
-      "marginPerLot": 5865.2,
+      "marginPerLot": 5858.6,
       "contract": "ao2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2691.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "BR",
       "name": "合成橡胶",
       "exchange": "SHFE",
       "exchangeName": "上期所",
-      "price": 14235.0,
-      "openInterest": 88720,
+      "price": 14065.0,
+      "openInterest": 90982,
       "contractMultiplier": 5,
       "marginRate": 0.12,
-      "marginPerLot": 8541.0,
+      "marginPerLot": 8439.0,
       "contract": "br2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 14760.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "M",
       "name": "豆粕",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 3235.0,
-      "openInterest": 2519021,
+      "price": 3244.0,
+      "openInterest": 2546489,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 2264.5,
+      "marginPerLot": 2270.8,
       "contract": "m2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3228.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "Y",
       "name": "豆油",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 8732.0,
-      "openInterest": 710319,
+      "price": 8758.0,
+      "openInterest": 712018,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 6112.4,
+      "marginPerLot": 6130.6,
       "contract": "y2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8748.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "A",
       "name": "豆一",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 4969.0,
-      "openInterest": 360039,
+      "price": 4976.0,
+      "openInterest": 359281,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 3478.3,
+      "marginPerLot": 3483.2,
       "contract": "a2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4994.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "B",
       "name": "豆二",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 3987.0,
-      "openInterest": 213040,
+      "price": 3993.0,
+      "openInterest": 216304,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 2790.9,
+      "marginPerLot": 2795.1,
       "contract": "b2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3982.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "C",
@@ -325,29 +325,29 @@
       "exchange": "DCE",
       "exchangeName": "大商所",
       "price": 2277.0,
-      "openInterest": 1130132,
+      "openInterest": 1141839,
       "contractMultiplier": 10,
       "marginRate": 0.07,
       "marginPerLot": 1593.9,
       "contract": "c2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2274.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "CS",
       "name": "淀粉",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 2572.0,
-      "openInterest": 266058,
+      "price": 2567.0,
+      "openInterest": 269128,
       "contractMultiplier": 10,
       "marginRate": 0.06,
-      "marginPerLot": 1543.2,
+      "marginPerLot": 1540.2,
       "contract": "cs2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2573.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "JD",
@@ -362,7 +362,7 @@
       "contract": "jd2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3746.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "LH",
@@ -377,232 +377,232 @@
       "contract": "lh2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 11920.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "P",
       "name": "棕榈油",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 10023.0,
-      "openInterest": 561392,
+      "price": 10049.0,
+      "openInterest": 562277,
       "contractMultiplier": 10,
       "marginRate": 0.08,
-      "marginPerLot": 8018.4,
+      "marginPerLot": 8039.2,
       "contract": "p2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 10064.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "L",
       "name": "聚乙烯",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 7741.0,
-      "openInterest": 402127,
+      "price": 7728.0,
+      "openInterest": 405567,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 2709.35,
+      "marginPerLot": 2704.8,
       "contract": "l2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7875.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "PP",
       "name": "聚丙烯",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 8008.0,
-      "openInterest": 545260,
+      "price": 7989.0,
+      "openInterest": 549881,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 2802.8,
+      "marginPerLot": 2796.15,
       "contract": "pp2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8179.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "V",
       "name": "聚氯乙烯",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 4525.0,
-      "openInterest": 1178349,
+      "price": 4527.0,
+      "openInterest": 1190644,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 1583.75,
+      "marginPerLot": 1584.45,
       "contract": "v2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4576.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "EG",
       "name": "乙二醇",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 5265.0,
-      "openInterest": 370243,
+      "price": 5227.0,
+      "openInterest": 379072,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 3685.5,
+      "marginPerLot": 3658.9,
       "contract": "eg2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5497.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "EB",
       "name": "苯乙烯",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 8765.0,
-      "openInterest": 353407,
+      "price": 8747.0,
+      "openInterest": 348130,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 3067.75,
+      "marginPerLot": 3061.45,
       "contract": "eb2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8967.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "J",
       "name": "焦炭",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 2140.0,
-      "openInterest": 66686,
+      "price": 2109.0,
+      "openInterest": 63871,
       "contractMultiplier": 100,
       "marginRate": 0.12,
-      "marginPerLot": 25680.0,
+      "marginPerLot": 25308.0,
       "contract": "j2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2168.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "JM",
       "name": "焦煤",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 1588.0,
-      "openInterest": 500867,
+      "price": 1573.5,
+      "openInterest": 512664,
       "contractMultiplier": 60,
       "marginRate": 0.12,
-      "marginPerLot": 11433.6,
+      "marginPerLot": 11329.2,
       "contract": "jm2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1592.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "I",
       "name": "铁矿石",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 714.0,
-      "openInterest": 555470,
+      "price": 715.5,
+      "openInterest": 561206,
       "contractMultiplier": 100,
       "marginRate": 0.11,
-      "marginPerLot": 7854.0,
+      "marginPerLot": 7870.5,
       "contract": "i2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 716.5,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "RR",
       "name": "粳米",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 3561.0,
-      "openInterest": 22179,
+      "price": 3559.0,
+      "openInterest": 22232,
       "contractMultiplier": 10,
       "marginRate": 0.06,
-      "marginPerLot": 2136.6,
+      "marginPerLot": 2135.4,
       "contract": "rr2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 3563.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "BZ",
       "name": "纯苯",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 7617.0,
-      "openInterest": 28448,
+      "price": 7598.0,
+      "openInterest": 28406,
       "contractMultiplier": 30,
       "marginRate": 0.07,
-      "marginPerLot": 15995.7,
+      "marginPerLot": 15955.8,
       "contract": "bz2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7787.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "PG",
       "name": "液化气",
       "exchange": "DCE",
       "exchangeName": "大商所",
-      "price": 5775.0,
-      "openInterest": 105547,
+      "price": 5766.0,
+      "openInterest": 106551,
       "contractMultiplier": 20,
       "marginRate": 0.11,
-      "marginPerLot": 12705.0,
+      "marginPerLot": 12685.2,
       "contract": "pg2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5910.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SR",
       "name": "白糖",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 5316.0,
-      "openInterest": 602931,
+      "price": 5334.0,
+      "openInterest": 603249,
       "contractMultiplier": 10,
       "marginRate": 0.06,
-      "marginPerLot": 3189.6,
+      "marginPerLot": 3200.4,
       "contract": "sr701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5360.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "CF",
       "name": "棉花",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 16835.0,
-      "openInterest": 538462,
+      "price": 16890.0,
+      "openInterest": 540753,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 5892.25,
+      "marginPerLot": 5911.5,
       "contract": "cf701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 16960.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "CY",
       "name": "棉纱",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 22860.0,
-      "openInterest": 13771,
+      "price": 22920.0,
+      "openInterest": 13818,
       "contractMultiplier": 5,
       "marginRate": 0.15,
-      "marginPerLot": 17145.0,
+      "marginPerLot": 17190.0,
       "contract": "cy611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 23095.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "AP",
@@ -617,7 +617,7 @@
       "contract": "ap610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7442.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "CJ",
@@ -632,37 +632,37 @@
       "contract": "cj701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8125.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "TA",
       "name": "PTA",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 5656.0,
-      "openInterest": 896124,
+      "price": 5620.0,
+      "openInterest": 888142,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 1979.6,
+      "marginPerLot": 1967.0,
       "contract": "ta701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5782.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "MA",
       "name": "甲醇",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 2878.0,
-      "openInterest": 846481,
+      "price": 2845.0,
+      "openInterest": 849891,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 2014.6,
+      "marginPerLot": 1991.5,
       "contract": "ma610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2946.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "UR",
@@ -677,67 +677,67 @@
       "contract": "ur701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1762.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SA",
       "name": "纯碱",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 1042.0,
-      "openInterest": 1080361,
+      "price": 1043.0,
+      "openInterest": 1095902,
       "contractMultiplier": 20,
       "marginRate": 0.08,
-      "marginPerLot": 1667.2,
+      "marginPerLot": 1668.8,
       "contract": "sa701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1046.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "FG",
       "name": "玻璃",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 908.0,
-      "openInterest": 1518172,
+      "price": 911.0,
+      "openInterest": 1534884,
       "contractMultiplier": 20,
       "marginRate": 0.09,
-      "marginPerLot": 1634.4,
+      "marginPerLot": 1639.8,
       "contract": "fg701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 916.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "OI",
       "name": "菜油",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 10265.0,
-      "openInterest": 317353,
+      "price": 10301.0,
+      "openInterest": 315045,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 7185.5,
+      "marginPerLot": 7210.7,
       "contract": "oi611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 10308.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "RM",
       "name": "菜粕",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 2237.0,
-      "openInterest": 636417,
+      "price": 2264.0,
+      "openInterest": 659821,
       "contractMultiplier": 10,
       "marginRate": 0.07,
-      "marginPerLot": 1565.9,
+      "marginPerLot": 1584.8,
       "contract": "rm611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2236.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "PK",
@@ -752,7 +752,7 @@
       "contract": "pk611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8040.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SF",
@@ -767,7 +767,7 @@
       "contract": "sf611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 6008.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SM",
@@ -782,52 +782,52 @@
       "contract": "sm611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5954.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "PF",
       "name": "短纤",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 7638.0,
-      "openInterest": 181536,
+      "price": 7600.0,
+      "openInterest": 179336,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 2673.3,
+      "marginPerLot": 2660.0,
       "contract": "pf610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7788.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "PX",
       "name": "对二甲苯",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 8174.0,
-      "openInterest": 169538,
+      "price": 8134.0,
+      "openInterest": 167360,
       "contractMultiplier": 5,
       "marginRate": 0.07,
-      "marginPerLot": 2860.9,
+      "marginPerLot": 2846.9,
       "contract": "px611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8372.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SH",
       "name": "烧碱",
       "exchange": "CZCE",
       "exchangeName": "郑商所",
-      "price": 1936.0,
-      "openInterest": 218870,
+      "price": 1938.0,
+      "openInterest": 222089,
       "contractMultiplier": 30,
       "marginRate": 0.08,
-      "marginPerLot": 4646.4,
+      "marginPerLot": 4651.2,
       "contract": "sh611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1947.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "IF",
@@ -842,7 +842,7 @@
       "contract": "if2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 4522.4,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "IH",
@@ -857,7 +857,7 @@
       "contract": "ih2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 2856.2,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "IC",
@@ -872,7 +872,7 @@
       "contract": "ic2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7638.2,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "IM",
@@ -887,7 +887,7 @@
       "contract": "im2609",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 7474.8,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "T",
@@ -902,7 +902,7 @@
       "contract": "t2612",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 109.53,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "TF",
@@ -917,7 +917,7 @@
       "contract": "tf2612",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 106.585,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "TS",
@@ -932,7 +932,7 @@
       "contract": "ts2612",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 102.62,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "TL",
@@ -947,67 +947,67 @@
       "contract": "tl2612",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 116.63,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SC",
       "name": "原油",
       "exchange": "INE",
       "exchangeName": "能源中心",
-      "price": 570.2,
-      "openInterest": 42100,
+      "price": 571.4,
+      "openInterest": 42579,
       "contractMultiplier": 1000,
       "marginRate": 0.16,
-      "marginPerLot": 91232.0,
+      "marginPerLot": 91424.0,
       "contract": "sc2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 591.8,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "LU",
       "name": "低硫燃油",
       "exchange": "INE",
       "exchangeName": "能源中心",
-      "price": 4795.0,
-      "openInterest": 84937,
+      "price": 4815.0,
+      "openInterest": 82980,
       "contractMultiplier": 10,
       "marginRate": 0.16,
-      "marginPerLot": 7672.0,
+      "marginPerLot": 7704.0,
       "contract": "lu2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 5099.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "NR",
       "name": "20号胶",
       "exchange": "INE",
       "exchangeName": "能源中心",
-      "price": 15495.0,
-      "openInterest": 54333,
+      "price": 15475.0,
+      "openInterest": 54172,
       "contractMultiplier": 10,
       "marginRate": 0.09,
-      "marginPerLot": 13945.5,
+      "marginPerLot": 13927.5,
       "contract": "nr2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 15690.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "BC",
       "name": "国际铜",
       "exchange": "INE",
       "exchangeName": "能源中心",
-      "price": 96620.0,
-      "openInterest": 10063,
+      "price": 96400.0,
+      "openInterest": 10432,
       "contractMultiplier": 5,
       "marginRate": 0.11,
-      "marginPerLot": 53141.0,
+      "marginPerLot": 53020.0,
       "contract": "bc2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 96590.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "EC",
@@ -1022,7 +1022,7 @@
       "contract": "ec2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 1946.5,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "LC",
@@ -1037,7 +1037,7 @@
       "contract": "lc2701",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 153960.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "PS",
@@ -1052,7 +1052,7 @@
       "contract": "ps2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 37480.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "PT",
@@ -1067,7 +1067,7 @@
       "contract": "pt2610",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 459.95,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     },
     {
       "code": "SI",
@@ -1082,8 +1082,8 @@
       "contract": "si2611",
       "marginSource": "AKShare futures_fees_info",
       "preSettlement": 8735.0,
-      "priceUpdatedAt": "2026-08-25 21:04:02"
+      "priceUpdatedAt": "2026-08-25 21:55:50"
     }
   ],
-  "lastAttemptAt": "2026-08-25T13:04:07+00:00"
+  "lastAttemptAt": "2026-08-25T13:56:49+00:00"
 }
